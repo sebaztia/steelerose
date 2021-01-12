@@ -1,0 +1,33 @@
+html {
+  font-size: $font-size;
+}
+
+body {
+  color: $font-body-color;
+  font-family: $font-body;
+  font-weight: $font-weight-normal;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+
+html, body{
+  border:none;
+  height:100%;
+  min-height:100%;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+.site-wrapper{
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  max-width:100%;
+}

@@ -1,0 +1,70 @@
+#task-basket__wrapper {
+  a {
+    background:$brand2;
+    @include border-radius($button-radius);
+    box-sizing: border-box;
+    border: $button-border;
+    padding: $button-padding;
+    text-align: center;
+    text-decoration: none;
+    text-transform:uppercase;
+    color:white;
+	  
+	  &:hover{
+		  background: darken($brand2, 5%);
+	  }
+  }
+}
+
+.task-basket__row {
+  display:flex;
+  border-bottom:1px solid $grey-light;
+
+  span {
+    display:inline-block;
+    background-color:transparent;
+    padding:3px 5px;
+    border-radius:5px;
+    font-weight:bold;
+
+    &.waiting {
+      background-color:$brand4;
+      color:white;
+    }
+
+    &.complete, &.completed {
+      background-color:$brand2;
+      color:white;
+    }
+  }
+}
+.task-basket__task, .task-basket__status, .task-basket__amount {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding:5px;
+}
+
+.task-basket__badge {
+  color:white;
+  text-align:center;
+  display:inline-block;
+  margin-left:5px;
+}
+
+.task-basket__badge-wrap {
+  position:relative;
+}
+
+.task-basket__count {
+  width:13px;
+  height:13px;
+  position:absolute;
+  font-size:$small-font-size - 5 ;
+  background: darken($brand2, 10%);
+  color:white;
+  top:-3px;
+  right:-6px;
+  padding-left: 1px;
+  border-radius:50%;
+  text-align: center;
+}

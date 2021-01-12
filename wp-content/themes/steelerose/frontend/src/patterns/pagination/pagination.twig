@@ -1,0 +1,32 @@
+{% if nbPages > 1 %}
+	{% set nearbyPagesLimit = 4 %}
+	<div class="dpl-pagination">
+		Currently on page <b>{{ currentPage }}</b> of <b>{{ nbPages }}</b>.<br />
+		<ul class="pagination__wrapper">
+			{% if currentPage != 1 %}
+				<li>
+					<a href="{{ url }}1">First</a>
+				</li>
+			{% endif %}
+			{% for i in 1..nbPages %}
+				{% if 0 == (currentPage - nearbyPagesLimit) - loop.index %}
+					<li class="disabled"><a href="#">...</a></li>
+				{% elseif 0 == (currentPage + nearbyPagesLimit) - loop.index %}
+					<li class="disabled"><a href="#">...</a></li>
+				{% elseif 0 < (currentPage - nearbyPagesLimit) - loop.index %}
+				{% elseif 0 > (currentPage + nearbyPagesLimit) - loop.index %}
+				{% else %}
+					<li {% if currentPage == loop.index  %} class="active"{% endif %}>
+						<a href="{{ url }}{{ loop.index }}">{{ loop.index }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+			{% if currentPage != nbPages %}
+				<li>
+					<a href="{{ url }}{{ nbPages }}">Last</a>
+				</li>
+			{% endif %}
+		</ul>
+		<div class="clearfix"></div>
+	</div>
+{% endif %}

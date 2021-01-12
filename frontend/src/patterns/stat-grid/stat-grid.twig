@@ -1,0 +1,18 @@
+{% if cols %}
+<div class="dpl-stat-grid">
+	<div class="container">
+		<div class="row flex-same-height">
+			{% for col in cols %}
+				<div class="four columns flex-same-height--item">
+					<div class="stat-grid__wrapper">
+						<div class="stat-grid__content">
+							<p class="h1 stat-grid__title nomargin--bottom"><b>{{ col.title }}</b></p>
+							<p class="standfirst">{{ col.text }}</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endif %}

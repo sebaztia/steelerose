@@ -1,0 +1,13 @@
+{
+    "render_template": "probate-machine.php",
+    "name": "probate-machine",
+    "category": "patterns",
+    "type": "preact",
+    "title": "Probate Machine",
+    "description": "Displays the Probate Machine",
+    "icon": "format-image",
+    "use-pattern-dir": true,
+    "supports": {
+        "align": false
+    }
+}

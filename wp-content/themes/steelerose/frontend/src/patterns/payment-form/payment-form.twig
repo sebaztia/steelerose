@@ -1,0 +1,30 @@
+<div class="dpl-take-payment">
+    <div class="form-stripe-cc__card">
+        <label class="label__form" for="card-number">Card Number</label>
+        <div id="card-number" class="input empty input__bgwhite"></div>
+    </div>
+
+    <div class="form-stripe-cc__cvc">
+        <label class="label__form" for="card-cvc">CVC</label>
+        <div id="card-cvc" class="input empty input__bgwhite"></div>
+    </div>
+    <div class="form-stripe-cc__expiry">
+        <label class="label__form" for="card-expiry">Expiration Date</label>
+        <div id="card-expiry" class="input empty input__bgwhite"></div>
+    </div>
+    <div class="clearfix"></div>
+    <p>
+        <label class="label__form" for="card-name">Name on card</label>
+        <input name="card-name" class="input__bgwhite" id="card-name" type="text"  />
+    </p>
+    <div class="take-payment__errors"></div>
+    <p>
+        {% include "@patterns/button/button.twig" with {
+            element : 'button',
+            type : 'submit',
+            label : 'Pay now' ,
+            theme : 'primary_dark',
+            class : 'button__lg'
+        } %}
+    </p>
+</div>

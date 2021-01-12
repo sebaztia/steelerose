@@ -1,0 +1,7 @@
+<p>With:<br />
+{{ paymentMethod.brand | upper }} | {{ paymentMethod.last4 }}</p>
+{% include "@patterns/button/button.twig" with {
+    label : 'CONFIRM',
+    element : 'button',
+    id : 'confirm-payment-method'
+} %}

@@ -1,0 +1,99 @@
+/************************************************************************************************
+                     * Colors
+ ************************************************************************************************/
+
+$brand1: #c53662; // pink
+$brand1l : #e06388; // light pink
+$brand2: #78b942; // green
+$brand3: #87c5bb; // teal
+$brand4: #Ea9e7d; // light orange
+$brand5: #5fa2cb; // blue
+$brand6: #ABC0C6; // light blue/grey
+$brand7: #D7F3FC; // light pale blue
+$brand8: #C4E9F4; // light pale blue
+
+$brand-primary : $brand1;
+
+$brand-dark: #4c5864;
+$brand-medium: #ccc;
+$brand-light: #edf5f7;
+
+$bg-dark: $brand-dark;
+$bg-medium:#E7F3F6;
+$bg-lightmedium: #EDF4F6;
+$bg-light: #edf5f7;
+
+$grey-dark : #4c5864;
+$grey-medium : #86989d;
+$grey-light : #a4bbc2;
+
+$border-light: #E1E1E1;
+$border-dark: #deeaed;
+
+$probate-machine-tabcontent-light: #f7fbfc;
+
+$bg-overlay: rgba(black, 0.5);
+
+$brand-highlight: $brand2;
+
+$error: #B00001;
+$alert: #FAEBEE;
+$success: #96b422;
+
+/************************************************************************************************
+                     * Typography
+ ************************************************************************************************/
+
+$font-body-color: #5e6c7b;
+$font-body: 'Red Hat Display', sans-serif;
+$font-heading-color: $brand-dark;
+$font-heading: 'Open Sans', sans-serif;
+// $font-heading : $font-body;
+$font-letter-spacing: 0.03em;
+$font-line-height: 140%;
+$font-margin: 0 0 30px;
+$font-padding: 0;
+$font-size: 18px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+
+/************************************************************************************************
+                     * Buttons
+ ************************************************************************************************/
+
+$button-radius: 4px;
+$button-width: auto;
+$button-padding: 11px 25px;
+
+$button-color: white;
+$button-color-hover: white;
+$button-font : $font-body;
+$button-size: $font-size - 2;
+$button-letter-spacing : 0.07em;
+// $button-weight: $font-weight-bold;
+$button-weight: $font-weight-bold;
+$button-bg: $brand1;
+$button-bg-hover: darken($brand1, 10%);
+$button-border: 0;
+$button-border-color: $brand1;
+$button-border-color-hover: $brand1;
+
+/************************************************************************************************
+                     * Grid / Layout
+ ************************************************************************************************/
+
+$container-width: 1200px;
+$column-padding: 30px;
+
+$box-radius: $button-radius;
+$box-shadow: 0px 2px 8px -5px rgba(0,0,0,0.3);
+$box-shadow-hover: 0px 2px 12px -5px rgba(0,0,0,0.3);
+
+$device-xs: 480px;
+$device-s: 550px;
+$device-m: 800px;
+$device-l: 1000px;
+$device-xl: 1280px;

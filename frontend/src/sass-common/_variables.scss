@@ -1,0 +1,81 @@
+/************************************************************************************************
+                     * Colors
+ ************************************************************************************************/
+
+$brand-primary: #C1510E; //Blue
+$brand-secondary: #4aad9a; //Teal
+$brand-tertiary: #E9D693; //Yellow
+
+$brand-dark: #666;
+$brand-medium: #ccc;
+$brand-light: #f7f7f7;
+
+$bg-dark: $brand-dark;
+$bg-medium: $brand-medium;
+$bg-light: $brand-light;
+
+$border-light: #E1E1E1;
+$border-dark: #cccccc;
+
+$bg-overlay: rgba(black, 0.5);
+
+$brand-highlight: $brand-secondary;
+
+$error: #B00001;
+$success: #96b422;
+
+/************************************************************************************************
+                     * Typography
+ ************************************************************************************************/
+
+$font-body-color: $brand-dark;
+$font-body: 'Open Sans', sans-serif;
+$font-heading-color: $brand-dark;
+$font-heading: 'Montserrat', sans-serif;
+$font-letter-spacing: 0.03em;
+$font-line-height: 140%;
+$font-margin: 0 0 30px;
+$font-padding: 0;
+$font-size: 16px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+
+/************************************************************************************************
+                     * Buttons
+ ************************************************************************************************/
+
+$button-radius: 4px;
+$button-width: auto;
+$button-padding: 11px 35px;
+
+$button-color: white;
+$button-color-hover: white;
+$button-size: $font-size;
+// $button-weight: $font-weight-bold;
+$button-weight: $font-weight-normal;
+
+$button-bg: $brand-highlight;
+$button-bg-hover: darken($brand-highlight, 10%);
+$button-border: 0;
+$button-border-color: $brand-highlight;
+$button-border-color-hover: $brand-highlight;
+
+/************************************************************************************************
+                     * Grid / Layout
+ ************************************************************************************************/
+
+$container-width: 1200px;
+$column-padding: 30px;
+
+$box-radius: $button-radius;
+$box-shadow: 0px 2px 8px -5px rgba(0,0,0,0.3);
+$box-shadow-hover: 0px 2px 12px -5px rgba(0,0,0,0.3);
+
+$device-xs: 480px;
+$device-s: 550px;
+$device-m: 800px;
+$device-l: 1000px;
+$device-xl: 1280px;

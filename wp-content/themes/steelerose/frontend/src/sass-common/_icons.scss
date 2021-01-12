@@ -1,0 +1,60 @@
+[class^="icon-"], [class*=" icon-"], .contact-details-row li:before,
+.dpl-login-link:before{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/************************************************************************************************
+	* Social Icons
+ ************************************************************************************************/
+
+ul.social-list{
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li{
+		margin: 5px 9px;
+
+		a{
+			font-size: 30px;
+			padding: 0;
+		}
+	}
+}
+
+.icon-location:before{
+  content: "\e911";
+}
+// Brand color on hover...
+.icon-youtube:before {
+	color: #f00;
+}
+.icon-googleplus:before {
+	color: #dc4e41;
+}
+.icon-linkedin:before {
+	color: #0077b5;
+}
+.icon-pinterest:before {
+	color: #bd081c;
+}
+.icon-facebook:before {
+	color: #3b5998;
+}
+.icon-instagram:before {
+	color: #e4405f;
+}
+.icon-twitter:before {
+	color: #1da1f2;
+}

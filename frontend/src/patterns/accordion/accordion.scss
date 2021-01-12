@@ -1,0 +1,7 @@
+@import "lib/bs-accordion.scss";
+
+.dpl-accordion {
+  .accordion__content {
+    padding:$column-padding / 2 !important;
+  }
+}

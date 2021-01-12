@@ -1,0 +1,20 @@
+.dpl-list-item-icon {
+  margin:($column-padding / 2) 0;
+  position:relative;
+
+  .list-item__icon {
+    width:80px;
+    float:left;
+  }
+
+  .list-item__text {
+    margin-left:80px;
+    height:100%;
+    padding-left:$column-padding / 2;
+    box-sizing:border-box;
+    display:flex;
+    align-items: center;
+    position:absolute;
+    justify-content:left;
+  }
+}

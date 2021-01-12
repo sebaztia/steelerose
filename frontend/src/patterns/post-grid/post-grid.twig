@@ -1,0 +1,22 @@
+{% if cols %}
+	<div class="dpl-post-grid">
+		<div class="container">
+			<div class="row flex-same-height">
+				{% for col in cols %}
+					<div class="four columns flex-same-height--item">
+						<div class="post-grid__wrapper">
+							<div class="post-grid__content">
+								{% include "post-box/post-box.twig" with {
+									title : col.title,
+									label : col.label,
+									excerpt : col.excerpt,
+									href : col.href
+								} %}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endif %}

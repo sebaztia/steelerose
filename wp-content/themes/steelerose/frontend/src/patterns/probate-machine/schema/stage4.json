@@ -1,0 +1,433 @@
+{
+  "tabTitle": "Stage 4",
+  "title": "Accounts",
+  "icon": "icon-user",
+  "status": "disabled",
+  "sections" : [
+    {
+      "id" : "s400",
+      "title": "Genealogy Report",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t400",
+          "title": "Contact an ancestry company to prepare a genealogy report.",
+          "status" : "incomplete",
+          "price" : 1000,
+          "tooltip" : {
+            "help" : "You will need this as evidence."
+          }
+        }
+      ]
+    },
+    {
+      "id" : "s401",
+      "title": "Beneficiary details",
+      "status" : "disabled",
+      "enableConditions" : [
+        {
+          "target" : "s403",
+          "thisValueIs" : "XXX",
+          "updateTargetStatus" : "enabled"
+        }
+      ],
+      "tasks": [
+        {
+          "id" : "t401",
+          "title" : "Beneficiary details",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q700",
+              "label" : "Do you know who the beneficiaries are?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "tooltip" : {
+                "help" : "All of them."
+              },
+              "enableConditions" : [
+                {
+                  "target" : ["q701", "q702", "q703"],
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : ["q701", "q702", "q703"],
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : ["t402", "t4021", "t403"],
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : ["t402", "t4021", "t403"],
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q701",
+              "label" : "How many beneficiaries are there?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter how many beneficiaries"
+                }
+              }
+            },
+            {
+              "id": "q702",
+              "label" : "Name",
+              "type" : "Text",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter Beneficiary names"
+                }
+              }
+            },
+            {
+              "id": "q703",
+              "label" : "Address",
+              "type" : "Address",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter Beneficiary address"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t402",
+          "title" : "Check the Will",
+          "price" : 2000,
+          "status" : "disabled"
+        },
+        {
+          "id" : "t4021",
+          "title" : "Who are the beneficiaries?",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q698",
+              "label" : "Do you not know who all the beneficiaries are because the Will refers to a class of people? (E.g. my children, my parents, my cousins etc.)",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t403",
+          "title" : "Check the intestacy laws and refer to the genealogy report",
+          "status" : "disabled"
+        }
+      ]
+    },
+    {
+      "id" : "s402",
+      "title": "Executor details",
+      "status" : "disabled",
+      "enableConditions" : [
+        {
+          "target" : ["s407", "s408"],
+          "thisValueIs" : "XXX",
+          "updateTargetStatus" : "enabled"
+        }
+      ],
+      "tasks": [
+        {
+          "id" : "t404",
+          "title" : "Executor details",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q706",
+              "label" : "Do you know who the executors are?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "tooltip" : {
+                "help" : "All of them."
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q708",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q708",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q711",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q711",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q707",
+              "label" : "Do you know who the administrators are?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t406",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t406",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q708",
+              "label" : "How many executors are there?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter how many beneficiaries"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : ["q709", "q710"],
+                  "thisValueIs" : "XXX",
+                  "updateTargetStatus" : "enabled"
+                }
+              ]
+            },
+            {
+              "id": "q709",
+              "label" : "Name",
+              "type" : "Text",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter Beneficiary names"
+                }
+              }
+            },
+            {
+              "id": "q710",
+              "label" : "Address",
+              "type" : "Address",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter Beneficiary address"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t405",
+          "title" : "Check the Will",
+          "status" : "disabled",
+          "price" : 2000
+        },
+        {
+          "id" : "t406",
+          "title" : "Check the intestacy laws",
+          "status" : "disabled",
+          "price" : 2000,
+          "tooltip" : {
+            "help" : "As there is no Will, the intestacy laws would apply."
+          }
+        }
+      ]
+    },
+    {
+      "id" : "s403",
+      "title": "Contact the Beneficiaries",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t407",
+          "title" : "You will need photo ID, a utility bill no older than three months and a signed and dated letter confirming the following: their name, address, their account number, sort code, the name on the account, the bank's address, and whether or not they would like their inheritance sent to the account they are giving you details for or by cheque.",
+          "status" : "incomplete",
+          "price" : 1000,
+          "enableConditions" : [
+            {
+              "target" : "s404",
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s404",
+      "title": "Anti money laundering",
+      "status" : "disabled",
+      "enableConditions" : [
+        {
+          "target" : "s405",
+          "thisValueIs" : "XXX",
+          "updateTargetStatus" : "enabled"
+        }
+      ],
+      "tasks": [
+        {
+          "id" : "t408",
+          "title" : "Check if the beneficaires have any county court judgements.",
+          "status" : "incomplete",
+          "price" : 1000,
+          "tooltip" : {
+            "help" : "The Register of Judgments, Orders and Fines (sometimes referred to as 'the CCJ Register') would hold these records."
+          }
+        },
+        {
+          "id" : "t410",
+          "title" : "Check the beneficiaries photo ID to and utility bill to make sure you are paying the right person",
+          "status" : "incomplete",
+          "price" : 500
+        }
+      ]
+    },
+    {
+      "id" : "s405",
+      "title": "Draft the Estate Accounts",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t411",
+          "title" : "Follow our simple guide on the 8 steps to draft a basic set of estate accounts.",
+          "status" : "incomplete",
+          "price" : 500,
+          "tooltip" : {
+            "help" : "*Link to Estate account article. XXX"
+          },
+          "enableConditions" : [
+            {
+              "target" : ["s407", "s408"],
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s406",
+      "title": "Documentary Evidence",
+      "status" : "enabled",
+      "tasks": [
+        {
+          "id" : "t412",
+          "title" : "Gather all necessary documentary evidence together",
+          "status" : "incomplete",
+          "tooltip" : {
+            "help" : "To acompany your estate accounts, you should have documentary evidence showing why you put the figure you did on the account. (for example this can be as simple as a letter from the bank with the figure on, or it could be a detailed report from an estate agent showing the property valuation.)"
+          }
+        }
+      ]
+    },
+    {
+      "id" : "s407",
+      "title": "Executor Signoff",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t413",
+          "title" : "Send a copy of the documentary evidence and the accounts to {{q709}} and ask them to sign and return the accounts to you.",
+          "status" : "incomplete",
+          "price" : 500,
+          "tooltip" : {
+            "help" : "Sending a 2 copies of the accounts allows the executor to keep a copy."
+          }
+        }
+      ]
+    },
+    {
+      "id" : "s408",
+      "title": "Administrator Signoff",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t413",
+          "title" : "Send a copy of the documentary evidence and the accounts to {{q709}} and ask them to sign and return the accounts to you.",
+          "status" : "incomplete",
+          "price" : 500,
+          "tooltip" : {
+            "help" : "Sending a 2 copies of the accounts allows the executor to keep a copy."
+          }
+        }
+      ]
+    }
+  ]
+}

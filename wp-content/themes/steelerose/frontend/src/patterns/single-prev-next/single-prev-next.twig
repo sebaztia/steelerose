@@ -1,0 +1,15 @@
+<div class="dpl-single-prev-next post-pagination">
+
+    {% if pTitle %}
+        <a rel="prev" href="{{ pHref }}" >
+            {{ pTitle }}
+        </a>
+    {% endif %}
+
+    {% if nTitle %}
+        <a rel="next" href="{{ nHref }}" >
+            {{ nTitle }}
+        </a>
+    {% endif %}
+
+</div>

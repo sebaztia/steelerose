@@ -1,0 +1,377 @@
+.dpl-probate-machine {
+	background: #f7fbfc;
+  .enabled_inithide {
+    display:none;
+    border:none;
+  }
+	
+	.section-row{
+		padding-top: 0;
+	}
+
+  a.bs-accordion-heading:hover {
+    text-decoration:none !important;
+  }
+
+  strong {
+    font-weight:normal;
+  }
+
+  .bs-accordion .bs-accordion .bs-accordion-heading {
+    padding-bottom:0 !important;
+  }
+
+  label {
+    font-size:$font-size;
+    font-weight:$font-weight-light;
+    position:relative;
+  }
+
+  form.disabled {
+    input, select {
+      pointer-events: none;
+      opacity:0.5;
+    }
+  }
+
+  .probate-machine__field {
+    margin:15px 0;
+
+    .error-helper {
+      border:1px solid red;
+      background:pink;
+      padding:3px;
+    }
+  }
+
+  .probate-machine__tab-title {
+    text-transform:uppercase;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+  }
+
+  .probate-machine__tab-icon {
+    margin-right:10px;
+    font-size:25px;
+    i {
+      opacity:.5;
+    }
+  }
+
+  .probate-machine__count {
+    display:inline;
+    float:right;
+	  font-weight: $font-weight-bold;
+    margin-left:15px;
+    font-size:$small-font-size;
+    color:lighten($font-body-color, 20%);
+    position:relative;
+    top:3px; 
+  }
+
+	.probate-machine__count-divider { 
+		display:inline-block;
+		margin-top: -2px;
+		vertical-align: top;
+	}
+	.probate-machine__count-divider:after { 
+	  content:"|";
+    color:lighten($font-body-color, 20%);
+    margin:0 3.5px;
+  }
+
+  .probate-machine__stage-title {
+    color:$brand1;
+    font-size:$h1-size;
+    display:flex;
+    align-items:center;
+  }
+
+  .probate-machine__stage-title-icon {
+    margin-right:10px;
+    i {
+      opacity:.5;
+    }
+    font-size:50px;
+  }
+
+  .probate-machine__badge {
+    width:30px;
+    font-size:15px;
+    height:20px;
+    padding:5px 0;
+    display:table;
+    font-style:normal;
+    background:$bg-dark;
+    border-radius:50%;
+    color:white;
+    text-align:center;
+    font-weight:bold;
+    vertical-align:middle;
+    float:left;
+    margin-right:15px;
+  }
+
+  .probate-machine__section-title {
+    color:$brand1;
+    font-size:$h4-size;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight:400;
+    padding:20px 10px;
+  }
+	
+	.complete{
+		.probate-machine__badge{
+			background: darken($brand2, 5%);
+		}
+		.probate-machine__section-title,
+		.probate-machine__count,
+		.probate-machine__count-divider:after{
+			color: darken($brand2, 5%);
+		}
+	}
+
+  .probate-machine__task {
+    margin-left:$column-padding / 2;
+    margin-bottom:$column-padding;
+    padding-bottom:$column-padding;
+    border-bottom:2px solid $bg-light;
+
+  }
+
+  .probate-machine__complete-task:hover {
+    text-decoration:underline;
+  }
+
+  .probate-machine__tasks-wrapper {
+    .complete, &.complete {
+      .probate-machine__task-title {
+        &:before {
+          font-family: 'FontAwesome';
+          content: "\f058";
+          color: $brand1;
+        }
+      }
+    }
+  }
+
+  .probate-machine__title-wrapper {
+    padding:($section-padding / 2) 0;
+    font-family:$font-body;
+	  
+	  @media(min-width: $device-m){
+    	display:flex;
+	  }
+  }
+
+  .probate-machine__questions {
+	  text-align: left;
+
+	  @media(min-width: $device-m){
+		  
+    	margin-left:$column-padding / 4;
+		.probate-machine__field.half {
+		  width:50%;
+
+		  &:nth-child(odd) {
+			padding-right:$section-padding / 2;
+			float:left;
+			clear:both;
+		  }
+
+		  &:nth-child(even) {
+			float:right;
+			padding-left:$section-padding / 2;
+		  }
+		}
+	  }
+
+    .react-datepicker-wrapper {
+      display:block;
+    }
+  }
+
+  .probate-machine__task-title {
+	display: block;
+    font-size:$h4-size;
+    font-weight:400;
+	  padding-left: 35px;
+	  position: relative;
+	  text-align: left;
+	  
+	  @media(min-width: $device-m){
+    	flex: 80;
+    	padding-right:$section-padding / 2;
+	  }
+	  strong{
+		  text-align: left;
+	  }
+    &:before {
+		font-family: 'FontAwesome';
+		content:"\f111";
+		left:0;
+		position: absolute;
+		top: 4px;
+    }
+	  .small-text{
+		  font-size: 16px;
+		  opacity: 0.5;
+		  transition: all .2s ease-in-out; 
+	  }
+	  
+	  &:hover .small-text{
+		  color: $brand-primary;
+		  opacity: 1;
+	  }
+  }
+
+  .probate-machine__task-status {
+    display: block;
+    flex-direction: column;
+    justify-content:center;
+    border-left:2px solid $bg-light;
+    font-size:$small-font-size;
+    font-weight:400;
+	  margin-top: 15px;
+	  
+	  @media(min-width: $device-m){
+    	display:flex;
+    	flex: 20;
+	  	margin-top: 0;
+    	padding-left:$section-padding / 2;
+	  }
+
+    div {
+      display: inline-block;
+	  padding-left: 25px;
+	  position: relative;
+		
+		i{
+			left: 0;
+			position: absolute;
+			transform: translate3d(0, -50%, 0);
+			top: 48%;
+		}
+		
+		@media(min-width: $device-m){
+		}
+    }
+	  
+	  .probate-machine__status{
+		  padding-left:0;
+	  }
+
+    .probate-machine__status-complete {
+      color:$brand2;
+    }
+
+    .probate-machine__status-progressing {
+      color:$brand5;
+    }
+  }
+
+  .probate-machine__status-blob {
+    font-style:normal;
+  }
+
+  .probate-machine__status {
+    font-size:$small-font-size;
+    &:before {
+      content:"";
+    }
+  }
+
+  .probate-machine__task-form {
+    flex:80;
+  }
+
+  .probate-machine__task-status {
+
+  }
+
+  .probate-machine__tooltip {
+    display:inline-block;
+    padding:0 10px;
+    position:relative;
+    top:3px;
+    cursor:pointer;
+	  
+	  &:hover svg{
+		  filter: brightness(95%);
+	  }
+
+    i {
+      font-style:normal;
+    }
+  }
+
+    label {
+    display:inline-block;
+  }
+
+  .probate-machine__label-options {
+    margin-top: 12.5px;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    label {
+      	margin-right:5px;
+		padding: 0 10px 0 40px;
+		position: relative;
+		
+		input{
+			left: 10px;
+			position: absolute;
+			top: 3px;
+		}
+    }
+  }
+
+  .cover {
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:1;
+    background:rgba(255,255,255,.5);
+  }
+
+  .probate-machine__repeater-add, .probate-machine__repeater-remove {
+    float:left;
+    clear:both;
+    margin:20px 0;
+  }
+
+  // Luke will probably want to do something with this
+  .probate-machine__repeater-question-wrapper {
+    border:1px solid black;
+    padding:20px;
+    margin:20px 0;
+  }
+}
+
+.probate-machine__tooltip-content {
+  padding:0 20px;
+}
+
+.ReactModal__Overlay{
+	background-color: rgba(white, 0.7) !important;
+	backdrop-filter: blur(3px);
+}
+
+.ReactModalPortal{
+	.dpl-tabs .tabs__tab-wrapper{
+		justify-content: initial;
+		
+		> li:first-child{
+			margin-left: 0;
+			padding: 15px 20px;
+		}
+	}
+}
+
+.ReactModal__Content{
+	background: none !important;
+	border: 0 !important;
+	width: 100%;
+}

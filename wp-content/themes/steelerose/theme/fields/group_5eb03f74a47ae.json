@@ -1,0 +1,100 @@
+{
+    "key": "group_5eb03f74a47ae",
+    "title": "Block\/charity-rows",
+    "fields": [
+        {
+            "key": "field_5eb03f74a71ed",
+            "label": "Title",
+            "name": "Block\/charity-rows\/title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5eb03f74a7227",
+            "label": "Charities",
+            "name": "Block\/charity-rows\/charities",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "charity"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5eb03f74a725f",
+            "label": "Background Colour",
+            "name": "Block\/charity-rows\/backgroundColour",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "grey": "Grey",
+                "brand1": "Brand 1",
+                "brand2": "Brand 2",
+                "brand3": "Brand 3",
+                "brand4": "Brand 4",
+                "brand5": "Brand 5",
+                "brand6": "Brand 6",
+                "brand7": "Brand 7",
+                "brand8": "Brand 8"
+            },
+            "default_value": [
+                "white"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/charity-rows"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1588609793
+}

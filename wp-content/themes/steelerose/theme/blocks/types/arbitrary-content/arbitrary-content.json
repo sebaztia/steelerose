@@ -1,0 +1,12 @@
+{
+    "render_template": "arbitrary-content.php",
+    "name": "arbitrary-content",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Arbitrary Content",
+    "description": "Displays the \"Arbitrary content\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

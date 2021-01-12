@@ -1,0 +1,14 @@
+.dpl-snippet {
+  margin:$column-padding 0;
+
+  .snippet__icon {
+    width:16px;
+    float:left;
+  }
+
+  .snippet__content {
+    width:calc(100% - (16px + 10px));
+    float:left;
+    margin-left:10px;
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "render_template": "service-grid.php",
+    "name": "service-grid",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Services Grid",
+    "description": "Displays the \"Service grid\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

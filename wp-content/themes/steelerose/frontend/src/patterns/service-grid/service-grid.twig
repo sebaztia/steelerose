@@ -1,0 +1,45 @@
+{% if cols %}
+<div class="dpl-service-grid
+        {% if backgroundColour %} bg-{{ backgroundColour }}{% endif %}
+">
+    <div class="container">
+        <section class="section-row">
+            {% if title %}
+                <h2 class="text-center">{{ title }}</h2>
+            {% endif %}
+            <div class="row flex-same-height">
+                {% for col in cols %}
+                    <div class="four columns flex-same-height--item">
+                        <div class="service-grid__wrapper">
+                            {% if col.link %}
+                                <a href="{{ col.link }}">
+                            {% endif %}
+                            <div class="service-grid__content {% if inview %}inview{% endif %}">
+                                <div class="service-grid__image">
+                                    <img src="{{ col.image }}" alt="{{ col.imageAlt }}" />
+                                </div>
+                                <div class="service-grid__title">
+                                    <h3>{{ col.title }}</h3>
+                                </div>
+                                <div class="service-grid__text">
+                                    <p>{{ col.text }}</p>
+                                </div>
+                                {% if col.label %}
+                                <div class="service-grid__button">
+                                    {% include "@patterns/overlay-link/overlay-link.twig" with {
+                                        text : col.label
+                                    } %}
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% if col.link %}
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</div>
+{% endif %}

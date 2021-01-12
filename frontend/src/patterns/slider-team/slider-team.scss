@@ -1,0 +1,26 @@
+@import "lib/slick-theme.scss";
+.dpl-slider-team {
+  max-width:70%;
+  margin:0 auto;
+
+  .slick-slide {
+    transform:scale(0.8);
+    transition:all .5s ease;
+  }
+
+  .slick-slide.slick-current {
+    transform: scale(1.0);
+  }
+}
+
+@media (max-width: $device-m - 1) {
+  .dpl-slider-team {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: $device-s - 1) {
+  .dpl-slider-team {
+    max-width: 73%;
+  }
+}

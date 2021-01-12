@@ -1,0 +1,27 @@
+import { h, render } from 'preact';
+import domReady from '@wordpress/dom-ready';
+
+const $ = jQuery;
+const %3$sRender = () => {
+    const els =
+        document.querySelectorAll(
+            'div.%1$s'
+        );
+
+    els.forEach((e) => {
+        if(!$(e).hasClass('initialised')) {
+            render(<div>Dynamically loaded %1$s via Preact</div>,
+                document.querySelector(
+                    'div#' + e.id
+                )
+            );
+            $(e).addClass('initialised');
+        }
+    });
+};
+
+domReady(() => {
+    setInterval(() => {
+        %3$sRender()
+    },500);
+});

@@ -1,0 +1,2026 @@
+{
+  "tabTitle": "Stage 3",
+  "title": "Gathering Assets",
+  "icon": "icon-checklist",
+  "status": "disabled",
+  "sections" : [
+    {
+      "id" : "s300",
+      "title": "Bank Account",
+      "status" : "enabled",
+      "tasks": [
+        {
+          "id" : "t300",
+          "title": "Setup The Trustees Bank Account",
+          "status" : "incomplete",
+          "tooltip" : {
+            "help" : "Contact a bank and ask to set up a Trustees Bank Account."
+          }
+        },
+        {
+          "id" : "t299",
+          "title": "Section 27 Notice - London Gazette",
+          "status" : "incomplete",
+          "price" : 1000,
+          "tooltip" : {
+            "help" : "You need to put a death notice in the London Gazette."
+          }
+        },
+        {
+          "id" : "t298",
+          "title": "Section 27 Notice - Local Paper",
+          "status" : "incomplete",
+          "price" : 1000,
+          "tooltip" : {
+            "help" : "You need to put a death notice in the local paper where {{q100}} lived."
+          }
+        }
+      ]
+    },
+    {
+      "id" : "s301",
+      "title": "Home residence - Sole name / Tenants in common",
+      "status" : "enabled",
+      "tasks": [
+        {
+          "id" : "t301",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q500",
+              "label" : "Is {{q202}} being sold?",
+              "type" : "Radio",
+              "status" : "enabled",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q501",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q501",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q502",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q502",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t302",
+          "title": "Contact an estate agent to sell {{q202}}",
+          "status" : "disabled",
+          "price" : 1000,
+          "enableConditions" : [
+            {
+              "target" : "t304",
+              "thisValueIs" : "complete",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t303",
+          "title": "Transfer {{q202}} to the beneficiaries",
+          "status" : "disabled"
+        },
+        {
+          "id" : "t304",
+          "title" : "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q600",
+              "label" : "Did {{q202}} sell for {{q203}}?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q601",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q601",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q601",
+              "label" : "What was the sale price of {{q202}}?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the sale price of {{q202}}"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s302",
+      "title": "Home Residence - Joint Tenants",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t305",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q503",
+              "label" : "Is {{q204}} being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q504",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q504",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q505",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q505",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t306",
+          "title": "Contact an estate agent to sell {{q204}}",
+          "status" : "disabled",
+          "price" : 1000
+        },
+        {
+          "id" : "t307",
+          "title": "Notify the Land Registry that {{q100}} has passed away.",
+          "status" : "disabled",
+          "price" : 500
+        }
+      ]
+    },
+    {
+      "id" : "s303",
+      "title": "Residential Property - Sole Name / Tenants in Common",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t308",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q503",
+              "label" : "Is {{q209}} being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : ["t309","t312"],
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : ["t309","t312"],
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t310",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t310",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t309",
+          "title": "Contact an estate agent to sell {{q209}}",
+          "status" : "disabled",
+          "price" : 1000
+        },
+        {
+          "id" : "t310",
+          "title": "Transfer {{q209}} to the beneficiaries ",
+          "status" : "disabled"
+        },
+        {
+          "id" : "t312",
+          "title" : "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q602",
+              "label" : "Did {{q209}} sell for {{q358}}?",
+              "type" : "Radio",
+              "status" : "enabled",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q603",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q603",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q603",
+              "label" : "What was the sale price of {{q209}}?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the sale price of {{q209}}"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s304",
+      "title": "Residential Property - Joint Tenants",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t313",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q509",
+              "label" : "Is {{211}} being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t314",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t314",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t315",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t315",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t314",
+          "title": "Contact an estate agent to sell {{q211}}",
+          "status" : "disabled",
+          "price" : 1000
+        },
+        {
+          "id" : "t315",
+          "title": "Notify the Land Registry that {{q100}} has passed away.",
+          "status" : "disabled",
+          "price" : 500
+        }
+      ]
+    },
+    {
+      "id" : "s305",
+      "title": "Land and Buildings - Sole Name / Tenants in Common",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t316",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q512",
+              "label" : "Is {{q215}} being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : ["t317","t318"],
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : ["t317","t318"],
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t319",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t319",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t317",
+          "title": "Contact an estate agent to sell {{q215}}",
+          "status" : "disabled",
+          "price" : 1000
+        },
+        {
+          "id" : "t318",
+          "title" : "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q602",
+              "label" : "Did {{q215}} sell for {{q216}}?",
+              "type" : "Radio",
+              "status" : "enabled",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q604",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q604",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q604",
+              "label" : "What was the sale price of {{q215}}?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the sale price of {{q215}}"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t319",
+          "title": "Transfer {{q215}} to the beneficiaries ",
+          "status" : "disabled"
+        }
+      ]
+    },
+    {
+      "id" : "s306",
+      "title": "Land and Buildings - Joint Tenants",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t320",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q515",
+              "label" : "Is {{217}} being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t321",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t321",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t322",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t322",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t321",
+          "title": "Contact an estate agent to sell {{q217}}",
+          "status" : "disabled",
+          "price" : 1000
+        },
+        {
+          "id" : "t322",
+          "title": "Notify the Land Registry that {{q100}} has passed away.",
+          "status" : "disabled",
+          "price" : 500
+        }
+      ]
+    },
+    {
+      "id" : "s307",
+      "title": "Nominated Assets",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t323",
+          "title": "Contact the organisation that holds the {{q221}} and notify them that {{q100}} has passed away",
+          "status" : "incomplete",
+          "price" : 1000
+        }
+      ]
+    },
+    {
+      "id" : "s308",
+      "title": "Assets & debts outside the UK",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t324",
+          "title": "Property",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q519",
+              "label" : "What is the address of the property?",
+              "type" : "Address",
+              "value" : "",
+              "status" : "disabled",
+              "enableConditions" : [
+                {
+                  "target" : "q520",
+                  "thisValueIs" : "Done",
+                  "updateTargetStatus" : "enabled"
+                }
+              ]
+            },
+            {
+              "id": "q520",
+              "label" : "Is {{q519}} being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : ["q522", "t326"],
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : ["q522", "t326"],
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t325",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t325",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q522",
+              "label" : "Who is receiving {{q519}}?",
+              "type" : "Text",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter who is receiving {{q519}}"
+                }
+              },
+              "tooltip" : {
+                "help" : "You need to put a death notice in the local paper where {{q100}} lived."
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t325",
+          "title": "Contact a local estate agent to sell {{q519}}",
+          "status" : "disabled"
+        },
+        {
+          "id" : "t326",
+          "title": "Transfer {{q519}} to {{q522}}",
+          "status" : "disabled",
+          "tooltip" : {
+            "help" : "You may need to contact a local legal professional near {{q519}}"
+          }
+        },
+        {
+          "id" : "t327",
+          "title": "Write to whoever holds the cash and transfer it to the Trustee Account",
+          "status" : "disabled"
+        },
+        {
+          "id" : "t328",
+          "title": "Car",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q520",
+              "label" : "Is the car being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q527",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q527",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t329",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t329",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q527",
+              "label" : "Who is receiving the car?",
+              "type" : "Text",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter who is receiving the car"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t239",
+          "title": "Sell the car",
+          "status" : "disabled"
+        },
+        {
+          "id" : "t330",
+          "title": "Jewellery",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q528",
+              "label" : "Is the jewellery being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q530",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q530",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t331",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t331",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q530",
+              "label" : "Who is receiving the jewellery?",
+              "type" : "Text",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter who is receiving the jewellery"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t331",
+          "title": "Sell the jewellery",
+          "status" : "disabled",
+          "tooltip" : {
+            "help" : "It is normally best to contact an auctioneer to arrange the sale of any jewellery."
+          }
+        },
+        {
+          "id" : "t332",
+          "title": "Miscellaneous",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q531",
+              "label" : "Are the miscellaneous assets being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q533",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q533",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t333",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t333",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q533",
+              "label" : "Who is receiving the miscellaneous assets?",
+              "type" : "Text",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter who is receiving the miscellaneous assets"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t333",
+          "title": "Sell the miscellaneous assets",
+          "status" : "disabled"
+        },
+        {
+          "id" : "t334",
+          "title": "Debts",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q534",
+              "label" : "Who did {{q100}} owe the {{q290}} to?",
+              "type" : "Text",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter who {{q100}} owed the {{q290}} to"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t335",
+                  "thisValueIs" : "XXX",
+                  "updateTargetStatus" : "enabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t335",
+          "title": "Pay {{q534}} the {{q290}}",
+          "status" : "disabled"
+        }
+      ]
+    },
+    {
+      "id" : "s314",
+      "title": "Joint Bank Account",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t336",
+          "title": "Write to {{q224}} to notify them the death and ask them to remove {{q100}}'s name from the account.",
+          "status" : "incomplete",
+          "price" : 1000
+        }
+      ]
+    },
+    {
+      "id" : "s315",
+      "title": "Trust for the benefit of {{q100}}",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t337",
+          "title": "Trust assets due after death",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q537",
+              "label" : "Is there any assets due to {{q100}}'s estate now that {{q100}} has passed away?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t338",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t338",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t339",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t339",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t338",
+          "title": "Notify the trustees that {{q100}} has passed away",
+          "status" : "disabled",
+          "price" : 1000
+        },
+        {
+          "id" : "t339",
+          "title": "Notify the trustees that {{q100}} has passed away and that they now need to transfer the {{q239}} to the beneficiaries of {{q100}}'s estate.",
+          "status" : "disabled",
+          "price" : 1000,
+          "enableConditions" : [
+            {
+              "target" : "t341",
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s316",
+      "title": "Sole bank accounts",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t340",
+          "title": "Write to {{q292}} to close the account and transfer any monies to the trustee's bank account.",
+          "status" : "incomplete",
+          "price" : 500,
+          "enableConditions" : [
+            {
+              "target" : "t341",
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t341",
+          "title": "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q606",
+              "label" : "Did {{q292}} transfer {{q296}} into the trustee's bank account?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q607",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q607",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q607",
+              "label" : "How much did {{q292}} transfer into the trustee's bank account?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter how muc did {{q292}} transfer"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s317",
+      "title": "National savings accounts",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t342",
+          "title": "Write to {{q300}} to close the accountand transfer any monies to the trustee's bank account.",
+          "status" : "incomplete",
+          "price" : 500,
+          "enableConditions" : [
+            {
+              "target" : "t343",
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t343",
+          "title": "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q608",
+              "label" : "Did {{q300}} transfer {{q304}} into the trustee's bank account?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q609",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q609",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q609",
+              "label" : "How much did {{q300}} transfer into the trustee's bank account?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter how muc did {{q300}} transfer"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s318",
+      "title": "Cash",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t344",
+          "title": "Deposit the {{q308}} into the trustee's account",
+          "status" : "incomplete",
+          "price" : 500,
+          "enableConditions" : [
+            {
+              "target" : "t345",
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t345",
+          "title": "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q610",
+              "label" : "Did you deposit exactly {{q308}} into the trustee's bank account?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q611",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q611",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q611",
+              "label" : "How much did you deposit into the trustee's bank account?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter much you deposited into the trustee's bank account"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s319",
+      "title": "Household or personal goods in sole name",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t346",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q543",
+              "label" : "Are these items being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t347",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t347",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t347",
+          "title": "t347",
+          "status" : "disabled",
+          "tooltip" : {
+            "help" : "It is normally best to contact an auctioneer to arrange the sale of goods."
+          },
+          "enableConditions" : [
+            {
+              "target" : "t348",
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t348",
+          "title" : "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q545",
+              "label" : "Did the items sell for {{q311}}?",
+              "type" : "Radio",
+              "value" : "",
+              "status" : "incomplete",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q546",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q546",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q546",
+              "label" : "What did the items sell for?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the sale price"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s320",
+      "title": "Stocks & Shares quoted on the stock exchange",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t349",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q547",
+              "label" : "Are these being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t3491",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t3491",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t3492",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t3492",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t3491",
+          "title": "Write to {{q311}} to sell the Stocks and Shares",
+          "status" : "disabled",
+          "price" : 500,
+          "enableConditions" : [
+            {
+              "target" : ["t350", "q550"],
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            },
+            {
+              "target" : "t362",
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t3492",
+          "title": "Write to {{q314}} to transfer the Stocks and Shares to the beneficiaries",
+          "status" : "disabled",
+          "price" : 1000,
+          "enableConditions" : [
+            {
+              "target" : ["t350", "q552"],
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t350",
+          "title" : "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q550",
+              "label" : "Did the Stocks and Shares sell for {{q316}}?",
+              "type" : "Radio",
+              "value" : "",
+              "status" : "disabled",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q551",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q551",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q551",
+              "label" : "What did the Stocks and Shares sell for?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the sale price"
+                }
+              }
+            },
+            {
+              "id": "q552",
+              "label" : "Was the value of the Stocks and shares {{q316}} when they were transferred to the beneficiaries??",
+              "type" : "Radio",
+              "value" : "",
+              "status" : "disabled",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q553",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q553",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q553",
+              "label" : "What was the value of the stocks and shares when they were transferred to the beneficiaries?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the value of stocks"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s321",
+      "title": "Stocks & Shares not quoted on the stock exchange",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t351",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q554",
+              "label" : "Are these being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t352",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t352",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t353",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t353",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t352",
+          "title": "Write to {{q319}} to sell the Stocks and Shares",
+          "status" : "disabled",
+          "price" : 500,
+          "enableConditions" : [
+            {
+              "target" : ["t354", "q557"],
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t353",
+          "title": "Write to {{q319}} to transfer the Stocks and Shares to the beneficiaries",
+          "status" : "disabled",
+          "price" : 1000,
+          "enableConditions" : [
+            {
+              "target" : ["t354", "q559"],
+              "thisValueIs" : "XXX",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t354",
+          "title" : "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q557",
+              "label" : "Did the Stocks and Shares sell for {{q321}}?",
+              "type" : "Radio",
+              "value" : "",
+              "status" : "disabled",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q558",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q558",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q558",
+              "label" : "What did the Stocks and Shares sell for?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the sale price"
+                }
+              }
+            },
+            {
+              "id": "q559",
+              "label" : "Was the value of the Stocks and shares {{q321}} when they were transferred to the beneficiaries?",
+              "type" : "Radio",
+              "value" : "",
+              "status" : "disabled",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q560",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q560",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q560",
+              "label" : "What was the value of the stocks and shares when they were transferred to the beneficiaries?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the value of stocks"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s322",
+      "title": "Insurance Policies",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t355",
+          "title" : "Who gets paid",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q561",
+              "label" : "Does the insurance policy held with {{q324}} pay the estate or a nominated beneficiary?",
+              "type" : "Checkbox",
+              "value" : "",
+              "status" : "disabled",
+              "options": [
+                "Estate",
+                "Nominated Beneficiary"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please choose who gets paid"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t356",
+                  "thisValueIs" : "Estate",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t357",
+                  "thisValueIs" : "Nominated Beneficiary",
+                  "updateTargetStatus" : "enabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t356",
+          "title": "Write to {{q324}} and instruct them to pay the trustee's bank account.",
+          "status" : "disabled",
+          "price" : 500
+        },
+        {
+          "id" : "t357",
+          "title": "Write to {{q324}} and instruct them to pay the nominated beneficiary.",
+          "status" : "disabled",
+          "price" : 500
+        }
+      ]
+    },
+    {
+      "id" : "s323",
+      "title": "Outstanding money owed to {{q100}}",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t358",
+          "title": "Write to {{q324}} and instruct them to pay the trustee's bank account.",
+          "status" : "disabled",
+          "price" : 500
+        }
+      ]
+    },
+    {
+      "id" : "s324",
+      "title": "Assets held in a partnership or as a business interest",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t359",
+          "title" : "To sell, or not to sell",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q500",
+              "label" : "Is {{q336}} being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t360",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t360",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t361",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t361",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t360",
+          "title": "Contact a company broker to sell {{q336}}",
+          "status" : "disabled",
+          "price" : 1000,
+          "enableConditions" : [
+            {
+              "target" : "t304",
+              "thisValueIs" : "complete",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t361",
+          "title": "Fill out a share transfer form to transfer the asset to the beneficiaries",
+          "status" : "disabled",
+          "price" : 1000,
+          "enableConditions" : [
+            {
+              "target" : "t304",
+              "thisValueIs" : "complete",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t362",
+          "title" : "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q568",
+              "label" : "Did {{q336}} sell for {{q338}}?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q569",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q569",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q569",
+              "label" : "What did {{q336}} sell for?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the sale price of {{q336}}"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s325",
+      "title": "Other assets not included above",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t363",
+          "title" : "What are they?",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q570",
+              "label" : "Describe the other assets",
+              "type" : "Textbox",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please describe the other assets"
+                }
+              }
+            },
+            {
+              "id": "q571",
+              "label" : "Are they being sold?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t364",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t364",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t365",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t365",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t364",
+          "title": "Sell the {{q570}}",
+          "status" : "disabled",
+          "enableConditions" : [
+            {
+              "target" : ["t366", "q574"],
+              "thisValueIs" : "complete",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id" : "t365",
+          "title": "Transfer the {{q570}} to the beneficiaries",
+          "status" : "disabled"
+        },
+        {
+          "id" : "t366",
+          "title" : "Ch-ch-ch-changes' during the administration",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id": "q574",
+              "label" : "Did the assets sell for {{q342}}?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q575",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q575",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q575",
+              "label" : "How much did the assets sell for?",
+              "type" : "Numerical",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the sale price"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s326",
+      "title": "Other debts not included above",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t367",
+          "title" : "What are they?",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id": "q576",
+              "label" : "Describe the other debts",
+              "type" : "Textbox",
+              "value" : "",
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please describe the other assets"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : ["t368"],
+                  "thisValueIs" : "XXX",
+                  "updateTargetStatus" : "enabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t368",
+          "title" : "Pay off the other debts",
+          "status" : "disabled"
+        }
+      ]
+    }
+  ]
+}

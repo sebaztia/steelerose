@@ -1,0 +1,42 @@
+<header class="dpl-header headroom">
+    {% include "@patterns/header-topbar/header-topbar.twig" %}
+
+    <div class="container">
+        <div class="flex-header">
+            <div class="flex-header--left">
+                {% include "@patterns/logo/logo.twig" with {
+                    src : "/public/150x100.png",
+                    alt : "Steele Rose",
+                    link : "/"
+                } %}
+            </div>
+            <div class="flex-header--right">
+                {% include "@patterns/header-navigation/header-navigation.twig" with {
+                    links : [
+                        {
+                            "label" : "Page",
+                            "href" : "/pages/page.html"
+                        },
+                        {
+                            "label" : "UI",
+                            "href" : "/pages/ui.html"
+                        },
+                        {
+                            "label" : "News",
+                            "href" : "/"
+                        },
+                        {
+                            "label" : "Charities",
+                            "href" : "/"
+                        },
+                        {
+                            "label" : "Contact",
+                            "href" : "/"
+                        }
+                    ]
+                } %}
+            </div>
+        </div>
+    </div>
+    {% include "@patterns/header-search/header-search.twig" %}
+</header>

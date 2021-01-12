@@ -1,0 +1,117 @@
+{% include "@templates/head.twig" %}
+<main id="main">
+
+    {% include "@patterns/breadcrumbs/breadcrumbs.twig" with
+        {
+            page : "Current page",
+            crumbs : [
+            {
+                label : "Home",
+                link : "/"
+            },
+            {
+                label : "Previous Page",
+                link : "#"
+            }
+        ]
+        }
+    %}
+
+    {% include "@patterns/page-banner/page-banner.twig" with {
+        imgSrc : "/public/1920x600.png",
+        imgAlt : "Banner alt",
+        title : "Main title here",
+        style : "dark"
+    }%}
+
+    <div class="container">
+        <div class="row">
+            <div class="columns twelve">
+                {% include "@patterns/arbitrary-content/arbitrary-content.twig" with {
+                    title : "About title to go here",
+                    content : "
+            <h6>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididun</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p><button>Find out more</button></p>",
+                    align: "center"
+                } %}
+            </div>
+        </div>
+    </div>
+
+    {% include "@patterns/call-to-action/call-to-action.twig" with {
+        align : 'left',
+        invert : true,
+        title : 'Another title to go in here',
+        content : 'icons',
+        imgSrc : "/public/600x600.png",
+        imgAlt : "Probate Machine"
+    } %}
+
+    {% include "@patterns/service-grid/service-grid.twig" with {
+        cols : [
+            {
+                image : "/public/100x100.png",
+                imageAlt : "Test alt",
+                title : "Service",
+                text  : "Lorem ipsum dolor sit amet, consectetur",
+                buttonHref : '#',
+                buttonLabel : 'Find out more'
+            },
+            {
+                image : "/public/100x100.png",
+                imageAlt : "Test alt",
+                title : "Service",
+                text  : "Lorem ipsum dolor sit amet, consectetur",
+                buttonHref : '#',
+                buttonLabel : 'Find out more'
+            },
+            {
+                image : "/public/100x100.png",
+                imageAlt : "Test alt",
+                title : "Service",
+                text  : "Lorem ipsum dolor sit amet, consectetur",
+                buttonHref : '#',
+                buttonLabel : 'Find out more'
+            }
+        ]
+    } %}
+
+    {% include "@patterns/call-to-action/call-to-action.twig" with {
+        align : 'right',
+        invert : true,
+        title : 'Another title here',
+        content : '<p>Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit</p>',
+        buttonLabel : "Find out more",
+        buttonHref : '#',
+        embedSrc : "https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1"
+    } %}
+
+    {% include "@patterns/call-to-action/call-to-action.twig" with {
+        align : 'left',
+        invert : true,
+        title : 'Signup CTA here',
+        content : '<p class="standfirst">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit</p><p>Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit</p>',
+        buttonLabel : "Find out more",
+        buttonHref : '#',
+        imgSrc : "/public/600x600.png",
+        imgAlt : "Probate Machine"
+    } %}
+
+</main>
+{% include "@templates/foot.twig" %}

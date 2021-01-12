@@ -1,0 +1,12 @@
+{
+    "render_template": "charity-rows.php",
+    "name": "charity-rows",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Charity Rows",
+    "description": "Displays a list of \"Charity Row\" patterns",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

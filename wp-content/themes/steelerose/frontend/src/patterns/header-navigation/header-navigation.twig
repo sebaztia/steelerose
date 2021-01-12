@@ -1,0 +1,46 @@
+{% if links %}
+	<div class="header-navigation__container">
+		<div class="menu-button">
+			<button class="hamburger hamburger--spin menu-trigger" type="button">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+			</button>
+		</div>
+		<ul id="menu-main-menu" class="main-menu hori-list">
+			{% for link in links %}
+
+				{% if attribute(link.fields, 'Menu/main/makeButton') %}
+					<li>
+						{% include "@patterns/button/button.twig" with {
+							element : 'a',
+							href : link.url,
+							label : link.title,
+							title : link.title,
+							colour : attribute(link.fields, 'Menu/main/colour'),
+							labelColour : 'light',
+							class : 'probate-button'
+						} %}
+					</li>
+				{% else %}
+					<li>
+						<a class="{{ link.classes }}" href="{{ link.url }}">
+							{{ link.title }}
+						</a>
+						{% if link.wpse_children %}
+							<ul class="main-menu__children">
+								{% for child in link.wpse_children %}
+									<li>
+										<a class="{{ child.classes }}" href="{{ child.url }}">
+											{{ child.title }}
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}

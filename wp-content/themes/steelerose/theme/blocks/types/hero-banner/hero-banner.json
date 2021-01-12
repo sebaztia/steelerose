@@ -1,0 +1,12 @@
+{
+    "render_template": "hero-banner.php",
+    "name": "hero-banner",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Hero Banner",
+    "description": "Displays the \"Hero Banner\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

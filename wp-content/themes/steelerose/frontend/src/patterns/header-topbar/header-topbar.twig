@@ -1,0 +1,17 @@
+<div class="dpl-header-topbar">
+	<div class="container">
+		<div class="flex-header">
+			<div class="flex-header--left">
+					{% include "@patterns/social-icons/social-icons.twig" %}
+			</div>
+			<div class="flex-header--right">
+				{% include "@patterns/header-topbar-links/header-topbar-links.twig" with {
+					links : global.menu_topbar
+				} %}
+				{% include "@patterns/header-search/header-search.twig" with {
+					icon : true
+				} %}
+			</div>
+		</div>
+	</div>
+</div>

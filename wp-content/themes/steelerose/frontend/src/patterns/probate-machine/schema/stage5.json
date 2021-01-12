@@ -1,0 +1,69 @@
+{
+  "tabTitle": "Stage 5",
+  "title": "Distribution",
+  "icon": "icon-gift",
+  "status": "disabled",
+  "sections" : [
+    {
+      "id" : "s501",
+      "title": "Household/ Personal Goods",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t501",
+          "title": "Give the household and/or personal goods to the beneficiaries",
+          "status" : "incomplete"
+        }
+      ]
+    },
+    {
+      "id" : "s502",
+      "title": "Assets outside the UK",
+      "status" : "disabled",
+      "tasks": [
+        {
+          "id" : "t502",
+          "title": "Give the car to {{q527}}",
+          "status" : "disabled"
+        },
+        {
+          "id" : "t503",
+          "title": "Give the jewellery to {{q530}}",
+          "status" : "disabled"
+        }
+      ,
+        {
+          "id" : "t504",
+          "title": "Give the miscellaneous assets to {{q533}}",
+          "status" : "disabled"
+        }
+      ]
+    },
+    {
+      "id" : "s503",
+      "title": "Trustee's bank account",
+      "status" : "enabled",
+      "tasks": [
+        {
+          "id" : "t505",
+          "title": "Make reimbursements",
+          "status" : "incomplete",
+          "tooltip" : {
+            "help" : "E.G. if someone paid for the funeral, If there were bills paid by the beneficiaries and not the estate, or if you had to pay any fees to complete the process."
+          }
+        },
+        {
+          "id" : "t506",
+          "title": "Pay Beneficiaries",
+          "status" : "disabled"
+        }
+      ,
+        {
+          "id" : "t507",
+          "title": "Notify bank to close the trustee's bank account",
+          "status" : "disabled"
+        }
+      ]
+    }
+  ]
+}

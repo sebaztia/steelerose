@@ -1,0 +1,25 @@
+{% if cols %}
+<div class="dpl-stat-grid
+        {% if backgroundColour %} bg-{{ backgroundColour }}{% endif %}
+">
+	<div class="container">
+		<section class="section-row">
+			{% if title %}
+				<h2 class="text-center text-white">{{ title }}</h2>
+			{% endif %}
+			<div class="row flex-same-height">
+				{% for col in cols %}
+					<div class="four columns flex-same-height--item">
+						<div class="stat-grid__wrapper">
+							<div class="stat-grid__content">
+								<div class="stat-grid__number" data-number="{{ col.value }}">{{ col.value }}</div>
+								<p class="h4 text-white">{{ col.text }}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+</div>
+{% endif %}

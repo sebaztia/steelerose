@@ -1,0 +1,12 @@
+{
+    "render_template": "map.php",
+    "name": "map",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Map",
+    "description": "Displays the \"Map\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

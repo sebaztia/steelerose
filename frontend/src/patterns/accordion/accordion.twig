@@ -1,0 +1,27 @@
+{% if accordions %}
+    <div class="dpl-accordion">
+        {% if embed == false %}
+        <div class="container">
+        {% endif %}
+            {% for acc in accordions %}
+                <div class="bs-accordion content-accordion left-align">
+                    <a href="#" class="bs-accordion-heading">
+                        {{ acc.title }}
+                        <span class="icon-plus"></span>
+                    </a>
+                    <div class="bs-accordion-container">
+                        <div class="bs-accordion-content accordion__content">
+                            {% if acc.content == 'tabs' %}
+                                {% include "@patterns/accordion/examples/embedded-tabs.twig" %}
+                            {% else %}
+                                {{ acc.content }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% if embed == false %}
+        </div>
+        {% endif %}
+    </div>
+{% endif %}

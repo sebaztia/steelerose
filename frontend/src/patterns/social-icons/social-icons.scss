@@ -1,0 +1,39 @@
+.dpl-social-icons {
+
+  a.social-icons__item {
+    display:inline-block;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    text-align:center;
+    margin-right:5px;
+    background:$brand-secondary;
+    color:$bg-light;
+
+    i:before {
+      color:$bg-light;
+    }
+
+    &:hover {
+      background:$bg-light;
+
+      i:before {
+        color:$font-body-color;
+      }
+    }
+  }
+
+  &.dark {
+    a.social-icons__item {
+      background:$bg-light;
+
+      i:before {
+        color:$font-body-color;
+      }
+
+      &:hover {
+        background:$bg-medium;
+      }
+    }
+  }
+}

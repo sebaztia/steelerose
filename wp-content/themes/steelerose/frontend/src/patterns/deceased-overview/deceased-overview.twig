@@ -1,0 +1,56 @@
+<div class="dpl-deceased-overview bg-lightextra">
+    <div class="section-row">
+        <div class="container">
+            <div class="row flex-same-height">
+                <div class="flex-same-height--item columns {% if taskTracker %}seven{% else %}twelve{% endif %}">
+                    <h2>Hi Account Holder!</h2>
+                    {% if first_name %}
+                        <div class="section-border">
+                            <p>
+                                <span class="h2-size">Deceased Name:</span>
+                                <br />
+                                {% if title %}
+                                    {{ title }}
+                                {% endif %}
+                                {{ first_name }}
+                                {% if last_name %}
+                                    {{ last_name }}
+                                {% endif %}
+                            </p>
+                        </div>
+                    {% endif %}
+                    <div class="row">
+                        {% if dob %}
+                            <div class="columns six">
+                                <p>
+                                    <span class="h2-size">Date of Birth:</span>
+                                    <br />
+                                    {{ dob }}
+                                </p>
+                            </div>
+                        {% endif %}
+                        {% if dod %}
+                            <div class="columns six">
+                                <p>
+                                    <span class="h2-size">Date of Death:</span>
+                                    <br />
+                                    {{ dod }}
+                                </p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if taskTracker %}
+                    <div class="flex-same-height--item columns one">
+                        <div class="border-vertical"></div>
+                    </div>
+                    <div class="flex-same-height--item columns four">
+                        {% include "@patterns/task-tracker/task-tracker-widget.twig" with {
+                            percent : taskTracker.percent
+                        } %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

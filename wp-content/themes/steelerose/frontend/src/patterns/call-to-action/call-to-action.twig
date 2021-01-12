@@ -1,0 +1,60 @@
+<div class="dpl-call-to-action {% if textColour %}text-{{ textColour }}{% endif %} {% if backgroundColour %}bg-{{ backgroundColour }}{% endif %} {% if embedSrc %}has-video{% endif %}">
+	{% if footText %}
+		<h3 class="call-to-action__foottext">
+			{{ footText }}
+		</h3>
+	{% endif %}
+		<div class="call-to-action__box {{ align }} {% if inview %}inview{% endif %}">
+			<div class="call-to-action__box-content">
+				<div class="call-to-action__box-content-padding">
+					<div class="call-to-action__box-title">
+						<h2>{{ title }}</h2>
+					</div>
+					<div class="call-to-action__box-text">
+						{{ content }}
+					</div>
+					{% if buttonLabel %}
+						{% set class = 'none' %}
+						{% if backgroundColour=='brand1' %}
+							{% set class = 'brand2' %}
+						{%  endif %}
+						{% include "@patterns/button/button.twig" with {
+							element : "a",
+							label : buttonLabel,
+							href : buttonHref,
+							class : class
+						} %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="call-to-action__box {% if inview %}inview{% endif %}">
+			<div class="call-to-action__box-content">
+				<div class="call-to-action__box-content-padding">
+					{% if imgSrc %}
+						<img
+								class="{%
+									if imgFill %}
+								call-to-action__box-img__fill
+								{% endif %}
+								{% if imgAlign %}
+								{{ imgAlign }}
+								{% endif %}"
+								src="{{ imgSrc }}" alt="{{ imgAlt }}" />
+					{% elseif embedSrc %}
+						<div class="call-to-action__box-video-wrapper">
+							<iframe class="embed" height="100%" width="100%"
+									title=""
+									frameborder="0"
+									allowfullscreen=""
+									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+									src="{{ embedSrc }}?feature=embed">
+							</iframe>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+</div>

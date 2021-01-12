@@ -1,0 +1,33 @@
+.dpl-snippet {
+  margin:$column-padding 0;
+  font-weight:700;
+	
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+  .snippet__icon {
+    width:16px;
+    float:left;
+    color: $grey-light;
+    position:relative;
+    top:2px;
+  }
+
+  .snippet__content {
+    width:calc(100% - (16px + 10px));
+    float:left;
+    margin-left:10px;
+  }
+
+  address {
+    font-style:normal;
+  }
+
+  a {
+    position:relative;
+    z-index:1;
+    color:white;
+    font-weight:normal;
+  }
+}

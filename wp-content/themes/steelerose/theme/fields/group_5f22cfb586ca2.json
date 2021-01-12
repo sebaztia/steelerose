@@ -1,0 +1,50 @@
+{
+    "key": "group_5f22cfb586ca2",
+    "title": "Menu\/topbar",
+    "fields": [
+        {
+            "key": "field_5f22cfe800b20",
+            "label": "Icon",
+            "name": "Menu\/topbar\/icon",
+            "type": "textarea",
+            "instructions": "Add icon code here if required",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/topbar"
+            }
+        ],
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/topbar_loggedin"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1600165637
+}

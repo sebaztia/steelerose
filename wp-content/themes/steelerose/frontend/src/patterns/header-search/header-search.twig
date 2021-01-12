@@ -1,0 +1,38 @@
+<style>
+	.header-search__wrapper {
+		position:absolute;
+		top:-10px;
+	}
+</style>
+	<div class="dpl-header-search">
+		{% if icon %}
+			<a href="#" class="header-search__trigger">
+				<svg class="icon icon-search">
+					<use xlink:href="#icon-search"></use>
+				</svg>
+			</a>
+		{% else %}
+			<div class="header-search__wrapper">
+				<div class="container">
+					<form method="get" id="searchform" action="/">
+						<div class="header-search__field">
+							<input name="s" id="header-search-field" type="text" placeholder="Type in your search" />
+							<div class="header-search__button">
+								{% include "@patterns/button/button.twig" with {
+									element : "button",
+									type : "submit",
+									label : "<svg class=\"icon icon-search\"><use xlink:href=\"#icon-search\"></use></svg>",
+									class : "bg-transparent"
+								} %}
+							</div>
+						</div>
+					</form>
+
+					<!-- <div class="header-search__close">
+                        <a href="#">X</a>
+                    </div> -->
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		{% endif %}
+	</div>

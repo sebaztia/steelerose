@@ -1,0 +1,13 @@
+{
+    "render_template": "form-logout.php",
+    "name": "form-logout",
+    "category": "forms",
+    "type": "preact",
+    "title": "Logout Form",
+    "description": "Displays the Logout Confirmation Form",
+    "icon": "format-image",
+    "use-pattern-dir": true,
+    "supports": {
+        "align": false
+    }
+}

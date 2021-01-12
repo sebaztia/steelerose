@@ -1,0 +1,298 @@
+/************************************************************************************************
+										 * Buttons
+ ************************************************************************************************/
+
+.dpl-button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]{
+  @include border-radius($button-radius);
+  box-sizing: border-box;
+  border: $button-border;
+  border-color: $button-border-color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $button-size;
+  font-weight: $button-weight;
+  outline: 0 !important;
+  padding: $button-padding;
+  text-align: center;
+  text-decoration: none;
+  text-transform:uppercase;
+  background:$button-bg;
+  color:white !important;
+  letter-spacing:$button-letter-spacing;
+  font-family:$button-font;
+
+  &:hover {
+    background:$button-bg-hover;
+  }
+
+  &.full-width {
+    width:100%;
+    box-sizing:border-box;
+  }
+
+  &.small {
+    padding: $button-padding / 2;
+    font-size: $button-size - 3;
+  }
+
+  &.smaller {
+    padding: $button-padding / 4;
+    font-size:$small-font-size - 3;
+  }
+}
+
+/************************************************************************************************
+										 * Pagination
+ ************************************************************************************************/
+
+.pagination{
+  margin-top: 30px;
+  text-align: center;
+
+  ul{
+    background: white;
+    @include box-sizing(border-box);
+    @include border-radius($box-radius);
+    display: inline-block;
+    list-style: none;
+    padding: 0 50px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  li{
+    display: inline-block;
+    margin: 0;
+
+    .span{
+      display: inline-block;
+    }
+  }
+
+  .dots,
+  .current{
+    cursor: default;
+  }
+
+  a, .dots, .current{
+    display: block;
+    font-size: 20px;
+    padding: 9px 5px 8px;
+    text-decoration: none;
+  }
+
+  a{
+    color: $brand-highlight;
+
+    &:hover{
+      color: darken($brand-highlight, 5%);
+      @include transform(scale(1.2));
+    }
+  }
+
+  .prev,
+  .next{
+    height: 100%;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+
+    span{
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      @include transform(translate3d(-50%, -50%, 0));
+    }
+  }
+  .prev{
+    left: 0;
+  }
+  .next{
+    right: 0;
+  }
+}
+
+/************************************************************************************************
+										 * Tags
+ ************************************************************************************************/
+
+a[rel="tag"] {
+  color: white;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 14px;
+  @include border-radius(3px);
+  border: 1px solid rgba(white, 0.5);
+  display: inline-block;
+  &:hover{
+    border: 1px solid white;
+  }
+}
+
+.single{
+  .icon-tag{
+    width: 20px;
+    display: inline-block;
+    position: relative;
+    &:before{
+      position: absolute;
+      top: -13px;
+    }
+  }
+  .post-tags{
+    margin: 0 0 30px 0;
+    display: inline-block;
+    a:hover{
+      text-decoration: none !important;
+    }
+  }
+  a[rel="tag"] {
+    color: $para-color;
+    border: 1px solid rgba($para-color, 0.5);
+    &:hover{
+      border: 1px solid $para-color;
+    }
+  }
+}
+
+/************************************************************************************************
+										 * Blog Single
+ ************************************************************************************************/
+
+.pag-single-row{
+  border-bottom: 0 !important;
+  margin: 0!important;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  @media(min-width: $device-m){
+    margin-left: -$column-padding !important;
+    margin-right: -$column-padding !important;
+  }
+}
+.post-pagination{
+  background: white;
+  @include box-sizing(border-box);
+  @include border-radius($box-radius);
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &:before{
+    background: $border-light;
+    content: "";
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate3d(-50%, -50%, 0));
+    width: 1px;
+  }
+
+  a{
+    @include box-sizing(border-box);
+    color: $font-body-color;
+    display: inline-block;
+    font-size: 22px;
+    padding: 50px 50px 50px 20px;
+    position: relative;
+    text-align: right;
+    vertical-align: middle;
+    width: 50%;
+
+    @media(min-width: $device-m){
+      padding: 50px 70px 50px 30px;
+    }
+
+    @media(min-width: $device-l){
+      padding: 70px 70px 70px 30px;
+    }
+
+    span.icon{
+      font-size: 40px;
+      right: 0;
+      position: absolute;
+      top: 50%;
+      @include transform(translate3d(0, -50%, 0));
+
+      @media(min-width: $device-m){
+        font-size: 50px;
+      }
+    }
+
+    &[rel="next"]:first-child{
+      margin-left: 50%;
+    }
+
+    &[rel="prev"]{
+      padding: 50px 20px 50px 50px;
+      text-align: left;
+
+      @media(min-width: $device-m){
+        padding: 50px 30px 50px 70px;
+      }
+
+      @media(min-width: $device-l){
+        padding: 70px 30px 70px 70px;
+      }
+
+      span.icon{
+        left: 0;
+        right: auto;
+      }
+    }
+
+    span.pag-title{
+      display: none;
+
+      @media(min-width: $device-s){
+        display: block;
+        font-family: $font-heading;
+        font-size: 25px;
+        line-height: 120%;
+      }
+
+      @media(min-width: $device-m){
+        font-size: 30px;
+      }
+      @media(min-width: $device-l){
+        font-size: 40px;
+      }
+    }
+
+    &:hover, &:hover .pag-title{
+      color: $font-body-color;
+
+      span.icon{
+        color: $brand-highlight;
+        @include transform(translate3d(0, -50%, 0) scale(1.2));
+      }
+    }
+  }
+}
+/************************************************************************************************
+										 * Larger than tablet
+ ************************************************************************************************/
+@media (min-width: $device-m) {
+
+}
+
+/************************************************************************************************
+										 * Larger than desktop
+ ************************************************************************************************/
+@media (min-width: $device-l) {
+
+}

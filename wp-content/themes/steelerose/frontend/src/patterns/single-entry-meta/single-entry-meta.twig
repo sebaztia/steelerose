@@ -1,0 +1,40 @@
+<div class="dpl-single-entry-meta {% if thumbnail==false %}nothumb{% endif %}">
+    {% if thumbnail %}
+        <div class="single-entry-meta__thumb">
+            <img src="{{ thumbnail.href }}" alt="{{ thumbnail.alt }}" />
+        </div>
+    {% endif %}
+    {% if author %}
+        <div class="single-entry-meta__author">
+            {% if avatar %}
+                <div class="single-entry-meta__avatar">
+                    {% if author.url %}
+                        <a href="{{ author.url }}">
+                    {% endif %}
+                        <img src="{{ avatar.img }}" alt="" />
+                    {% if author.url %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
+            {% if author.url %}
+                <a href="{{ author.url }}">
+            {% endif %}
+                 {{ author.name }}
+            {% if author.url %}
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if date %}
+        <p class="single-entry-meta__date">
+           {{ date }}
+        </p>
+    {% endif %}
+        <h1>{{ title }}</h1>
+        {% if subtitle %}
+                <h4>
+                        <span class="caps color-brand1">{{ subtitle }}</span>
+                </h4>
+        {% endif %}
+</div>

@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+
+    <style type="text/css">
+        canvas#signature {
+            border:1px solid black;
+        }
+    </style>
+</head>
+
+<p>Sign Here</p>
+<canvas width="400" height="100" id="signature"></canvas>
+<p>
+    <button id="clear">CLEAR</button>&nbsp;
+    <button id="save">SAVE</button>
+</p>
+
+<script>
+    var canvas = document.querySelector("canvas");
+    var signaturePad = new SignaturePad(canvas, {
+        maxWidth: 1
+    });
+
+    var clearBtn = document.getElementById('clear');
+    clearBtn.onclick = function() {
+        signaturePad.clear();
+    };
+
+    var saveBtn = document.getElementById('save');
+    saveBtn.onclick = function() {
+        if (signaturePad.isEmpty()) {
+            alert('Please add signature');
+        } else {
+            var data =
+                signaturePad.toDataURL();
+            console.log(data);
+        }
+    };
+</script>
+</html>

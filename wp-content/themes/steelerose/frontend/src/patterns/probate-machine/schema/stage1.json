@@ -1,0 +1,1564 @@
+{
+  "tabTitle": "Stage 1",
+  "title" : "Information Gathering",
+  "icon": "icon-information-gathering",
+  "status": "enabled",
+  "sections": [
+    {
+      "id" : "s100",
+      "title": "Who has passed",
+      "status" : "enabled",
+      "tasks": [
+        {
+          "id" : "t100",
+          "title": "What would you like us to call the the person that has passed away?",
+          "status" : "incomplete",
+          "questions": [
+            {
+              "id" : "q100",
+              "label": false,
+              "type": "Text",
+              "status" : "incomplete",
+              "fieldFullWidth" : true,
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "What would you like us to call the the person that has passed away?"
+                }
+              }
+            }
+          ],
+          "tooltip" : {
+            "help" : "For example we can call them by their first name, their title and surname, or even by a name that you knew them as."
+          }
+        }
+      ],
+      "enableConditions" : [
+        {
+          "target" : "s101",
+          "thisStatusIs" : "complete",
+          "updateTargetStatus" : "enabled"
+        },
+        {
+          "target" : "s102",
+          "thisStatusIs" : "complete",
+          "updateTargetStatus" : "enabled"
+        },
+        {
+          "target" : "s103",
+          "thisStatusIs" : "complete",
+          "updateTargetStatus" : "enabled"
+        },
+        {
+          "target" : "s104",
+          "thisStatusIs" : "complete",
+          "updateTargetStatus" : "enabled"
+        }
+      ]
+    },
+    {
+      "id" : "s101",
+      "title": "{{q100}}'s details",
+      "status" : "disabled",
+      "current" : false,
+      "tasks": [
+        {
+          "id" : "t101",
+          "title" : "Tell us a bit about {{q100}}",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q101",
+              "label": "Title",
+              "type": "Text",
+              "status" : "incomplete",
+              "value" : "",
+              "IHT" : "1.1",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the deceased's title"
+                }
+              }
+            },
+            {
+              "id" : "q102",
+              "label": "Surname",
+              "type": "Text",
+              "status" : "incomplete",
+              "value" : "",
+              "IHT" : "1.2",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the deceased's surname"
+                }
+              }
+            },
+            {
+              "id" : "q103",
+              "label": "First name",
+              "type": "Text",
+              "status" : "incomplete",
+              "value" : "",
+              "IHT" : "1.3",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the deceased's first name"
+                }
+              }
+            },
+            {
+              "id" : "q104",
+              "label": "Any other names",
+              "type": "Text",
+              "status" : "incomplete",
+              "value" : "",
+              "validation" : false,
+              "tooltip" : {
+                "help" : "For example maiden names or previous names."
+              }
+            },
+            {
+              "id" : "q105",
+              "label": "When were they born?",
+              "type": "Date",
+              "status" : "enabled",
+              "value" : "",
+              "maxDate" : {
+                "type" : "subtract",
+                "years" : 18
+              },
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the deceased's date of birth"
+                }
+              }
+            },
+            {
+              "id" : "q106",
+              "label": "What was their marital status?",
+              "type": "Select",
+              "options" : [
+                "Married or in civil partnership",
+                "Single",
+                "Divorced",
+                "Surviving civil partner"
+              ],
+              "status" : "incomplete",
+              "value" : "",
+              "IHT" : "1.5",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the marital status"
+                }
+              }
+            },
+            {
+              "id" : "q107",
+              "label": "Occupation",
+              "type": "Text",
+              "status" : "incomplete",
+              "value" : "",
+              "IHT" : "1.6",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the deceased's occupation"
+                }
+              }
+            },
+            {
+              "id" : "q108",
+              "label": "Do you know their National Insurance Number?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "incomplete",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select whether you know the deceased National Insurance Number"
+                }
+              },
+              "tooltip" : {
+                "help" : "You can find their National Insurance number on their payslip, P60, or on letters about tax, pensions and benefits."
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q109",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q109",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "t102",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled_inithide"
+                },
+                {
+                  "target" : "t102",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q109",
+              "label": "What is their National Insurance Number?",
+              "type": "NINumber",
+              "status" : "disabled",
+              "value" : "",
+              "IHT": "1.7",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the deceased's NI number"
+                },
+                "ninumber" : {
+                  "test" : true,
+                  "message" : "Your national insurance number is invalid"
+                }
+              }
+            },
+            {
+              "id" : "q110",
+              "label" : "Did they live permanently in England or Wales at the date of death?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "incomplete",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select the deceased residential status"
+                }
+              },
+              "tooltip" : {
+                "gov" : "Living permanently means they had either their permanent or principal home in England and Wales at the date of death or they intended to return to England and Wales to live permanently."
+              }
+            },
+            {
+              "id" : "q111",
+              "label" : "Was {{q100}} legally adopted?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "incomplete",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please check yes or no"
+                }
+              }
+            },
+            {
+              "id" : "q112",
+              "label" : "Have you registered the death?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "incomplete",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please check yes or no"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t103",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t103",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled_inithide"
+                }
+              ]
+            },
+            {
+              "id" : "q113",
+              "label": "What was the date of death?",
+              "type": "Date",
+              "status" : "incomplete",
+              "value" : "",
+              "IHT": "1.4",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the deceased's date of death"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t102",
+          "title" : "Find out {{q100}}'s National Insurance Number",
+          "status" : "disabled",
+          "price" : 2500
+        },
+        {
+          "id" : "t103",
+          "title" : "How to register the death",
+          "status" : "disabled",
+          "questions" : [
+            {
+              "id" : "q115",
+              "label": "Where did the death happen?",
+              "type": "Select",
+              "status" : "incomplete",
+              "value" : "",
+              "options" : [
+                "England or Wales",
+                "Scotland",
+                "Northern Ireland",
+                "Overseas"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please let us know where the death happened"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q116",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q117",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q119",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q120",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q121",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q122",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q123",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q124",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q116",
+                  "thisValueIs" : "England or Wales",
+                  "updateTargetStatus" : "incomplete",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q116",
+                  "thisValueIs" : "Scotland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q116",
+                  "thisValueIs" : "Northern Ireland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q117",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q117",
+                  "thisValueIs" : "Scotland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q117",
+                  "thisValueIs" : "Northern Ireland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q119",
+                  "thisValueIs" : "England or Wales",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q119",
+                  "thisValueIs" : "Scotland",
+                  "updateTargetStatus" : "complete"
+                },
+                {
+                  "target" : "q119",
+                  "thisValueIs" : "Northern Ireland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q119",
+                  "thisValueIs" : "Overseas",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q120",
+                  "thisValueIs" : "England or Wales",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q120",
+                  "thisValueIs" : "Scotland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q120",
+                  "thisValueIs" : "Northern Ireland",
+                  "updateTargetStatus" : "complete"
+                },
+                {
+                  "target" : "q120",
+                  "thisValueIs" : "Overseas",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q121",
+                  "thisValueIs" : "England or Wales",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q121",
+                  "thisValueIs" : "Scotland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q122",
+                  "thisValueIs" : "Scotland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q123",
+                  "thisValueIs" : "Scotland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q124",
+                  "thisValueIs" : "Scotland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q121",
+                  "thisValueIs" : "Northern Ireland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q123",
+                  "thisValueIs" : "Northern Ireland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q124",
+                  "thisValueIs" : "Northern Ireland",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q121",
+                  "thisValueIs" : "Overseas",
+                  "updateTargetStatus" : "complete"
+                },
+                {
+                  "target" : "q123",
+                  "thisValueIs" : "Overseas",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q124",
+                  "thisValueIs" : "Overseas",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q116",
+              "label" : "Did the person die at home, in hospital or elsewhere?",
+              "type" : "Select",
+              "status" : "disabled",
+              "value" : "",
+              "options" : [
+                "At home or in hospital",
+                "Elsewhere"
+              ],
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please let us know where the death happened"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q117",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q122",
+                  "thisValueIs" : "",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q117",
+                  "thisValueIs" : "At home or in hospital",
+                  "updateTargetStatus" : "enabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q117",
+                  "thisValueIs" : "Elsewhere",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q122",
+                  "thisValueIs" : "Elsewhere",
+                  "updateTargetStatus" : "enabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q122",
+                  "thisValueIs" : "At home or in hospital",
+                  "updateTargetStatus" : "disabled",
+                  "updateTargetValue" : ""
+                },
+                {
+                  "target" : "q119",
+                  "thisValueIs" : "At home or in hospital",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q119",
+                  "thisValueIs" : "Elsewhere",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q120",
+                  "thisValueIs" : "At home or in hospital",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q120",
+                  "thisValueIs" : "Elsewhere",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q121",
+                  "thisValueIs" : "At home or in hospital",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q121",
+                  "thisValueIs" : "Elsewhere",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q123",
+                  "thisValueIs" : "At home or in hospital",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q123",
+                  "thisValueIs" : "Elsewhere",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q124",
+                  "thisValueIs" : "At home or in hospital",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q124",
+                  "thisValueIs" : "Elsewhere",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q117",
+              "label" : "Was the death expected?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q124",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q124",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "complete"
+                },
+                {
+                  "target" : "t104",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled_inithide"
+                },
+                {
+                  "target" : "t104",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+
+              ]
+            },
+            {
+              "id" : "q119",
+              "label" : "Please register the death",
+              "status" : "disabled",
+              "type" : "Link",
+              "value" : "https://www.nrscotland.gov.uk/registration/registering-a-death"
+            },
+            {
+              "id" : "q120",
+              "label" : "Please register the death",
+              "status" : "disabled",
+              "type" : "Link",
+              "value" : "https://www.nidirect.gov.uk/articles/registering-death"
+            },
+            {
+              "id" : "q121",
+              "label" : "Please register the death",
+              "status" : "disabled",
+              "type" : "Link",
+              "value" : "https://www.gov.uk/register-a-death/y/overseas"
+            },
+            {
+              "id" : "q122",
+              "label" : "Was the death expected?",
+              "type" : "Radio",
+              "value" : "",
+              "options" : [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q123",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q123",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "complete"
+                }
+              ]
+            },
+            {
+              "id" : "q123",
+              "label" : "Please register the death",
+              "status" : "disabled",
+              "type" : "Link",
+              "value" : "https://www.gov.uk/register-a-death/y/england_wales/elsewhere/no"
+            },
+            {
+              "id" : "q124",
+              "label" : "Please register the death",
+              "status" : "disabled",
+              "type" : "Link",
+              "value" : "https://www.gov.uk/register-a-death/y/england_wales/at_home_hospital/no"
+            }
+          ]
+        },
+        {
+          "id" : "t104",
+          "title" : "Register the death at any register office",
+          "status" : "disabled",
+          "price" : 5000,
+          "tooltip" : {
+            "gov" : "If you use the one in the area where the person died you’ll be given the documents you’ll need on the day. &/If you use a different register office the documents will be sent to the office in the area where the person died before they’re issued to you. This means you’ll usually wait a few days.&/ Registering the death will take about 30 minutes - you might need to make an appointment. &/ What you need to do"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s102",
+      "title": "{{q100}}'s estate",
+      "status": "disabled",
+      "current" : false,
+      "tasks": [
+        {
+          "id": "t105",
+          "status": "incomplete",
+          "title": "Potentially Exempt Transfers",
+          "questions": [
+            {
+              "id": "q125",
+              "label": "Did {{q100}} make any gifts, over £3,000 per year, in the 7 years prior to their death? (other than normal birthday, festive, marriage or civil partnership gifts)",
+              "type": "Radio",
+              "IHT" : "2.1",
+              "options": [
+                "Yes",
+                "No",
+                "Don't know"
+              ],
+              "status": "incomplete",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q126",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q126",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q126",
+                  "thisValueIs": "Don't know",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q127",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q127",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q127",
+                  "thisValueIs": "Don't know",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q128",
+                  "thisValueIs": "Don't know",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q128",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q128",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                }
+              ],
+              "tooltip" : {
+                "gov" : "In the 7 years before they died, did the deceased: make any gifts or other transfers totalling more than £3,000 per year, other than normal birthday, festive, marriage or civil partnership gifts?"
+              }
+            },
+            {
+              "id": "q126",
+              "label": "Is the total value of these gifts more than £150,000?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q127",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q127",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "enabled"
+                }
+              ]
+            },
+            {
+              "id": "q127",
+              "label": "Do the assets qualify as 'specified transfers?'",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "tooltip" : {
+                "gov" : "To qualify as ‘specified transfers’ the assets given away can only be: • cash • listed stocks and shares • household and personal goods • houses, land and buildings"
+              }
+            },
+            {
+              "id": "q128",
+              "label": "Do you have all the bank statements going back 7 years?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "t106",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "t106",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "incomplete"
+                },
+                {
+                  "target": "t107",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "incomplete"
+                },
+                {
+                  "target": "t107",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "incomplete"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t106",
+          "status": "disabled",
+          "title": "Write to all the banks that {{q100}} had an account with in the past 7 years and ask for the bank statements going back 7 years",
+          "price" : 1000
+        },
+        {
+          "id": "t107",
+          "status" : "disabled",
+          "title" : "Check the bank statements for any gifts made, over £3,000, in the 7 years prior to {{q100}}'s death? (other than normal birthday, festive, marriage or civil partnership gifts)",
+          "price" : 1000
+        },
+        {
+          "id" : "t108",
+          "status" : "enabled",
+          "title" : "Tell us about {{q100}}'s estate",
+          "questions" : [
+            {
+              "id": "q129",
+              "label": "Were they the beneficiary of any trusts in the 7 years prior to their death?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "enabled",
+              "value": "",
+              "IHT" : "4",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "tooltip" : {
+                "gov" : "Did the deceased have the right to receive the benefit from any assets held in a trust that were treated as part of their estate for Inheritance Tax purposes?"
+              },
+              "enableConditions": [
+                {
+                  "target": "q130",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "incomplete"
+                },
+                {
+                  "target": "q130",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q130",
+              "label": "Was there more than one trust?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q131",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q131",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "incomplete"
+                }
+              ]
+            },
+            {
+              "id": "q131",
+              "label": "Was the amount held in this trust above £150,000?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q132",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q131",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "incomplete"
+                }
+              ]
+            },
+            {
+              "id": "q132",
+              "label": "Did they give up their right to benefit from any assets held in trust?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "IHT" : "2.2",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "tooltip" : {
+                "gov" : "Did they give up their right to benefit from any assets held in trust that were treated as part of their estate for Inheritance Tax purposes?"
+              }
+            },
+            {
+              "id": "q133",
+              "label": "Did {{q100}} own or benefit from any assets outside the United Kingdom? ",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "IHT" : "5",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q134",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "incomplete"
+                },
+                {
+                  "target": "q134",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q134",
+              "label": "Are the assets worth more than £100,000?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            },
+            {
+              "id": "q135",
+              "label": "Did they ever gift something where they could still benefit from the gifted asset?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "IHT" : "3.1",
+              "tooltip" : {
+                "help" : "For example transferring their property to someone but still living in it.",
+                "gov" : "Did they make a gift, where they continued to benefit from, or had some right to benefit from, or use all or part of the asset?"
+              },
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q136",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "incomplete"
+                },
+                {
+                  "target": "q136",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q136",
+              "label": "Was this gift made after 17 March 1986?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            },
+            {
+              "id": "q137",
+              "label": "Did they ever gift something to someone who wasn’t able to take full possession of it?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "IHT" : "3.2",
+              "tooltip" : {
+                "help" : "For example transferring their property to someone but still living in it.",
+                "gov" : "Did they gift something where the person receiving the gift did not take full possession of it?"
+              },
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q138",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "incomplete"
+                },
+                {
+                  "target": "q138",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q138",
+              "label": "Was this gift made after 17 March 1986?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            },
+            {
+              "id": "q139",
+              "label": "Has {{q100}} received an income from an asset previously owned or that {{q100}} contributed to buying?",
+              "type": "Radio",
+              "tooltip" : {
+                "help" : "For example giving a property to, or buying a property for, someone and receiving rent in return.",
+                "gov" : "Did the deceased make an election on form IHT500 ‘Election for Inheritance Tax to apply to asset previously owned’ that an Income Tax charge should not apply to: 1. assets they previously owned, in which they retained a benefit | 2. the deceased’s contribution to the purchase price of assets acquired by another person, but in which the deceased retained a benefit?"
+              },
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "IHT" : "3.3",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            },
+            {
+              "id": "q140",
+              "label": "Did the deceased pay for any life insurance policies for someone else who wasn’t a surviving spouse or civil partner?",
+              "type": "Radio",
+              "tooltip" : {
+                "gov" : "Did the deceased pay premiums on any life insurance policies that were not for their own benefit or did not pay out to the estate, and did they buy an annuity at any time? Ignore any policies paid out to a surviving spouse or civil partner."
+              },
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "IHT" : "6",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            },
+            {
+              "id": "q141",
+              "label": "Did the deceased have any kind of pension arrangement other than the State Pension?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "IHT" : "7",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q142",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "incomplete"
+                },
+                {
+                  "target": "q142",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q142",
+              "label": "Did the deceased change or dispose of their pension in the 2 years before they died?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "IHT" : "8",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s103",
+      "title": "{{q100}}'s wishes",
+      "status": "disabled",
+      "current" : false,
+      "tasks": [
+        {
+          "id": "t1061",
+          "status": "incomplete",
+          "title": "The Will",
+          "questions": [
+            {
+              "id": "q143",
+              "label": "Did they have a Will written during their life?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "incomplete",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q144",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q144",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q144",
+              "label": "Do you have the Will or a copy of the latest Will?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q146",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q146",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q146",
+              "label": "Is the Will held by a professional?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No",
+                "Don't know"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "t1081",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "enabled_inithide"
+                },
+                {
+                  "target": ["t109","t110","t1081"],
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "t1071",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "enabled_inithide"
+                },
+                {
+                  "target": ["t109","t110","t1071"],
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": ["t109","t110"],
+                  "thisValueIs": "Don't know",
+                  "updateTargetStatus": "enabled_inithide"
+                },
+                {
+                  "target": ["t1071", "t1081"],
+                  "thisValueIs": "Don't know",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "t1071",
+          "status": "disabled",
+          "title": "Write to the professional to obtain the original or a copy of the Will",
+          "tooltip" : {
+            "help" : "Usually, a death certificate and all executors of the Will have to send their signed authority for it to be released."
+          },
+          "price" : 1000
+        },
+        {
+          "id": "t1081",
+          "status": "disabled",
+          "title": "Obtain the original or a copy of the Will",
+          "price" : 1000
+        },
+        {
+          "id": "t109",
+          "status": "disabled",
+          "title": "Find the Will",
+          "tooltip" : {
+            "help" : "The Will may be stored with: A legal professional that dealt with {{100}} (solicitor, accountant or financial advisor), {{100}}'s bank or a Will register."
+          },
+          "price" : 1000
+        },
+        {
+          "id": "t110",
+          "status": "disabled",
+          "title": "Have the Will read by a professional.",
+          "price" : 5000
+        }
+      ]
+    },
+    {
+      "id": "s104",
+      "title": "The Funeral",
+      "status": "disabled",
+      "current" : false,
+      "tasks": [
+        {
+          "id": "t111",
+          "status": "incomplete",
+          "title": "The Funeral",
+          "questions": [
+            {
+              "id": "q152",
+              "label": "Have you had the funeral?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "incomplete",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q154",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q154",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q153",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q153",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q153",
+              "label": "Have you arranged the funeral?",
+              "type": "Radio",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status": "disabled",
+              "value": "",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select"
+                }
+              },
+              "enableConditions": [
+                {
+                  "target": "q154",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q154",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target": "q156",
+                  "thisValueIs": "No",
+                  "updateTargetStatus": "enabled"
+                },
+                {
+                  "target": "q156",
+                  "thisValueIs": "Yes",
+                  "updateTargetStatus": "disabled"
+                },
+                {
+                  "target" : "t112",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled_inithide"
+                },
+                {
+                  "target" : "t112",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id": "q154",
+              "label": "How much is the funeral invoice?",
+              "type": "Numerical",
+              "status": "disabled",
+              "value": "",
+              "IHT" : "12.1",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "t112",
+          "status": "disabled",
+          "title": "Contact your local funeral director",
+          "price" : 1000
+        }
+      ]
+    }
+  ]
+}

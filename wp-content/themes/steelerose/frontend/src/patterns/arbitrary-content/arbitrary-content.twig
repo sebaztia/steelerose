@@ -1,0 +1,14 @@
+<div class="dpl-arbitrary-content
+{% if align %} text{{ align }}{% endif %}
+{% if width %} {{ width }}{% endif %}
+{% if backgroundColour %} bg-{{ backgroundColour }}{% endif %}
+">
+	<section class="section-row">
+		<div class="container">
+			{% if title %}
+				<h2>{{ title }}</h2>
+			{% endif %}
+			{{ content }}
+		</div>
+	</section>
+</div>

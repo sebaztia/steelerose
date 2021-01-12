@@ -1,0 +1,21 @@
+{
+  "script": [
+    "header",
+    "header-navigation",
+    "call-to-action",
+    "stat-grid",
+    "service-grid",
+    "post-grid",
+    "header-search",
+    "breadcrumbs",
+    "tabs",
+    "accordion",
+    "team-slider",
+    "probate-machine",
+    "task-basket",
+    "form-login-registration",
+    "form-set-password",
+    "map",
+    "account-details"
+  ]
+}

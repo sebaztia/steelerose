@@ -1,0 +1,19 @@
+.dpl-account-field {
+  position:relative;
+
+  .account-field__edit {
+    position:absolute;
+    top:0;
+    right:0;
+  }
+
+  .account-field__save {
+    display:flex;
+    flex-direction:row-reverse;
+    padding-top:10px;
+  }
+
+  .account-field__input {
+    border-bottom:2px solid $bg-medium;
+  }
+}

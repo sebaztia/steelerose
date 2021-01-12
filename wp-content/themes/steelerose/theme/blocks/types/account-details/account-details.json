@@ -1,0 +1,12 @@
+{
+  "render_template": "account-details.php",
+  "name": "account-details",
+  "category": "patterns",
+  "type": "plain",
+  "title": "Account Details",
+  "description": "Displays the \"Account details\" pattern",
+  "icon": "format-image",
+  "supports": {
+    "align": false
+  }
+}

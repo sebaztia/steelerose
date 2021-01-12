@@ -1,0 +1,43 @@
+.dpl-login-link {
+	color: lighten($font-body-color, 30%);
+	font-size: $font-size - 3;
+	margin-right: 10px;
+	position: relative;
+	text-transform: uppercase;
+	display: inline-block;
+	
+	svg{
+		display: none;
+	}
+
+	@media(min-width: $device-xs){
+		margin-right: 30px;
+		padding-left: 35px;
+
+		svg {
+			display: block;
+			left: 0;
+			position: absolute;
+			top: 50%;
+			transform: translate3d(0, -50%, 0);
+			width:22px;
+			fill:lighten($font-body-color, 25%);
+		}
+
+		/*&:before{
+			content: "\e90a";
+			left: 0;
+			position: absolute;
+			transform: translate3d(0, -50%, 0);
+			top: 50%;
+		}*/
+	}
+	
+	&:hover{
+		color: $brand1;
+
+		svg {
+			fill: $brand1;
+		}
+	}
+}

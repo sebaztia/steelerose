@@ -1,0 +1,23 @@
+<div class="dpl-arbitrary-navigation {% if cols %}cols{% endif %} {% if arrows==false %}no-arrows{% endif %}">
+	{% if title %}
+	<h3 class="arbitrary-navigation__title">
+		{{ title }}
+	</h3>
+	{% endif %}
+	{% if items %}
+	<nav class="arbitrary-navigation__items">
+		<ul>
+			{% for item in items %}
+				<li>
+					<a href="{{ item.url }}">
+						{{ item.title }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		{% if cols %}
+			<div class="clearfix"></div>
+		{% endif %}
+	</nav>
+	{% endif %}
+</div>

@@ -1,0 +1,12 @@
+{
+    "render_template": "team-slider.php",
+    "name": "team-slider",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Team Slider",
+    "description": "Displays the \"Team slider\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

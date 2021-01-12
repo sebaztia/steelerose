@@ -1,0 +1,12 @@
+{
+    "render_template": "button.php",
+    "name": "button",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Button",
+    "description": "Displays the \"Button\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

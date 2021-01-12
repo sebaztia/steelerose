@@ -1,0 +1,24 @@
+{
+  "title": "Member Registration",
+  "questions": [
+    {
+      "label": "Your name",
+      "name": "first_name",
+      "type": "Text",
+      "conditions": false,
+      "validation": {
+        "required": true
+      }
+    },
+    {
+      "label": "Email address",
+      "name": "user_email",
+      "type": "Email",
+      "conditions": false,
+      "validation": {
+        "required": true,
+        "email": true
+      }
+    }
+  ]
+}

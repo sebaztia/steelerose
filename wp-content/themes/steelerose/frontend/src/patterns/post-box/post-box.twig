@@ -1,0 +1,21 @@
+<a href="{{ href }}" class="dpl-post-box {% if inview %}inview{% endif %} {% if class %}{{ class }}{% endif %}">
+	<div class="post-box__content">
+		<div class="post-box__wrapper">
+			<p class="post-box__date">
+				{{ date }}
+			</p>
+			<p class="post-box__title">
+				{{ title }}
+			</p>
+			<p class="post-box__excerpt">
+				{{ excerpt }}
+			</p>
+			<div class="post-box__button">
+				{% include "@patterns/overlay-link/overlay-link.twig" with {
+					text : "Find out more",
+					href : false
+				} %}
+			</div>
+		</div>
+	</div>
+</a>

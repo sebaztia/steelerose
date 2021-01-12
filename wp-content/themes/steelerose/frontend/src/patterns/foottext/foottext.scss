@@ -1,0 +1,21 @@
+.dpl-foottext {
+  display:block;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:0;
+
+  h3 {
+    font-size:160px;
+    font-weight:800;
+    color:rgba(0,0,0,.1);
+    line-height:.8;
+	opacity: 0.6;
+  }
+}
+
+@media (max-width: $device-m - 1) {
+  .dpl-foottext {
+    display:none;
+  }
+}

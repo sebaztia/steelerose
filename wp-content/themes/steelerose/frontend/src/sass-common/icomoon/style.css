@@ -1,0 +1,68 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-login-illustration {
+  width: 0.9326171875em;
+}
+
+.icon-credit-card {
+  width: 1.5em;
+}
+
+.icon-checklist-signup {
+  width: 1.0009765625em;
+}
+
+.icon-paper-plane {
+  width: 1.1650390625em;
+}
+
+.icon-shopping-cart {
+  width: 1.1376953125em;
+}
+
+.icon-map-marker {
+  width: 0.5712890625em;
+}
+
+.icon-phone {
+  width: 0.7861328125em;
+}
+
+.icon-search {
+  width: 0.9287109375em;
+}
+
+.icon-pinterest-p {
+  width: 0.7138671875em;
+}
+
+.icon-play1 {
+  width: 0.7900390625em;
+}
+
+.icon-linkedin {
+  width: 0.857421875em;
+}
+
+.icon-facebook {
+  width: 0.587890625em;
+}
+
+.icon-tag {
+  width: 0.845703125em;
+}

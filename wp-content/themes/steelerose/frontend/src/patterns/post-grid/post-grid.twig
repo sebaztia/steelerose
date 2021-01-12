@@ -1,0 +1,36 @@
+{% if cols %}
+	<div class="dpl-post-grid
+        {% if backgroundColour %} bg-{{ backgroundColour }}{% endif %}
+	">
+		{% if footText %}
+			{% include "@patterns/foottext/foottext.twig" with {
+				text : footText
+			} %}
+		{% endif %}
+		<div class="container">
+			<section class="section-row">
+				{% if title %}
+					<h2 class="text-center">{{ title }}</h2>
+				{% endif %}
+				<div class="row flex-same-height">
+					{% for col in cols %}
+						<div class="four columns flex-same-height--item">
+							<div class="post-grid__wrapper">
+								<div class="post-grid__content">
+									{% include "@patterns/post-box/post-box.twig" with {
+										title : col.title,
+										date  : col.date,
+										excerpt : col.excerpt,
+										href : col.href,
+										inview : col.inview,
+										class : col.class
+									} %}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</section>
+		</div>
+	</div>
+{% endif %}

@@ -1,0 +1,697 @@
+/************************************************************************************************
+										 * Form Variables
+ ************************************************************************************************/
+
+// Form
+$form-bg: none; // background color of form
+$form-border: 0; // border-width on form
+$form-margin: 0;
+$form-padding: 0; // set outer padding on form
+
+// Fields / Rows
+$form-field-margin: 0 0 20px 0 !important; // margin between field and label below (vertical spacing between rows)
+
+// Footer buttons
+$footer-buttons-border-top: 1px solid $border-light;
+$footer-buttons-margin-top: 15px;
+$footer-buttons-padding-top: 15px;
+
+// Button
+$form-button-bg: $button-bg;
+$form-button-border-color: $button-border-color;
+$form-button-color: $button-color;
+$form-button-bg-hover: $button-bg-hover;
+$form-button-border-color-hover: $button-border-color-hover;
+$form-button-color-hover: $button-color-hover;
+
+// Submit
+$form-submit-bg: $form-button-bg;
+$form-submit-border-color: $form-button-border-color;
+$form-submit-color: $form-button-color;
+$form-submit-bg-hover: $form-button-bg-hover;
+$form-submit-border-color-hover: $form-button-border-color-hover;
+$form-submit-color-hover: $form-button-color-hover;
+
+// Labels
+$form-label-size: $font-size;
+$form-label-color: $font-body-color;
+$form-label-margin: 0 0 8px;
+$form-label-padding: 0;
+$form-label-width: auto;
+$form-label-weight: $font-weight-bold;
+
+// Inputs
+$form-input-background: #f6fafb;
+$form-input-background-focus: darken($form-input-background, 5%);
+$form-input-border: none;
+$form-input-border-focus: white;
+$form-input-box-shadow: none;
+$form-input-radius: 4px;
+$form-input-color: $form-label-color;
+$form-input-color-focus: $form-label-color;
+$form-input-size: $form-label-size;
+$form-input-weight: $form-label-weight;
+$form-input-height: 45px;
+$form-input-width: 100%;
+$form-input-padding: 6px 10px;
+
+// Textarea
+$form-textarea-height: 100px;
+
+// Select
+$form-multiple-select-height: 100px;
+
+// Radio | Checkboxes
+$form-textarea-height: 100px;
+
+// Progress Bar Wrapper
+$form-bar-wrapper-margin: 0 0 15px;
+$form-bar-wrapper-padding: 0;
+$form-bar-wrapper-width: 100%;
+
+// Name Field
+$form-name-prefix-width: 70px;
+
+// Time Field
+$form-time-width: 70px;
+
+// Progress Bar
+$form-bar-bg: #ccc;
+$form-bar-color: white;
+$form-bar-fill-bg: $brand1;
+$form-bar-radius: 25px;
+$form-bar-border: 10px solid #f1f1f1;
+$form-bar-margin: 0;
+$form-bar-padding: 5px;
+$form-bar-width: $form-bar-wrapper-width;
+$form-bar-title-color: $form-label-color;
+$form-bar-title-margin: 0 0 10px;
+$form-bar-title-padding: 0;
+$form-bar-title-size: $form-label-size;
+
+// Required
+$required-color: $error;
+
+//Validation error (first main message)
+$validation-error-bg: none;
+$validation-error-border: 1px solid $error;
+$validation-error-color: $error;
+$validation-error-size: $font-size;
+$validation-error-weight: $font-weight-normal;
+$validation-error-margin: 15px 0;
+$validation-error-padding: 15px;
+
+// Validation field message
+$validation-message-color: $error;
+$validation-message-size: $font-size - 4;
+$validation-message-weight: $font-weight-normal;
+$validation-message-margin: 5px 0 0;
+$validation-message-padding: 0;
+
+// Validation Field error
+$validation-field-bg: rgba($error, 0.1);
+$validation-field-color: $form-input-color;
+$validation-field-border-color: $error;
+$validation-field-bg-focus: $validation-field-bg;
+
+//Validation success (first main message)
+$validation-success-bg: none;
+$validation-success-border: 1px solid $success;
+$validation-success-color: $success;
+$validation-success-size: $font-size;
+$validation-success-weight: $font-weight-normal;
+$validation-success-margin: 15px 0;
+$validation-success-padding: 15px;
+
+// Datepicker
+$datepicker-font: 'Glyphicons Halflings';
+$datepicker-arrows-bg: $font-body-color;
+$datepicker-arrows-radius: 50%;
+$datepicker-arrows-color: white;
+$datepicker-arrows-size: 27px;
+$datepicker-arrows-height: 25px;
+$datepicker-arrows-width: 25px;
+$datepicker-arrows-margin: 0;
+$datepicker-arrows-left-icon: '\2039';
+$datepicker-arrows-right-icon: '\203A';
+$datepicker-day-hover: #eee;
+$datepicker-current-bg: $brand1;
+$datepicker-current-color: white;
+
+/************************************************************************************************
+										 * Form Elements
+ ************************************************************************************************/
+
+
+form{
+	background: $form-bg;
+	border: $form-border;
+	margin: $form-margin;
+
+	*{
+		@include box-sizing(border-box);
+	}
+
+	// Base
+	legend{
+		display: none;
+		margin-bottom: 0;
+		font-weight: 600;
+	}
+	fieldset {
+		padding: 0;
+		border-width: 0;
+	}
+}
+
+// Labels
+label{
+	color: $form-label-color;
+	display: block;
+	font-size: $form-label-size;
+	font-weight: $form-label-weight;
+	margin: $form-label-margin;
+	padding: $form-label-padding;
+	text-align: left;
+	width: $form-label-width;
+}
+
+.gform_heading{
+	margin-bottom: 30px;
+}
+// Inputs
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+.StripeElement,
+textarea,
+select{
+	background-color: $form-input-background;
+	@include box-sizing(border-box);
+	@include border-radius($form-input-radius);
+	@include box-shadow($form-input-box-shadow);
+	color: $form-input-color;
+	border: $form-input-border;
+	font-size: $form-input-size;
+	height: $form-input-height;
+	padding: $form-input-padding; /* The 6px vertically centers text on FF, ignored by Webkit */
+	width: $form-input-width;
+	@include appearance(none);
+
+	&::-ms-expand{
+		display: none;
+	}
+
+	&:hover{
+		background-color: $form-input-background-focus;
+	}
+	&:focus{
+		outline: 0;
+	}
+}
+
+input[type="file"]{
+	width: 100%;
+}
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+// Select
+select[multiple='multiple']{
+	height: $form-multiple-select-height;
+}
+// Text area
+textarea{
+	height: auto;
+	min-height: $form-textarea-height;
+}
+
+// Checkbox | Radio
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline; }
+
+.hidden-field{
+	display: none;
+}
+
+// Narrow fields
+input.twochar, input.onechar,
+select.shortwidth, select.medwidth,
+div.shortwidth, div.medwidth {
+	float:left;
+	margin-right:10px;
+}
+
+input.twochar {
+	width:45px;
+}
+
+input.onechar {
+	width:30px;
+}
+
+
+select.shortwidth, div.shortwidth {
+	width:50px;
+}
+
+select.medwidth, div.medwidth {
+	width:200px;
+}
+
+/************************************************************************************************
+										 * GRAVITY FORM SPECIFIC
+ ************************************************************************************************/
+
+// Fields
+.gform_fields{
+	font-size: 0;
+	list-style: none;
+	margin: 0;
+	margin-left: -$column-padding;
+	margin-right: -$column-padding;
+	padding: 0;
+}
+.gfield{
+	display: inline-block;
+	float: none;
+	margin: $form-field-margin;
+	padding: 0 $column-padding;
+	vertical-align: top;
+	width: 100%;
+}
+
+.ginput_container{
+	width: auto;
+}
+
+.gform_page_footer{
+	border-top: $footer-buttons-border-top;
+	margin-top: $footer-buttons-margin-top;
+	padding-top: $footer-buttons-padding-top;
+	position: relative;
+	width: 100%;
+
+	.gform_next_button, input[type="submit"]{
+		float: right;
+	}
+}
+
+// Ajax Loader
+.gform_ajax_spinner{
+	left: 50%;
+	margin-left: -15px;
+	position: absolute;
+	top: 50px;
+}
+
+// Buttons
+.gform_wrapper{
+	.button{
+		background-color: $form-button-bg;
+		border-color: $form-button-border-color;
+		color: $form-button-color;
+
+		&:hover{
+			background-color: $form-button-bg-hover;
+			border-color: $form-button-border-color-hover;
+			color: $form-button-color-hover;
+		}
+	}
+
+	input[type="submit"]{
+		// background-color: $form-submit-bg;
+		// border-color: $form-submit-border-color;
+		// color: $form-submit-color;
+
+		&:hover{
+			// background-color: $form-submit-bg-hover;
+			// border-color: $form-submit-border-color-hover;
+			// color: $form-submit-color-hover;
+		}
+	}
+}
+
+// Checkboxes / Radio buttons
+
+.gfield_checkbox, .gfield_radio{
+	list-style: none;
+	padding: 0;
+
+	li *{
+		display: inline-block;
+		font-weight: $font-weight-normal;
+		vertical-align: middle;
+	}
+
+	label{
+		margin: 0;
+	}
+
+	input{
+		margin-right: 7px;
+	}
+}
+
+.gfield_radio input{
+	margin-right: 10px;
+}
+// Name fields
+.ginput_complex{
+	font-size: 0;
+	margin-left: -$column-padding;
+	margin-right: -$column-padding;
+
+	> span{
+		display: inline-block;
+		padding-left: $column-padding;
+		padding-right: $column-padding;
+		width: 100%;
+
+		label{
+			font-size: $form-label-size - 4;
+			margin: 5px 0 0;
+		}
+	}
+
+	&.has_prefix{
+		padding-left: ($column-padding * 2) + $form-name-prefix-width; // The width and padding of the prefix field
+		position: relative;
+
+		.name_prefix{
+			left: 0;
+			position: absolute;
+			width: $form-name-prefix-width + ($column-padding*2) !important;
+		}
+	}
+}
+
+// Address
+.ginput_container_address{
+	>span{
+		margin-top: 12px;
+
+		&.address_line_1{
+			margin-top: 0;
+		}
+	}
+}
+
+// Time
+
+.ginput_container_time{
+	display: inline-block;
+	vertical-align: top;
+	width: $form-time-width + $column-padding;
+
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="text"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="password"]{
+		width: $form-time-width;
+	}
+
+	i{
+		font-style: normal;
+	}
+
+	label{
+		font-size: $form-label-size - 4;
+		display: block;
+		margin-top: 5px;
+	}
+}
+
+// List
+
+.gfield_list{
+	td{
+		padding: 5px 0;
+		vertical-align: middle;
+
+		&.gfield_list_icons{
+			padding: 5px 10px;
+		}
+
+		img{
+			display: inline-block;
+		}
+	}
+	tr:first-child{
+		td{
+			padding-top: 0;
+		}
+	}
+	tr:last-child{
+		td{
+			padding-bottom: 0;
+		}
+	}
+}
+
+// Progress bar
+.gf_progressbar_wrapper{
+	margin: $form-bar-wrapper-margin;
+	padding: $form-bar-wrapper-padding;
+	width: $form-bar-wrapper-width;
+
+	h3.gf_progressbar_title{
+		color: $form-bar-title-color;
+		font-size: $form-bar-title-size;
+		margin: $form-bar-title-margin !important;
+		padding: $form-bar-title-padding !important;
+	}
+}
+
+.gf_progressbar{
+	background: $form-bar-bg;
+	border: $form-bar-border;
+	@include border-radius($form-bar-radius);
+	margin: $form-bar-margin;
+	overflow: hidden;
+	width: $form-bar-width;
+}
+
+.gf_progressbar_percentage{
+	background: $form-bar-fill-bg;;
+	color: $form-bar-color;
+	padding: $form-bar-padding;
+	text-align: center;
+}
+
+// Required
+.gfield_required{
+	color: $required-color;
+	margin-left: 5px;
+}
+
+// Validation error message
+.validation_error{
+	background: $validation-error-bg;
+	border: $validation-error-border;
+	color: $validation-error-color;
+	font-size: $validation-error-size;
+	font-weight: $validation-error-weight;
+	margin: $validation-error-margin;
+	padding: $validation-error-padding;
+}
+
+// Validation field message
+.validation_message{
+	color: $validation-message-color;
+	font-size: $validation-message-size;
+	font-weight: $validation-message-weight;
+	margin: $validation-message-margin;
+	padding: $validation-message-padding;
+}
+
+// Validation field error
+.gfield_error{
+	// Inputs
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="text"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="password"],
+	textarea,
+	select{
+		background-color: $validation-field-bg;
+		color: $validation-field-color;
+		border-color: $validation-field-border-color;
+
+		&:hover{
+			background-color: $validation-field-bg-focus;
+		}
+		&:focus{
+			outline: 0;
+		}
+	}
+}
+
+// Confirmation (message success)
+.gform_confirmation_message{
+	background: $validation-success-bg;
+	border: $validation-success-border;
+	color: $validation-success-color;
+	font-size: $validation-success-size;
+	font-weight: $validation-success-weight;
+	margin: $validation-success-margin;
+	padding: $validation-success-padding;
+}
+
+// Date picker
+.ui-datepicker {
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 8px rgba(black,.2);
+	display: none;
+	margin-top: 4px;
+	padding: 10px;
+	width: 240px;
+
+	select{
+		margin: 0 3px;
+	}
+
+	.ui-datepicker-header {
+		margin-bottom: 4px;
+		text-align: center;
+	}
+
+	.ui-datepicker-title {
+		font-weight: $font-weight-bold;
+	}
+
+	.ui-datepicker-prev,
+	.ui-datepicker-next {
+		background: $datepicker-arrows-bg;
+		@include border-radius($datepicker-arrows-radius);
+		cursor: pointer;
+		color: $datepicker-arrows-color;
+		font-family: $datepicker-font;
+		font-size: $datepicker-arrows-size;
+		font-style: normal;
+		font-weight: normal;
+		height: $datepicker-arrows-height;
+		line-height: 21px;
+		margin: $datepicker-arrows-margin;
+		text-align: center;
+		width: $datepicker-arrows-width;
+	}
+
+	.ui-datepicker-prev {
+		float: left;
+
+		&:before{
+			content: $datepicker-arrows-left-icon;
+		}
+	}
+	.ui-datepicker-next {
+		float: right;
+
+		&:before{
+			content: $datepicker-arrows-right-icon;
+		}
+	}
+
+	.ui-icon {
+		display: none;
+	}
+
+	.ui-datepicker-calendar {
+		table-layout: fixed;
+		width: 100%;
+
+		th,
+		td {
+			text-align: center;
+			padding: 4px 0;
+		}
+		td {
+			border-radius: 4px;
+			@include transition(background-color 0.1s ease-in-out, color 0.1s ease-in-out);
+
+			&:hover {
+				background-color: $datepicker-day-hover;
+				cursor: pointer;
+			}
+
+			a{
+				color: $font-body-color;
+				text-decoration: none;
+			}
+
+			&.ui-datepicker-current-day {
+				background-color: $datepicker-current-bg;
+
+				a{
+					color: $datepicker-current-color;
+				}
+			}
+
+			&.ui-datepicker-unselectable:hover {
+				background-color: #fff;
+				cursor: default;
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+/************************************************************************************************
+										 * Larger than tablet
+ ************************************************************************************************/
+@media (min-width: $device-m) {
+	form{
+		// Ajax Loader
+		.gform_ajax_spinner{
+			top: 10px;
+		}
+
+		// Name fields
+		.has_first_name.has_last_name > span{
+			width: 50%;
+		}
+
+		.has_first_name.has_middle_name.has_last_name > span{
+			width: 33.3%;
+		}
+
+		.has_first_name.has_middle_name.has_last_name.has_suffix > span{
+			width: 25%;
+		}
+
+		// Address
+		.ginput_container_address{
+			>span{
+				width: 50%;
+
+				&.ginput_full{
+					width: 100%;
+				}
+			}
+		}
+	}
+}

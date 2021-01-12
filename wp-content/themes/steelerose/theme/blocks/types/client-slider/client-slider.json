@@ -1,0 +1,12 @@
+{
+    "render_template": "client-slider.php",
+    "name": "client-slider",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Client Slider (DEPRECATED)",
+    "description": "Displays the \"Client Slider\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

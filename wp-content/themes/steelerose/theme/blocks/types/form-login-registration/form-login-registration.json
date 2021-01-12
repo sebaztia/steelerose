@@ -1,0 +1,13 @@
+{
+    "render_template": "form-login-registration.php",
+    "name": "form-login-registration",
+    "category": "forms",
+    "type": "preact",
+    "title": "Login & Register Form",
+    "description": "Displays the Login & Register Form",
+    "icon": "format-image",
+    "use-pattern-dir": true,
+    "supports": {
+        "align": false
+    }
+}

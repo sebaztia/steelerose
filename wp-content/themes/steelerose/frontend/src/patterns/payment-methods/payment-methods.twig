@@ -1,0 +1,19 @@
+{% if methods %}
+    <div class="dpl-payment-methods">
+        {% if methods.cards %}
+            <ul>
+                {% for card in methods.cards %}
+                    <li>
+                        <a
+                                class="payment-methods__card-saved"
+                                data-id="{{ card.id }}"
+                                data-brand="{{ card.card.brand }}"
+                                data-last4="{{ card.card.last4 }}"
+                                href="#">{{ card.card.brand }} | {{ card.card.last4 }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endif %}

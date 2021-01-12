@@ -1,0 +1,22 @@
+// .transition-all *, a{
+// 	@include transition(all 0.3s ease-in-out);
+// }
+
+button, .button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.hidden-nav, .hamburger,
+.youtube-player img, .youtube-player-with-thumb img, .icon-play,
+.gallery-block *, a, input, textarea, select{
+	@include transition(all 0.2s ease-in-out);
+}
+.main-menu__children{
+	@include transition(all 0.3s ease-in-out);
+}
+/************************************************************************************************
+                     * Larger than tablet
+ ************************************************************************************************/
+@media (min-width: $device-m) {
+
+}

@@ -1,0 +1,12 @@
+{
+  "render_template": "card-grid.php",
+  "name": "card-grid",
+  "category": "patterns",
+  "type": "plain",
+  "title": "Card Grid",
+  "description": "Displays the \"Card Grid\" pattern",
+  "icon": "format-image",
+  "supports": {
+    "align": false
+  }
+}

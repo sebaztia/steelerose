@@ -1,0 +1,38 @@
+<footer class="dpl-footer">
+    {% include "@patterns/foottext/foottext.twig" with {
+        text : "GET IN TOUCH"
+    } %}
+    <section class="section-row">
+        <div class="container">
+            <div class="row">
+                <div class="columns four">
+                    <div itemscope itemtype="http://schema.org/Organization">
+                        {% include "@patterns/logo/logo-footer.twig" %}
+                        {% include "@patterns/snippet/snippet-address.twig" %}
+                        {% include "@patterns/snippet/snippet-telephone.twig" %}
+                        {% include "@patterns/snippet/snippet-email.twig" %}
+                    </div>
+                </div>
+                <div class="columns four">
+                    {% include "@patterns/arbitrary-navigation/arbitrary-navigation.twig" with {
+                        title : global.menu_footer_1_title,
+                        items : global.menu_footer_1,
+                        arrows : false
+                    } %}
+                </div>
+                <div class="columns four">
+                    {% include "@patterns/arbitrary-navigation/arbitrary-navigation.twig" with {
+                        title : global.menu_footer_2_title,
+                        items : global.menu_footer_2,
+                        arrows: false
+                    } %}
+
+                    {% include "@patterns/social-icons/social-icons.twig" with {
+                        class : "dark"
+                    } %}
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+{% include "@patterns/footer-bottombar/footer-bottombar.twig" %}

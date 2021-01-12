@@ -1,0 +1,15 @@
+.dpl-footer {
+  background:$bg-dark;
+  color:white;
+  padding:$column-padding 0;
+
+  .dpl-arbitrary-navigation {
+    li {
+      border-bottom-color:$bg-medium;
+    }
+
+    a {
+      color:white;
+    }
+  }
+}

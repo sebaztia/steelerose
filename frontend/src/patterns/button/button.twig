@@ -1,0 +1,20 @@
+{% if element == 'a' %}
+<a
+		href="{{ href }}"
+		{% if title %}title="{{ title }}"{% endif %}
+		{% if id %}id="{{ id }}"{% endif %}
+		class="dpl-button{% if class %} {{ class }}{% endif %}"
+>
+{% elseif element == 'button' %}
+<button
+		{% if title %}title="{{ title }}"{% endif %}
+		{% if id %}id="{{ id }}"{% endif %}
+		class="button{% if class %} {{ class }}{% endif %}"
+>
+{% endif %}
+	{{ label }}
+{% if element == 'button' %}
+</button>
+{% elseif element == 'a' %}
+</a>
+{% endif %}

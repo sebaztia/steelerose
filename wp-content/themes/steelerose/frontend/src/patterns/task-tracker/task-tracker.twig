@@ -1,0 +1,38 @@
+<div class="dpl-task-tracker">
+    <div class="container">
+        <div class="section-row">
+            <div class="row flex-same-height">
+                <div class="six columns flex-same-height--item align-vertical tracker-text-col">
+                    <div>
+                        <h2>Task Tracker</h2>
+                        {% include "@patterns/task-tracker/task-tracker-action-complete.twig" with {
+                            percent : percent
+                        } %}
+						<a class="dpl-button" href="#">Complete all</a>
+                    </div>
+                </div>
+                <div class="one columns flex-same-height--item">
+                    <div class="border-vertical"></div>
+                </div>
+                <div class="five columns flex-same-height--item">
+                    <div class="inner-content text-center">
+
+                        <div class="c100 p{{ percent }} dark big center">
+                            <span class="stat-wrapper">
+                                <span>
+                                    <i class="stat-percent"><b>{{ percent }}%</b></i>
+                                    <i class="stat-completed">Completed</i>
+                                </span>
+
+                            </span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

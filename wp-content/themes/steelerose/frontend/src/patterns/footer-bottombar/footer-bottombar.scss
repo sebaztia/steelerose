@@ -1,0 +1,36 @@
+.dpl-footer-bottombar {
+  color:white;
+  padding:10px 0;
+  font-size:$small-font-size;
+  text-align:center;
+  background:darken($font-body-color, 15%);
+  position:relative;
+  z-index:1;
+
+  a {
+    color:white;
+  }
+
+  span {
+    display:inline-block;
+    margin:0 8px;
+    position:relative;
+
+    &:after {
+      content:"";
+      height:10px;
+      width:1px;
+      background-color:white;
+      display:block;
+      position:absolute;
+      top:5px;
+      right:-9px;
+    }
+
+    &:last-child {
+      &:after {
+        display:none;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.dpl-pagination {
+  margin:$column-padding 0;
+  text-align:center;
+
+  .pagination__wrapper {
+    padding-left:0;
+    display:inline-block;
+    margin: 10px auto 0;
+
+    li {
+      transition:all .5s ease;
+
+      &.disabled, &.active {
+        a {
+          cursor: default;
+        }
+      }
+
+      list-style-type:none;
+      float:left;
+      border:1px solid $bg-light;
+      margin:5px;
+      padding:5px;
+
+      &.disabled {
+        border:none;
+      }
+
+      &.active {
+        background:$bg-dark;
+        a {
+          color: white;
+        }
+      }
+
+      a {
+        padding:10px;
+      }
+
+      &:hover {
+        background-color:$brand2;
+
+        a {
+          color:white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{% if links %}
+	<div class="header-navigation__container">
+		<div class="menu-button">
+			<button class="hamburger hamburger--spin menu-trigger" type="button">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+			</button>
+		</div>
+		<ul id="menu-main-menu" class="main-menu hori-list">
+			{% for link in links %}
+				<li>
+					<a class="active" href="{{ link.href }}">
+						{{ link.label }}
+					</a>
+				</li>
+			{% endfor %}
+			<li>
+				{% include "@patterns/button/button.twig" with {
+					element : 'a',
+					href : '#',
+					label : 'Probate Machine',
+					title : 'Probate Machine'
+				} %}
+			</li>
+		</ul>
+	</div>
+{% endif %}

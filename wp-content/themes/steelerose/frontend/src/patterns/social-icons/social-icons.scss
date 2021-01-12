@@ -1,0 +1,45 @@
+.dpl-social-icons {
+  display:flex;
+  padding:5px 0;
+
+  a.social-icons__item {
+    display:inline-flex;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    text-align:center;
+    margin-right:10px;
+    background:lighten($font-body-color, 20%);
+    color:$bg-light;
+    align-items: center;
+    justify-content: center;
+    padding:3px;
+    font-size:14px;
+
+    i:before {
+      color:$bg-light;
+    }
+
+    &:hover {
+        background: $brand1;
+
+      i:before {
+       // color:$font-body-color;
+      }
+    }
+  }
+
+  &.dark {
+    a.social-icons__item {
+      background:$grey-medium;
+
+      i:before {
+        color:$font-body-color;
+      }
+
+      &:hover {
+        background:$bg-medium;
+      }
+    }
+  }
+}

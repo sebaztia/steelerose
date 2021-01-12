@@ -1,0 +1,22 @@
+<div class="dpl-page-banner {% if textColour %}text-{{ textColour }}{% endif %} {% if backgroundColour %}bg-{{ backgroundColour }}{% endif %}">
+    <section class="section-row">
+        <img class="page-banner__background" src="{{ global.frontend_url }}/../src/public/white-rose.svg" alt="White Rose Background" />
+        <div class="page-banner__wrapper">
+            <div>
+                {% if title %}
+                    <div class="page-banner__title">
+                        <h1>{{ title }}</h1>
+                    </div>
+                {% endif %}
+                {% if subText %}
+                    <div class="page-banner__subText">
+                        {{ subText }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {% if breadcrumbs %}
+        {{ breadcrumbs }}
+    {% endif %}
+</div>

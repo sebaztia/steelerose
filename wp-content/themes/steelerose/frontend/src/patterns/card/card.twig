@@ -1,0 +1,11 @@
+<div class="dpl-card">
+    {% if image %}
+        <div class="card__image">
+            <img src="{{ image }}" alt="{{ heading }}" />
+        </div>
+    {% endif %}
+    <h3 class="card__heading">
+        {{ heading }}
+    </h3>
+    {{ content }}
+</div>

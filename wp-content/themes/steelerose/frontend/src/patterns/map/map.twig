@@ -1,0 +1,11 @@
+<div class="dpl-map" data-zoom="16">
+    {% if locations %}
+        {% for loc in locations %}
+         <div class="marker" data-lat="{{ loc.lat }}" data-lng="{{ loc.lng }}">
+             <h4 class="map__title">{{ loc.title }}</h4>
+             <p class="map__address">{{ loc.address }}</p>
+             <p class="map__telephone">{{ loc.telephone }}</p>
+         </div>
+        {% endfor %}
+    {% endif %}
+</div>

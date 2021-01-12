@@ -1,0 +1,49 @@
+.dpl-post-box {
+  display:block;
+  background:$bg-medium;
+  text-align:center;
+  padding:$column-padding $column-padding ($column-padding*2) $column-padding;
+  position:relative;
+  color:$font-body-color;
+  height:100%;
+  max-width:300px;
+  box-sizing:border-box;
+
+  .post-box__label {
+    position:absolute;
+    top:0;
+    right:0;
+    padding:5px 10px;
+    background:$bg-dark;
+    color:white;
+    transition:all .5s ease;
+  }
+
+  .post-box__title {
+    font-size:$h3-size;
+    font-weight:bold;
+    margin:($column-padding / 2) 0;
+  }
+
+  .post-box__excerpt {
+    margin:$column-padding 0;
+  }
+
+  .post-box__button {
+    position:absolute;
+    bottom:$column-padding;
+    left:$column-padding;
+    width:calc(100% - #{$column-padding * 2});
+  }
+
+  &:hover {
+    background:$bg-dark;
+    color:white;
+
+    .post-box__label {
+      background:$button-bg;
+    }
+  }
+
+
+}

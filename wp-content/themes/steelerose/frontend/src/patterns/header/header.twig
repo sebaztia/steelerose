@@ -1,0 +1,16 @@
+<header class="dpl-header headroom">
+    {% include "@patterns/header-topbar/header-topbar.twig" %}
+    <div class="container dpl-header__main">
+        <div class="flex-header">
+            <div class="flex-header--left">
+                {% include "@patterns/logo/logo.twig" %}
+            </div>
+            <div class="flex-header--right">
+                {% include "@patterns/header-navigation/header-navigation.twig" with {
+                    links : global.menu_main
+                } %}
+            </div>
+        </div>
+    </div>
+</header>
+{% include "@patterns/header-search/header-search.twig" %}

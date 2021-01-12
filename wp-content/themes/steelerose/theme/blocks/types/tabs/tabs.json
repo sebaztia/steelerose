@@ -1,0 +1,12 @@
+{
+    "render_template": "tabs.php",
+    "name": "tabs",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Tabs",
+    "description": "Displays the \"Tabs\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

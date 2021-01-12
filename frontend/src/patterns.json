@@ -1,0 +1,16 @@
+{
+  "script": [
+    "header",
+    "header-navigation",
+    "call-to-action",
+    "stat-grid",
+    "profile-slide",
+    "service-grid",
+    "post-grid",
+    "header-search",
+    "breadcrumbs",
+    "tabs",
+    "accordion",
+    "slider-team"
+  ]
+}

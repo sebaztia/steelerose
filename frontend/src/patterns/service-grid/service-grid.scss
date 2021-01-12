@@ -1,0 +1,63 @@
+.dpl-service-grid {
+  background:$bg-light;
+  padding:$column-padding 0;
+
+  .service-grid__wrapper {
+    text-align:center;
+    padding:$column-padding;
+    box-sizing:border-box;
+  }
+
+  .service-grid__content {
+    transition:all .5s ease;
+    position:relative;
+    opacity:0;
+    bottom:-100px;
+    max-width:300px;
+    margin:0 auto;
+    &.inview {
+      opacity:1;
+      bottom:0;
+    }
+  }
+
+  .service-grid__image {
+    img {
+      border-radius:50%;
+    }
+  }
+
+  .service-grid__title {
+    font-size:$h3-size;
+    font-weight:bold;
+    margin:($column-padding / 2) 0;
+  }
+
+  .service-grid__text {
+    margin:($column-padding / 2) 0;
+  }
+
+  .columns {
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    margin-top:$column-padding;
+    margin-bottom:$column-padding;
+  }
+
+  .columns:nth-child(3n-1) {
+    border-left-color:$bg-medium;
+    border-right-color:$bg-medium;
+  }
+}
+
+@media (max-width: $device-m - 1) {
+  .dpl-service-grid {
+    .service-grid__wrapper {
+      padding:0;
+
+    }
+    .columns {
+      border: none;
+    }
+  }
+}

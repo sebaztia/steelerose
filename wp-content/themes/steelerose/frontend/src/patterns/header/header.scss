@@ -1,0 +1,44 @@
+$header-bg: white;
+$header-color: $grey-medium;
+$header-color-hover: $font-body-color;
+$header-color-current: $header-color-hover;
+$header-font-size: $font-size;
+
+$hidden-header-bg: white;
+$hidden-header-font-size: $font-size;
+$hidden-header-color: $font-body-color;
+
+header {
+  background: $header-bg;
+  border-bottom: 1px solid lighten($border-light, 5%);
+  //padding: 10px 0;
+  width: 100%;
+}
+
+.dpl-header {
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:10;
+
+  .dpl-header__main {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+
+	&.headroom--not-top{
+		box-shadow: 0px -16px 26px 0px rgba(0, 0, 0, 0.5);
+	}
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}

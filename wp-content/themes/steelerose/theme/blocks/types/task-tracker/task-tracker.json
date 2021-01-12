@@ -1,0 +1,12 @@
+{
+    "render_template": "task-tracker.php",
+    "name": "task-tracker",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Task Tracker",
+    "description": "Displays the \"Task Tracker\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

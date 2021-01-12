@@ -1,0 +1,15 @@
+{% if global.email %}
+<div class="dpl-snippet snippet">
+	<div class="snippet__icon">
+		<svg class="icon icon-envelop">
+			<use xlink:href="#icon-envelop"></use>
+		</svg>
+	</div>
+	<div class="snippet__content">
+		<p>
+			<a itemprop="email" href="mailto:{{ global.email }}" target="_blank">{{ global.email }}</a>
+		</p>
+	</div>
+	<div class="clearfix"></div>
+</div>
+{% endif %}

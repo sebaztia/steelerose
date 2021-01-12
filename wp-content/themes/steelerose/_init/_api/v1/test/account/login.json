@@ -1,0 +1,7 @@
+{
+  "method" : "POST",
+  "credentials" : {
+    "user_login": "username",
+    "user_password" : "12345678"
+  }
+}

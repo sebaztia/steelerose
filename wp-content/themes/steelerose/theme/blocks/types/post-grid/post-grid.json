@@ -1,0 +1,12 @@
+{
+    "render_template": "post-grid.php",
+    "name": "post-grid",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Post Grid",
+    "description": "Displays the \"Post Grid\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

@@ -1,0 +1,102 @@
+.dpl-call-to-action {
+  display:flex;
+  max-width:100%;
+  overflow:hidden;
+  box-sizing:border-box;
+  position:relative;
+
+  .call-to-action__box {
+    transition:all .5s ease;
+    position:relative;
+    display:flex;
+    align-items:center;
+
+    .call-to-action__box-content-padding {
+      box-sizing:border-box;
+    }
+  }
+
+  .call-to-action__box:first-child {
+    width:55%;
+    background:$bg-dark;
+    color:white;
+    padding:$column-padding 0;
+
+    + .call-to-action__box {
+      width:45%;
+      background:$bg-medium;
+      img {
+        max-width:100%;
+      }
+    }
+  }
+
+  &.invert {
+    .call-to-action__box:first-child {
+      background: $bg-light;
+      color: $font-body-color;
+    }
+  }
+
+  .call-to-action__box:first-child.left {
+    left:-9999px;
+    &.inview[style] {
+      left:0 !important;
+    }
+    .call-to-action__box-content-padding  {
+      padding-right:$column-padding;
+
+    }
+    + .call-to-action__box {
+      right:-9999px;
+      &.inview[style] {
+        right:0 !important;
+      }
+    }
+  }
+
+  .call-to-action__box:first-child.right {
+    right:-9999px;
+    order:2;
+    &.inview[style] {
+      right:0 !important;
+    }
+    .call-to-action__box-content-padding  {
+      padding-left:$column-padding;
+    }
+
+    + .call-to-action__box {
+      left:-9999px;
+      order:1;
+      text-align:right;
+      &.inview[style] {
+        left:0 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $device-m - 1) {
+  .dpl-call-to-action {
+    display:block;
+
+    .call-to-action__box:first-child,
+    .call-to-action__box,
+    .call-to-action__box:first-child + .call-to-action__box {
+      width:100%;
+
+      .call-to-action__box-content,
+      .call-to-action__box-content[style] {
+        margin:0 auto !important;
+      }
+    }
+
+    .call-to-action__box:first-child .call-to-action__box-content[style] {
+      width:100% !important;
+
+      .call-to-action__box-content-padding {
+        padding:$column-padding;
+      }
+    }
+  }
+}

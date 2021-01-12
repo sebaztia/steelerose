@@ -1,0 +1,12 @@
+{
+    "render_template": "accordion.php",
+    "name": "accordion",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Accordion",
+    "description": "Displays the \"Accordion\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

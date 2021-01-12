@@ -1,0 +1,58 @@
+<div class="dpl-call-to-action{% if invert %} invert{% endif %}">
+	<div class="call-to-action__box {{ align }}">
+		<div class="call-to-action__box-content">
+			<div class="call-to-action__box-content-padding">
+				<h2>{{ title }}</h2>
+				{# Temporary passing icons #}
+				{% if content=='icons' %}
+					{% include "@patterns/list-item-icon/list-item-icon.twig" with {
+						iconSrc : "/public/80x80.png",
+						iconAlt : "",
+						text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+					} %}
+					{% include "@patterns/list-item-icon/list-item-icon.twig" with {
+						iconSrc : "/public/80x80.png",
+						iconAlt : "",
+						text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+					} %}
+					{% include "@patterns/list-item-icon/list-item-icon.twig" with {
+						iconSrc : "/public/80x80.png",
+						iconAlt : "",
+						text : "Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+					} %}
+					{% include "@patterns/list-item-icon/list-item-icon.twig" with {
+						iconSrc : "/public/80x80.png",
+						iconAlt : "",
+						text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+					} %}
+				{# Temporary passing list #}
+				{% elseif content=='list' %}
+
+				{% else %}
+					{{ content }}
+				{% endif %}
+				{% if buttonLabel %}
+					{% include "@patterns/button/button.twig" with {
+						element : "a",
+						label : buttonLabel,
+						href : buttonHref
+					} %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="call-to-action__box">
+		<div class="call-to-action__box-content">
+			<div class="call-to-action__box-content-padding">
+				{% if imgSrc %}
+					<img src="{{ imgSrc }}" alt="{{ imgAlt }}" />
+				{% elseif embedSrc %}
+					<iframe class="embed" height="100%" width="100%"
+							src="{{ embedSrc }}">
+					</iframe>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>

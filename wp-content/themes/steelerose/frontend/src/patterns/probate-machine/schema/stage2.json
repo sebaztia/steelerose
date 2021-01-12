@@ -1,0 +1,1482 @@
+{
+  "tabTitle": "Stage 2",
+  "title": "Obtaining the Grant",
+  "icon": "icon-colored-email",
+  "status": "disabled",
+  "sections" : [
+    {
+      "id" : "s201",
+      "title" : "Property",
+      "status" : "enabled",
+      "tasks" : [
+        {
+          "id" : "t201",
+          "title" : "Property",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q200",
+              "label" : "Did they own a property?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "enabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q199",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q198",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q199",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q198",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q199",
+              "label" : "Was this property their home residence?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "tooltip" : {
+                "help" : "If you use the one in the area where the person died you’ll be given the documents you’ll need on the day. &/If you use a different register office the documents will be sent to the office in the area where the person died before they’re issued to you. This means you’ll usually wait a few days.&/ Registering the death will take about 30 minutes - you might need to make an appointment. &/ What you need to do"
+              }
+            },
+            {
+              "id" : "q198",
+              "label" : "Did they own any other land or buildings?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "tooltip" : {
+                "gov" : "This will include: • farms • business property, for example, a hotel, shop, factory etc • timber and woodlands • other land and buildings such as lock-up garages, redundant or derelict land, quarries, airfields etc • other rights that attach to land, such as fishing or shooting rights"
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t202",
+          "title" : "Home residence",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q201",
+              "label" : "How was {{q100}}'s home residence owned?",
+              "type" : "Radio",
+              "status" : "enabled",
+              "fieldFullWidth" : true,
+              "options" : [
+                "Sole name / Tenants in common",
+                "Joint tenants",
+                "Don't know"
+              ],
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the deceased's occupation"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : ["q202","q356","q343"],
+                  "thisValueIs" : "Sole name / Tenants in common",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : ["q202", "q356", "q343"],
+                  "thisValueIs" : "Joint tenants",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : ["q202","q356","q343"],
+                  "thisValueIs" : "Don't know",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : ["q204","q364","q270"],
+                  "thisValueIs" : "Joint tenants",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : ["q204","q364","q270"],
+                  "thisValueIs" : "Sole name / Tenants in common",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : ["q204","q364","q270"],
+                  "thisValueIs" : "Don't know",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q202",
+              "label" : "Address of the property",
+              "type" : "Address",
+              "status" : "disabled",
+              "value" : "",
+              "fieldFullWidth" : true,
+              "IHT" : "11.8b>",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please let us know the Address of the property"
+                },
+                "address" : {
+                  "test" : true,
+                  "message" : "Your address seems to be invalid or incomplete"
+                }
+              }
+            },
+            {
+              "id" : "q356",
+              "label" : "Do you know the value of the property?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q203",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q203",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t218",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled_inithide"
+                },
+                {
+                  "target" : "q203",
+                  "thisStatusIs" : "disabled",
+                  "updateTargetStatus" : "disabled"
+                }
+              ],
+              "tooltip" : {
+                "help" : "You should know the open market value of the deceased’s share."
+              }
+            },
+            {
+              "id" : "q203",
+              "label" : "What is the value of the property?",
+              "type" : "Text",
+              "status" : "disabled",
+              "value" : "",
+              "IHT" : "11.8a",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the value of the property"
+                }
+              },
+              "tooltip" : {
+                "gov" : "You should include the open market value of the deceased’s share."
+              }
+            },
+            {
+              "id" : "q343",
+              "label" : "Was there a mortgage on the property?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q344",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q344",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q344",
+                  "thisStatusIs" : "disabled",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q345",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q345",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q345",
+                  "thisStatusIs" : "disabled",
+                  "updateTargetStatus" : "disabled"
+                }
+              ],
+              "tooltip" : {
+                "help" : "If the deceased had a mortgage protection policy, you should include the mortgage in this box and answer Yes to 'Was there a mortgage protection policy'"
+              }
+            },
+            {
+              "id": "q344",
+              "label": "How much was left to pay on the mortgage?",
+              "type": "Text",
+              "value": "",
+              "IHT" : "12.2",
+              "status": "disabled",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please enter what was left on the mortgage"
+                }
+              },
+              "tooltip" : {
+                "help" : "For example, the deceased owned a half share of a house valued at £200,000. The property had a mortgage of £50,000 secured on it. The value of the deceased’s share of the property is £100,000 and the value of the deceased’s share of the mortgage is £25,000."
+              }
+            },
+            {
+              "id" : "q345",
+              "label" : "Was there a mortgage protection policy?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q346",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q346",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q346",
+                  "thisStatusIs" : "disabled",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q346",
+              "label" : "How much money was paid out from this policy?",
+              "type" : "Text",
+              "value": "",
+              "status": "disabled",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please enter the value"
+                }
+              }
+            },
+            {
+              "id" : "q204",
+              "label" : "Address of the property",
+              "type" : "Address",
+              "status" : "disabled",
+              "value" : "",
+              "IHT" : "9.2",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please let us know the Address of the property"
+                },
+                "address" : {
+                  "test" : true,
+                  "message" : "Your address seems to be invalid or incomplete"
+                }
+              }
+            },
+            {
+              "id" : "q364",
+              "label" : "Do you know the value of the property?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q205",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q205",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t220",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled_inithide"
+                },
+                {
+                  "target" : "q205",
+                  "thisStatusIs" : "disabled",
+                  "updateTargetStatus" : "disabled"
+                }
+              ],
+              "tooltip" : {
+                "help" : "You should know the open market value of the deceased’s share."
+              }
+            },
+            {
+              "id" : "q205",
+              "label" : "What is the value of the property?",
+              "type" : "Text",
+              "status" : "disabled",
+              "IHT" : "9.2a",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the value of the property"
+                }
+              },
+              "tooltip" : {
+                "gov" : "You should include the open market value of the deceased’s share."
+              }
+            },
+            {
+              "id" : "q270",
+              "label" : "Was there a mortgage on the property?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q271",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q271",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q271",
+                  "thisStatusIs" : "disabled",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q273",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q273",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q273",
+                  "thisStatusIs" : "disabled",
+                  "updateTargetStatus" : "disabled"
+                }
+              ],
+              "tooltip" : {
+                "help" : "If the deceased had a mortgage protection policy, you should include the mortgage in this box and answer Yes to 'Was there a mortgage protection policy'"
+              }
+            },
+            {
+              "id": "q271",
+              "label": "How much was left to pay on the mortgage?",
+              "type": "Text",
+              "value": "",
+              "status": "disabled",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please enter what was left on the mortgage"
+                }
+              },
+              "tooltip" : {
+                "help" : "For example, the deceased owned a half share of a house valued at £200,000. The property had a mortgage of £50,000 secured on it. The value of the deceased’s share of the property is £100,000 and the value of the deceased’s share of the mortgage is £25,000."
+              }
+            },
+            {
+              "id" : "q273",
+              "label" : "Was there a mortgage protection policy?",
+              "type" : "Radio",
+              "value" : "",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "status" : "disabled",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q274",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q274",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "q274",
+                  "thisStatusIs" : "disabled",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q274",
+              "label" : "How much money was paid out from this policy?",
+              "type" : "Text",
+              "value": "",
+              "status": "disabled",
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please enter the value"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t218",
+          "title" : "Get an estate agent to value {{q202}}.",
+          "status" : "disabled",
+          "price" : 1000,
+          "tooltip" : {
+            "help" : "Contact the local estate agent and ask for an open market valuation."
+          }
+        },
+        {
+          "id" : "t220",
+          "title" : "Get an estate agent to value {{q204}}.",
+          "status" : "disabled",
+          "price" : 1000,
+          "tooltip" : {
+            "help" : "Contact the local estate agent and ask for an open market valuation."
+          }
+        }
+      ]
+    },
+    {
+      "id" : "s203",
+      "title" : "Sole assets",
+      "status" : "enabled",
+      "tasks" : [
+        {
+          "id": "t209",
+          "title" : "Banks & Building Societies",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q291",
+              "label" : "Did {{q100}} have any sole bank or building society accounts?",
+              "type" : "Repeater",
+              "fieldFullWidth" : true,
+              "value" : "",
+              "radio" : true,
+              "options" : [
+                "Yes", "No"
+              ],
+              "repeatableQuestions" : [
+                {
+                  "id": "q292",
+                  "label" : "Who was the account held with?",
+                  "type" : "Text",
+                  "status" : "incomplete",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q293",
+                  "label" : "Do you know the account number?",
+                  "type" : "Radio",
+                  "status" : "incomplete",
+                  "options" : [
+                    "Yes", "No"
+                  ],
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "Please select Yes or No"
+                    }
+                  },
+                  "enableConditions" : [
+                    {
+                      "target" : "q294",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q294",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "disabled"
+                    },
+                    {
+                      "target" : "q297",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q297",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "disabled"
+                    }
+                  ]
+                },
+                {
+                  "id" : "q294",
+                  "label" : "What is the account number",
+                  "type" : "Text",
+                  "status" : "disabled",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q295",
+                  "label" : "Do you know how much was in the account on the day {{q100}} passed away?",
+                  "type" : "Radio",
+                  "status" : "incomplete",
+                  "options" : [
+                    "Yes", "No"
+                  ],
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "Please select Yes or No"
+                    }
+                  },
+                  "enableConditions" : [
+                    {
+                      "target" : "q296",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q296",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "disabled"
+                    },
+                    {
+                      "target" : "q297",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q297",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "disabled"
+                    }
+                  ]
+                },
+                {
+                  "id" : "q296",
+                  "label" : "How much was in the account?",
+                  "type" : "Numerical",
+                  "status" : "disabled",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q297",
+                  "title" : "Write to {{q292}} to obtain date of death figures.",
+                  "status" : "disabled",
+                  "price" : 1000
+                }
+              ],
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "addLabel" : "Add another account"
+            }
+          ]
+        },
+        {
+          "id": "t210",
+          "title" : "National Savings",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q299",
+              "label" : "Did they have any National Savings accounts in their sole name?",
+              "type" : "Repeater",
+              "fieldFullWidth" : true,
+              "value" : "",
+              "radio" : true,
+              "options" : [
+                "Yes", "No"
+              ],
+              "repeatableQuestions" : [
+                {
+                  "id": "q300",
+                  "label" : "Who was the account held with?",
+                  "type" : "Text",
+                  "status" : "incomplete",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q301",
+                  "label" : "Do you know the account number?",
+                  "type" : "Radio",
+                  "status" : "incomplete",
+                  "options" : [
+                    "Yes", "No"
+                  ],
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "Please select Yes or No"
+                    }
+                  },
+                  "enableConditions" : [
+                    {
+                      "target" : "q302",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q302",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "disabled"
+                    },
+                    {
+                      "target" : "t228",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "t228",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "disabled"
+                    }
+                  ]
+                },
+                {
+                  "id" : "q302",
+                  "label" : "What is the account number",
+                  "type" : "Text",
+                  "status" : "disabled",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q303",
+                  "label" : "Do you know how much was in the account on the day {{q100}} passed away?",
+                  "type" : "Radio",
+                  "status" : "incomplete",
+                  "options" : [
+                    "Yes", "No"
+                  ],
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "Please select Yes or No"
+                    }
+                  },
+                  "enableConditions" : [
+                    {
+                      "target" : "q304",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q304",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "disabled"
+                    },
+                    {
+                      "target" : "q305",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q305",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "disabled"
+                    }
+                  ]
+                },
+                {
+                  "id" : "q304",
+                  "label" : "How much was in the account?",
+                  "type" : "Numerical",
+                  "status" : "disabled",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q305",
+                  "title" : "Write to {{q300}} to obtain date of death figures.",
+                  "status" : "disabled",
+                  "price" : 1000
+                }
+              ],
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "addLabel" : "Add another account"
+            }
+          ]
+        },
+        {
+          "id" : "t211",
+          "title" : "Cash",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q307",
+              "label" : "Did {{q100}} have any cash not held in the above accounts?",
+              "type" : "Radio",
+              "status" : "incomplete",
+              "options" : [
+                "Yes", "No"
+              ],
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q308",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q308",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q308",
+              "label" : "How much cash?",
+              "type" : "Numerical",
+              "status" : "disabled",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter how much cash"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t212",
+          "title" : "Belongings",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q309",
+              "label" : "Did they have any household or personal goods in their own name?",
+              "type" : "Radio",
+              "status" : "incomplete",
+              "options" : [
+                "Yes", "No"
+              ],
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q310",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q310",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q310",
+              "label" : "Do you know the value of these items?",
+              "type" : "Radio",
+              "status" : "disabled",
+              "options" : [
+                "Yes", "No"
+              ],
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q311",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q311",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                },
+                {
+                  "target" : "t229",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t229",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q311",
+              "label" : "What is the total value of these items?",
+              "type" : "Numerical",
+              "status" : "disabled",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please enter the total value."
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "t229",
+          "title" : "Get an appraisal for the value of the items.",
+          "status" : "incomplete",
+          "price" : 1000,
+          "enableConditions" : [
+            {
+              "target" : "q311",
+              "thisValueIs" : "Complete",
+              "updateTargetStatus" : "enabled"
+            }
+          ]
+        },
+        {
+          "id": "t213",
+          "title" : "Stocks and Shares",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q313",
+              "label" : "Did {{q100}} have any Stocks and shares quoted on the Stock Exchange?",
+              "type" : "Repeater",
+              "fieldFullWidth" : true,
+              "value" : "",
+              "radio" : true,
+              "options" : [
+                "Yes", "No"
+              ],
+              "repeatableQuestions" : [
+                {
+                  "id": "q314",
+                  "label" : "Who were the Stocks and shares held with?",
+                  "type" : "Text",
+                  "status" : "incomplete",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q315",
+                  "label" : "Do you know the value of these as at the date of death?",
+                  "type" : "Radio",
+                  "status" : "incomplete",
+                  "options" : [
+                    "Yes", "No"
+                  ],
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "Please select Yes or No"
+                    }
+                  },
+                  "enableConditions" : [
+                    {
+                      "target" : "q316",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q316",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "disabled"
+                    },
+                    {
+                      "target" : "q317",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q317",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "disabled"
+                    }
+                  ]
+                },
+                {
+                  "id" : "q316",
+                  "label" : "What is the value of these stocks and shares?",
+                  "type" : "Numerical",
+                  "status" : "disabled",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q317",
+                  "title" : "Write to {{q314}} to get date of death figures.",
+                  "status" : "disabled",
+                  "price" : 1000
+                }
+              ],
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "addLabel" : "Add another account"
+            }
+          ]
+        },
+        {
+          "id": "t214",
+          "title" : "Insurance policies",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q323",
+              "label" : "Did {{q100}} have any insurance policies?",
+              "type" : "Repeater",
+              "fieldFullWidth" : true,
+              "value" : "",
+              "radio" : true,
+              "options" : [
+                "Yes", "No"
+              ],
+              "tooltip" : {
+                "help" : "Including bonus and sole mortgage protection policies."
+              },
+              "repeatableQuestions" : [
+                {
+                  "id": "q324",
+                  "label" : "Who was the policy held with?",
+                  "type" : "Text",
+                  "status" : "incomplete",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q315",
+                  "label" : "Do you know how much the policy pays out?",
+                  "type" : "Radio",
+                  "status" : "incomplete",
+                  "options" : [
+                    "Yes", "No"
+                  ],
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "Please select Yes or No"
+                    }
+                  },
+                  "enableConditions" : [
+                    {
+                      "target" : "q326",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q326",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "disabled"
+                    },
+                    {
+                      "target" : "q327",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q327",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "disabled"
+                    }
+                  ]
+                },
+                {
+                  "id" : "q326",
+                  "label" : "How much does the policy pay out?",
+                  "type" : "Numerical",
+                  "status" : "disabled",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q327",
+                  "title" : "Write to {{q324}} to find further details.",
+                  "status" : "disabled",
+                  "price" : 1000
+                }
+              ],
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "addLabel" : "Add another account"
+            }
+          ]
+        },
+        {
+          "id": "t215",
+          "title" : "Loans",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q329",
+              "label" : "Was there any outstanding money owed to {{q100}}?",
+              "type" : "Repeater",
+              "fieldFullWidth" : true,
+              "value" : "",
+              "radio" : true,
+              "options" : [
+                "Yes", "No"
+              ],
+              "repeatableQuestions" : [
+                {
+                  "id": "q330",
+                  "label" : "Who owed {{q100}} this money?",
+                  "type" : "Text",
+                  "status" : "incomplete",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q331",
+                  "label" : "How much did {{q330}} owe to {{q100}}?",
+                  "type" : "Numerical",
+                  "status" : "incomplete",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                }
+              ],
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "addLabel" : "Add another account"
+            }
+          ]
+        },
+        {
+          "id": "t216",
+          "title" : "Business",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q335",
+              "label" : "Did {{q100}} have any assets held in a partnership or as a business interest?",
+              "type" : "Repeater",
+              "fieldFullWidth" : true,
+              "value" : "",
+              "radio" : true,
+              "options" : [
+                "Yes", "No"
+              ],
+              "repeatableQuestions" : [
+                {
+                  "id": "q336",
+                  "label" : "What is the name of the company?",
+                  "type" : "Text",
+                  "status" : "incomplete",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q337",
+                  "label" : "Do you know how much the assets were worth on the date of death?",
+                  "type" : "Radio",
+                  "status" : "incomplete",
+                  "options" : [
+                    "Yes", "No"
+                  ],
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "Please select Yes or No"
+                    }
+                  },
+                  "enableConditions" : [
+                    {
+                      "target" : "q338",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q338",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "disabled"
+                    },
+                    {
+                      "target" : "q339",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q339",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "disabled"
+                    }
+                  ]
+                },
+                {
+                  "id" : "q338",
+                  "label" : "What is the value of these assets?",
+                  "type" : "Numerical",
+                  "status" : "disabled",
+                  "value" : "",
+                  "validation" : {
+                    "required" : {
+                      "test": true,
+                      "message": "This field cannot be empty"
+                    }
+                  }
+                },
+                {
+                  "id" : "q339",
+                  "label" : "Contact an accountant to have {{q100}}'s interest in the company valued.",
+                  "status" : "incomplete",
+                  "price" : 1000,
+                  "enableConditions" : [
+                    {
+                      "target" : "q338",
+                      "thisValueIs" : "Complete",
+                      "updateTargetStatus" : "enabled"
+                    }
+                  ]
+                }
+              ],
+              "validation": {
+                "required": {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "addLabel" : "Add another account"
+            }
+          ]
+        },
+        {
+          "id" : "t217",
+          "title" : "Other",
+          "status" : "incomplete",
+          "questions" : [
+            {
+              "id" : "q341",
+              "label" : "Are there any other assets not included above?",
+              "type" : "Radio",
+              "status" : "incomplete",
+              "options" : [
+                "Yes", "No"
+              ],
+              "tooltip" : {
+                "help" : "For example, refunds, Income Tax repayments, and any lump sum or continuing payments from a pension scheme."
+              },
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q342",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q342",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q342",
+              "label" : "What is the total value of these other assets?",
+              "type" : "Numerical",
+              "status" : "disabled",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            },
+            {
+              "id" : "q362",
+              "label" : "Did {{q100}} have any other UK debts not mentioned above?",
+              "type" : "Radio",
+              "status" : "incomplete",
+              "options" : [
+                "Yes", "No"
+              ],
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              },
+              "enableConditions" : [
+                {
+                  "target" : "q362",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q362",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q362",
+              "label" : "What is the total value of these other debts?",
+              "type" : "Numerical",
+              "status" : "disabled",
+              "value" : "",
+              "validation" : {
+                "required" : {
+                  "test": true,
+                  "message": "Please select Yes or No"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s204",
+      "title" : "Apply for the Grant",
+      "status" : "enabled",
+      "tasks" : [
+        {
+          "id": "t233",
+          "title" : "Print the IHT 205 and PA1 form.",
+          "status" : "incomplete",
+          "price" : 1000,
+          "callback" : {
+            "method" : "GET",
+            "endpoint" : "pmachine/iht/"
+          }
+        },
+        {
+          "id": "t234",
+          "title" : "Sign the forms and send them to the probate registry.",
+          "status" : "incomplete",
+          "price" : -1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<div class="dpl-card-grid
+        {% if backgroundColour %} bg-{{ backgroundColour }}{% endif %}
+">
+    <section class="section-row">
+        <div class="container">
+            {% if title %}
+                <div class="columns twelve">
+                    <h2 class="text-center">{{ title }}</h2>
+                </div>
+            {% endif %}
+            {% if cols %}
+                {% for col in cols %}
+                    <div class="columns {{ colCount }}">
+                        {% include "@patterns/card/card.twig" with {
+                            heading : col.heading,
+                            image : col.image,
+                            content : col.content
+                        } %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+</div>

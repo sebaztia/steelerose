@@ -1,0 +1,226 @@
+
+.bs-accordion{
+  margin: 0 0 30px 0;
+  .bs-accordion-heading{
+    text-transform: none;
+    background-color: $bg-medium;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-family: $font-heading;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: $heading-letter-spacing;
+    margin-top: 20px;
+    padding: 15px 55px 15px 20px;
+    position: relative;
+    text-decoration: none;
+    span{
+      @include transform( rotate(-45deg));
+      font-size: 25px;
+      margin: -12px 0 0 0;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+    }
+    &:hover{
+      // color: $bg-medium;
+      .icon-add{
+        // color: $bg-medium;
+      }
+    }
+  }
+  .bs-accordion-container{
+    border-left: 4px solid $bg-medium;
+    border-right: 4px solid $bg-medium;
+    box-sizing: border-box;
+    background: white;
+    height: 0;
+    position: relative;
+    overflow: hidden;
+    @include transition(height 0.2s ease-in-out);
+    &:after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      background-color: $bg-medium;
+      width: 100%;
+      height: 4px;
+      left:0;
+    }
+  }
+
+  .bs-accordion-content{
+    background: white;
+    position: relative;
+    p{
+      color: lighten($font-body-color, 10%);
+      &:last-child{
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .button{
+      margin-bottom: 15px;
+    }
+    .bs-active .bs-accordion-heading{
+      color: $bg-medium;
+    }
+
+  }
+
+  .bs-accordion-heading span{
+    @include transition(all 0.2s ease-in-out);
+  }
+
+  &.bs-active > .bs-accordion-heading span{
+    @include transform( rotate(0deg));
+  }
+
+  &.bs-active > .bs-accordion-container{
+    height: auto;
+  }
+  &:hover{
+    .bs-accordion-container{
+      border-left: 4px solid darken($bg-medium, 10%);
+      border-right: 4px solid darken($bg-medium, 10%);
+      &:after{
+        background-color: darken($bg-medium, 10%);
+      }
+    }
+    .bs-accordion-heading{
+      background-color: darken($bg-medium, 10%);
+    }
+  }
+  // Nested accordion
+  .bs-accordion{
+    border-top: 1px solid $border-dark;
+    margin: 0;
+    padding: 20px 0 0 0;
+    &:first-child{
+      padding: 0;
+      border: none;
+    }
+    .bs-accordion-heading{
+      background-color: transparent !important;
+      color: $bg-medium;
+      font-size: 19px;
+      font-weight: 400;
+      margin: 0;
+      padding: 0 0 20px 0;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .icon-add{
+      display: none;
+    }
+    .bs-accordion-container{
+      border: none !important;
+      &:after{
+        display: none;
+      }
+    }
+    .bs-accordion-content{
+      margin: 0;
+      border: none;
+      padding: 0 0 20px 0;
+    }
+
+  }
+}
+
+
+
+.segment-business{
+  .bs-accordion{
+    .bs-accordion-heading{
+      background-color: $brand-primary;
+    }
+    .bs-accordion-container{
+      border-left: 4px solid $brand-primary;
+      border-right: 4px solid $brand-primary;
+      &:after{
+        background-color: $brand-primary;
+      }
+    }
+    &:hover{
+      .bs-accordion-container{
+        border-left: 4px solid darken($brand-primary, 10%);
+        border-right: 4px solid darken($brand-primary, 10%);
+        &:after{
+          background-color: darken($brand-primary, 10%);
+        }
+      }
+      .bs-accordion-heading{
+        background-color: darken($brand-primary, 10%);
+      }
+    }
+  }
+}
+
+.segment-personal{
+  .bs-accordion{
+    .bs-accordion-heading{
+      background-color: $brand-secondary;
+    }
+    .bs-accordion-container{
+      border-left: 4px solid $brand-secondary;
+      border-right: 4px solid $brand-secondary;
+      &:after{
+        background-color: $brand-secondary;
+      }
+    }
+    &:hover{
+      .bs-accordion-container{
+        border-left: 4px solid darken($brand-secondary, 10%);
+        border-right: 4px solid darken($brand-secondary, 10%);
+        &:after{
+          background-color: darken($brand-secondary, 10%);
+        }
+      }
+      .bs-accordion-heading{
+        background-color: darken($brand-secondary, 10%);
+      }
+    }
+  }
+}
+
+.segment-careers{
+  .bs-accordion{
+    .bs-accordion-heading{
+      background-color: $brand-tertiary;
+    }
+    .bs-accordion-container{
+      border-left: 4px solid $brand-tertiary;
+      border-right: 4px solid $brand-tertiary;
+      &:after{
+        background-color: $brand-tertiary;
+      }
+    }
+    &:hover{
+      .bs-accordion-container{
+        border-left: 4px solid darken($brand-tertiary, 10%);
+        border-right: 4px solid darken($brand-tertiary, 10%);
+        &:after{
+          background-color: darken($brand-tertiary, 10%);
+        }
+      }
+      .bs-accordion-heading{
+        background-color: darken($brand-tertiary, 10%);
+      }
+    }
+  }
+}
+
+
+
+
+@media (min-width: $device-m) {
+  .bs-accordion-content{
+    margin: 25px 25px 29px 25px;
+  }
+}
+@media (min-width: $device-l) {
+
+}

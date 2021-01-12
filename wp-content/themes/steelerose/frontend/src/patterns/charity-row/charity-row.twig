@@ -1,0 +1,43 @@
+<div class="dpl-charity-row wrapspace {% if thumbAlign %}thumb-{{ thumbAlign }}{% endif %}  {% if inview %}inview{% endif %}">
+    <div class="container">
+        <div class="row">
+            <div class="columns 12">
+                <div class="charity-row__wrapper">
+                    <div class="charity-row__thumb">
+                        <div class="charity-row__thumb-wrapper">
+                            <img width="150" src="{{ thumb }}" alt="{{ title }}" />
+                        </div>
+                    </div>
+                    <div class="charity-row__content">
+                        <div class="charity-row__content-wrapper">
+                            <div>
+                                {% if title %}
+                                    <h3 class="charity-row__title">
+                                        {{ title }}
+                                    </h3>
+                                {% endif %}
+                                {% if subtitle %}
+                                    <h4 class="charity-row__subtitle">
+                                        <span class="caps color-brand1">{{ subtitle }}</span>
+                                    </h4>
+                                {% endif %}
+                                {% if description %}
+                                    <p class="charity-row__description">
+                                        {{ description }}
+                                    </p>
+                                {% endif %}
+                                {% if buttonHref %}
+                                    {% include "@patterns/overlay-link/overlay-link.twig" with {
+                                        text : buttonLabel,
+                                        href : buttonHref
+                                    } %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

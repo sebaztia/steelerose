@@ -1,0 +1,41 @@
+.dpl-post-grid {
+  position:relative;
+	
+	.row{
+		margin-top: 30px;
+	}
+
+  .row .columns {
+    margin-bottom:$column-padding;
+	  
+	  @media(min-width:$device-m){
+		  max-width: 33.333%;
+	  }
+  }
+
+  .dpl-post-box {
+    margin:0 auto;
+    transition:all .5s ease;
+    position:relative;
+    opacity:0;
+    bottom:-100px;
+    &.inview {
+      opacity:1;
+      bottom:0;
+    }
+  }
+
+  .post-grid__wrapper, .post-grid__content {
+    height:100%;
+  }
+
+  .post-grid__foottext {
+    font-size:90px;
+    color:rgba(0,0,0,.06);
+    font-family:$font-heading;
+    font-weight:800;
+    position:absolute;
+    bottom:-$column-padding;
+    z-index:-1;
+  }
+}

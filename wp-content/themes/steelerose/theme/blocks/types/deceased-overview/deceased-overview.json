@@ -1,0 +1,12 @@
+{
+    "render_template": "deceased-overview.php",
+    "name": "deceased-overview",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Deceased Overview",
+    "description": "Displays the \"Deceased Overview\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

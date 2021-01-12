@@ -1,0 +1,18 @@
+<div class="dpl-arbitrary-navigation">
+	<div class="arbitrary-navigation__title">
+		{{ title }}
+	</div>
+	{% if items %}
+	<nav class="arbitrary-navigation__items">
+		<ul>
+			{% for item in items %}
+				<li>
+					<a href="{{ item.href }}">
+						{{ item.label }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+	{% endif %}
+</div>

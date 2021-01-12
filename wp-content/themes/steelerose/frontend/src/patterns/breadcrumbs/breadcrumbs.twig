@@ -1,0 +1,16 @@
+<div class="dpl-breadcrumbs {% if style %} {{ style }}{% endif %}">
+	<div class="container">
+		<div class="row">
+			<div class="columns twelve">
+				<div class="breadcrumbs__wrapper">
+					{% for crumb in crumbs %}
+						<a href="{{ crumb.link }}">{{ crumb.label }}</a> <i class="fas fa-chevron-right"></i>
+					{% endfor %}
+					<span class="breadcrumbs__current">
+						{{ page }}
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

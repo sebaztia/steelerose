@@ -1,0 +1,30 @@
+<div class="dpl-header-search">
+	{% if icon %}
+	<a href="#" class="header-search__trigger">
+		<i class="icon-search"></i>
+	</a>
+	{% else %}
+		<div class="header-search__wrapper">
+			<div class="container">
+				<div class="header-search__label">
+					<label for="header-search-field">
+						<i class="icon-chevron-right"></i>
+					</label>
+				</div>
+				<div class="header-search__field">
+					<input id="header-search-field" type="text" placeholder="Type in your search" />
+				</div>
+				<div class="header-search__button">
+					{% include "@patterns/button/button.twig" with {
+						element : "button",
+						label : "GO"
+					} %}
+				</div>
+				<div class="header-search__close">
+					<a href="#">X</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	{% endif %}
+</div>

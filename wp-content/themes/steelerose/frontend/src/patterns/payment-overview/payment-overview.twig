@@ -1,0 +1,10 @@
+<div class="dpl-payment-overview">
+    <p>
+        You are purchasing: <br />
+        {% for product in products %}
+            <b>{{ product.task }}</b><br />
+        {% endfor %}
+        for <b>{{ total }}</b>.
+    </p>
+    <br />
+</div>

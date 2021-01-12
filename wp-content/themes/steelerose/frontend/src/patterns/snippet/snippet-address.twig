@@ -1,0 +1,37 @@
+<div class="dpl-snippet">
+	<div class="snippet__icon">
+		<svg class="icon icon-map-marker">
+			<use xlink:href="#icon-map-marker"></use>
+		</svg>
+	</div>
+	<div class="snippet__content">
+		{% if global.companyMapLink %}
+			<a href="{{ global.companyMapLink }}" target="_blank">
+		{% endif %}
+		<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<p>
+				{% if global.companyName %}
+					{{ global.companyName }}<br />
+				{% endif %}
+				<span itemprop="streetAddress">
+					{% if global.companyAdd1 %}
+						{{ global.companyAdd1 }}<br />
+					{% endif %}
+					{% if global.companyAdd2 %}
+						{{ global.companyAdd2 }}<br />
+					{% endif %}
+				</span>
+				{% if global.companyPostcode %}
+					<span itemprop="postalCode">{{ global.companyPostcode }}</span>
+				{% endif %}
+				{% if global.companyTown %}
+					,  <span itemprop="addressLocality">{{ global.companyTown }}</span>
+				{% endif %}
+			</p>
+		</address>
+		{% if global.companyMapLink %}
+			</a>
+		{% endif %}
+	</div>
+	<div class="clearfix"></div>
+</div>

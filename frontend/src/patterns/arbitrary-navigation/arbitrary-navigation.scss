@@ -1,0 +1,25 @@
+.dpl-arbitrary-navigation {
+
+  .arbitrary-navigation__title {
+    font-size:$h3-size;
+    font-weight:bold;
+  }
+
+  ul, li {
+    margin-left:0;
+    padding-left:0;
+  }
+
+  li {
+    border-bottom:1px solid $bg-light;
+
+    a {
+      padding:5px 0 10px 0;
+      display:block;
+    }
+
+    &:last-child {
+      border-bottom:0;
+    }
+  }
+}

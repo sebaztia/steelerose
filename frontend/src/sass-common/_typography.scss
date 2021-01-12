@@ -1,0 +1,263 @@
+/************************************************************************************************
+                     * VARIABLES
+ ************************************************************************************************/
+
+// Headings
+$heading-color: $font-heading-color;
+$heading-weight: $font-weight-normal;
+$heading-margin: 40px 0 30px;
+$heading-padding: $font-padding;
+$heading-letter-spacing: $font-letter-spacing;
+$heading-transform: none;
+$h1-size: 30px;
+$h2-size: 24px;
+$h3-size: 22px;
+$h4-size: 20px;
+$h5-size: 18px;
+$h6-size: 16px;
+$small-font-size: 12px;
+
+// Paragraph
+$para-color: $font-body-color;
+$para-size: $font-size;
+$para-weight: $font-weight-normal;
+$para-margin: $font-margin;
+$para-padding: $font-padding;
+$para-letter-spacing: $font-letter-spacing;
+$para-transform: none;
+
+// Lists items (if not changed inherits from paragraph)
+$list-color: $para-color;
+$list-size: $para-size;
+$list-weight: $para-weight;
+$list-margin: 0 0 10px;
+$list-padding: 0;
+$list-letter-spacing: $para-letter-spacing;
+$list-transform: none;
+
+// Lists containers
+$list-container-margin: 10px 0;
+$list-container-padding-left: 20px;
+
+// Blockquotes
+$blockquote-border: 3px solid $font-body-color;
+$blockquote-color: $para-color;
+$blockquote-margin: 30px 0;
+$blockquote-padding: 0 0 0 25px;
+$blockquote-size: $para-size;
+$blockquote-style: none;
+
+/************************************************************************************************
+                     * TYPOGRAPHY
+ ************************************************************************************************/
+.hori-list{
+	>li, >div, >a{
+		font-size: $font-size;
+	}
+}
+
+a{
+	color: $brand-primary;
+	font-weight: $font-weight-normal;
+	outline: 0;
+	text-decoration: none;
+
+	&[href^="mailto:"]{
+		/* These are technically the same, but use both */
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+	}
+
+	&:hover{
+		color: darken($brand-primary, 10%);
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	//color: $heading-color;
+	font-family: $font-heading;
+	font-weight: $heading-weight;
+	letter-spacing: $heading-letter-spacing;
+	line-height: $font-line-height;
+	margin: 30px 0 20px;
+	padding: $heading-padding;
+	text-transform: $heading-transform;
+
+	&:first-child{
+		margin-top: 0;
+	}
+
+	@media(min-width: $device-m){
+		margin: $heading-margin;
+	}
+}
+h1, .h1{
+	font-size: $h1-size;
+}
+h2, .h2{
+	font-size: $h2-size;
+}
+h3, .h3{
+	font-size: $h3-size;
+}
+h4, .h4{
+	font-size: $h4-size;
+}
+h5, .h5{
+	font-size: $h5-size;
+}
+h6, .h6{
+	font-size: $h6-size;
+}
+
+.section-title{
+	margin: 0 0 20px;
+
+	@media(min-width: $device-m){
+		margin: 0 0 30px;
+	}
+}
+
+.middle-column.section-title{
+	margin-bottom: 40px;
+
+	@media(min-width: $device-m){
+		margin-bottom: 60px;
+	}
+}
+
+strong, b{
+	font-weight: $font-weight-bold;
+}
+
+p{
+	//color: $para-color;
+	font-size: $para-size;
+	font-weight: $para-weight;
+	letter-spacing: $para-letter-spacing;
+	line-height: $font-line-height;
+	margin: 0 0 20px;
+	padding: $para-padding;
+	text-transform: $para-transform;
+
+	@media(min-width: $device-m){
+		margin: $para-margin;
+
+		/*&:first-of-type{
+			font-size: $font-size + 2;
+			font-weight: $font-weight-bold;
+		}*/
+	}
+}
+
+li{
+	color: $list-color;
+	font-size: $list-size;
+	font-weight: $list-weight;
+	letter-spacing: $list-letter-spacing;
+	margin: $list-margin;
+	padding: $list-padding;
+	text-transform: $list-transform;
+}
+
+blockquote{
+	border-left: $blockquote-border;
+	color: $blockquote-color;
+	font-size: $blockquote-size;
+	font-style: $blockquote-style;
+	margin: $blockquote-margin;
+	padding: $blockquote-padding;
+
+	p:first-of-type{
+		font-size: $blockquote-size;
+		font-weight: $font-weight-normal;
+	}
+}
+
+ul, ol{
+	margin: $list-container-margin;
+	padding-left:  $list-container-padding-left;
+}
+
+ol{
+	padding-left:  $list-container-padding-left + 5;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, ol{
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.standfirst {
+	font-size:$h3-size;
+}
+
+/************************************************************************************************
+                     * Larger than mobile
+ ************************************************************************************************/
+@media (min-width: $device-xs) {
+
+}
+
+/************************************************************************************************
+                     * Larger than phablet (also point when grid becomes active)
+ ************************************************************************************************/
+@media (min-width: $device-s) {
+
+}
+
+/************************************************************************************************
+                     * Larger than tablet
+ ************************************************************************************************/
+@media (min-width: $device-m) {
+	h1{
+		font-size: $h1-size + 20;
+	}
+	h2{
+		font-size: $h2-size + 20;
+	}
+	h3{
+		font-size: $h3-size + 20;
+	}
+	h4{
+		font-size: $h4-size + 10;
+	}
+	h5{
+		font-size: $h5-size + 10;
+	}
+	h6{
+		font-size: $h6-size + 10;
+	}
+}
+
+/************************************************************************************************
+                     * Larger than desktop
+ ************************************************************************************************/
+@media (min-width: $device-l) {
+
+}
+
+/************************************************************************************************
+                     * Larger than desktop HD
+ ************************************************************************************************/
+@media (min-width: $device-xl) {
+	h1{
+		font-size: $h1-size + 30;
+	}
+	h2{
+		font-size: $h2-size + 25;
+	}
+	h3{
+		font-size: $h3-size + 25;
+	}
+	h4{
+		font-size: $h4-size + 15;
+	}
+	h5{
+		font-size: $h5-size + 15;
+	}
+	h6{
+		font-size: $h6-size + 15;
+	}
+}

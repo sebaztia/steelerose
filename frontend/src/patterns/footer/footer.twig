@@ -1,0 +1,70 @@
+<footer class="dpl-footer">
+    <div class="container">
+        <div class="row">
+            <div class="columns four">
+                {% include "@patterns/logo/logo.twig" with {
+                    src : "/public/150x100.png",
+                    alt : "Steele Rose",
+                    link : "/"
+                } %}
+                {% include "@patterns/snippet/snippet-address.twig" %}
+                {% include "@patterns/snippet/snippet-telephone.twig" %}
+                {% include "@patterns/snippet/snippet-email.twig" %}
+            </div>
+            <div class="columns four">
+                {% include "@patterns/arbitrary-navigation/arbitrary-navigation.twig" with {
+                    title : "Title in here",
+                    items : [
+                        {
+                            href : "#",
+                            label : 'About us'
+                        },
+                        {
+                            href : "#",
+                            label : 'Latest News'
+                        },
+                        {
+                            href : "#",
+                            label : 'Contact us'
+                        },
+                        {
+                            href : "#",
+                            label : 'Terms & Conditions'
+                        },
+                        {
+                            href : "#",
+                            label : 'Privacy Policy'
+                        }
+                    ]
+                } %}
+            </div>
+            <div class="columns four">
+                {% include "@patterns/arbitrary-navigation/arbitrary-navigation.twig" with {
+                    title : "Title in here",
+                    items : [
+                        {
+                            href : "#",
+                            label : 'Probate'
+                        },
+                        {
+                            href : "#",
+                            label : 'Wills'
+                        },
+                        {
+                            href : "#",
+                            label : 'Charities'
+                        },
+                        {
+                            href : "#",
+                            label : 'Probate Machine'
+                        }
+                    ]
+                } %}
+
+                {% include "@patterns/social-icons/social-icons.twig" with {
+                    class : "dark"
+                } %}
+            </div>
+        </div>
+    </div>
+</footer>

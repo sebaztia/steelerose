@@ -1,0 +1,48 @@
+{
+    "key": "group_5e6215a31542f",
+    "title": "Block\/form-login-registration",
+    "fields": [
+        {
+            "key": "field_5f22c9cb801aa",
+            "label": "Tab order",
+            "name": "Block\/form-login-registration\/tabOrder",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "registration-first": "Registration first",
+                "login-first": "Login first"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "registration-first",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/form-login-registration"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1600165637
+}

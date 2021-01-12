@@ -1,0 +1,68 @@
+.dpl-stat-grid {
+  background-color:$brand4;
+
+  .stat-grid__wrapper {
+    text-align:center;
+    padding:$column-padding;
+    box-sizing:border-box;
+  }
+
+  .stat-grid__content {
+    transition:all .5s ease;
+    position:relative;
+    opacity:0;
+    bottom:-100px;
+    max-width:300px;
+    margin:0 auto;
+
+    p.standfirst {
+      color:white;
+    }
+
+    &.inview {
+      opacity:1;
+      bottom:0;
+    }
+  }
+
+  .stat-grid__title {
+    text-align:center;
+    font-size:$h1-size;
+    color:white;
+    font-weight:bold;
+  }
+
+  .stat-grid__number {
+    font-family:$font-heading;
+    font-size:100px;
+    font-weight:bold;
+    color:rgba(0,0,0,.1);
+    position:relative;
+    top:30px;
+    margin-top:-30px;
+  }
+
+  .columns {
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    margin-top:$column-padding;
+    margin-bottom:$column-padding;
+  }
+
+  .columns:nth-child(3n-1) {
+    border-left-color:lighten($brand4, 5%);
+    border-right-color:lighten($brand4, 5%);
+  }
+}
+
+@media (max-width: $device-m - 1) {
+  .dpl-stat-grid {
+    .stat-grid__wrapper {
+      padding:0;
+
+    }
+    .columns {
+      border: none;
+    }
+  }
+}

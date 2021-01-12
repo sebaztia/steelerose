@@ -1,0 +1,9 @@
+<div class="dpl-logo">
+	{% if siteLogoLink %}
+		<a href="{{ siteLogoLink }}">
+	{% endif %}
+		<img src="{{ siteLogoSrc }}" alt="{{ siteLogoAlt }}">
+	{% if siteLogoLink %}
+		</a>
+	{%  endif %}
+</div>

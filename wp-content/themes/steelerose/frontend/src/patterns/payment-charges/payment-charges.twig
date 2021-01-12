@@ -1,0 +1,18 @@
+<div class="dpl-payment-charges">
+    {% if charges %}
+        <ul>
+            {% for charge in charges %}
+                <li>
+                    <p>
+                        <b>Date : </b> {{ charge.created }}<br />
+                        <b>Amount</b> : {{ charge.amount }}<br />
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p><b>No payments yet</b></p>
+    {% endif %}
+</div>
+
+

@@ -1,0 +1,12 @@
+{
+    "render_template": "stat-grid.php",
+    "name": "stat-grid",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Stat Grid",
+    "description": "Displays the \"Stat grid\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

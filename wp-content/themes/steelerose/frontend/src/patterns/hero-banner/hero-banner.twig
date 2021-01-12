@@ -1,0 +1,36 @@
+<div class="dpl-hero-banner
+{% if imgPos %} image-pos-{{ imgPos }}{% endif %}
+{% if textColour %} text-{{ textColour }}{% endif %}
+{% if backgroundColour %} bg-{{ backgroundColour }}{% endif %}
+{% if twoThirdsContent %} two-thirds-content{% endif %}
+{% if imgCnt %} image-contain{% endif %}
+">
+    {% if footText %}
+        {% include "@patterns/foottext/foottext.twig" with {
+            text : footText
+        } %}
+    {% endif %}
+    <section class="section-row">
+        <div class="container position-static" >
+            <div class="hero-banner-column-1">
+                {% if h1  %}
+                    <h1>{{ title }}</h1>
+                {% else %}
+                    <h2>{{ title }}</h2>
+                {% endif %}
+                {% if content %}
+                    {{ content }}
+                {% endif %}
+            </div>
+            <div class="hero-banner-column-2">
+                <div class="hero-banner-image
+                {% if imgAlign %} {{ imgAlign }}{% endif %}">
+                    <img src="{{ imgSrc }}" alt="{{ title }}" />
+                </div>
+            </div>
+        </div>
+    </section>
+    {% if breadcrumbs %}
+        {{ breadcrumbs }}
+    {% endif %}
+</div>

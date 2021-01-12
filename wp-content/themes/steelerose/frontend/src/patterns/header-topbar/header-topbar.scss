@@ -1,0 +1,8 @@
+.dpl-header-topbar {
+  background:$bg-medium;
+  // margin-bottom:10px;
+
+  .header-topbar__login, .header-topbar__search{
+    display:inline-block;
+  }
+}

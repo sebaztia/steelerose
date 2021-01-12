@@ -1,0 +1,24 @@
+.dpl-post-grid {
+  margin-bottom:$column-padding;
+
+  .row .columns {
+    margin-bottom:$column-padding;
+  }
+
+  .dpl-post-box {
+    width:calc(100% - #{$column-padding} * 2);
+    margin:0 auto;
+    transition:all .5s ease;
+    position:relative;
+    opacity:0;
+    bottom:-100px;
+    &.inview {
+      opacity:1;
+      bottom:0;
+    }
+  }
+
+  .post-grid__wrapper, .post-grid__content {
+    height:100%;
+  }
+}

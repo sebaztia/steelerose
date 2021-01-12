@@ -1,0 +1,56 @@
+<div class="dpl-tabs
+{% if backgroundColour %} bg-{{ backgroundColour }}{% endif %}
+">
+    <div class="section-row">
+        <div class="tabs__nav-wrapper">
+            {% if embed == false %}
+            <div class="container">
+                {% endif %}
+                <ul class="tabs__tab-wrapper">
+                    {% for tab in  tabs %}
+                        <li data-index="{{ loop.index }}" {% if loop.index == 1 %}class="active first-load"{% endif %}>
+                            {% if tab.icon %}
+                                <div class="tabs__tab-title">
+                                    <div class="tabs__tab-icon">
+                                        <img src="{{ tab.icon }}" alt="{{ tab.title }}" />
+                                    </div>
+                                    <div class="tabs__tab-title-wrapper">
+                                        {{ tab.title }}
+                                    </div>
+                                </div>
+                            {% else %}
+                                {{ tab.title }}
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% if embed == false %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="tabs__main-wrapper">
+            {% if embed == false %}
+            <div class="container">
+                {% endif %}
+                <ul class="tabs__tab-content">
+                    {% for tab in  tabs %}
+                        <li data-index="{{ loop.index }}" {% if loop.index == 1 %}class="active"{% endif %}>
+                            <div class="tabs__tab-content-wrapper">
+                                {% if tab.contentType == 'accordion' %}
+                                    {% include "@patterns/accordion/accordion.twig" with {
+                                        embed : true,
+                                        accordions : tab.accordions
+                                    }%}
+                                {% else %}
+                                    {{ tab.content }}
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% if embed == false %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

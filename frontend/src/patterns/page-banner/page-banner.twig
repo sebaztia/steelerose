@@ -1,0 +1,12 @@
+<div class="dpl-page-banner {% if style %}{{ style }}{% endif %}">
+    {% if imgSrc %}
+        <img src="{{ imgSrc }}" alt="{{ imgAlt }}" />
+    {% endif %}
+	<div class="page-banner__wrapper">
+            {% if title %}
+                <div class="page-banner__title">
+                    <h1>{{ title }}</h1>
+                </div>
+            {% endif %}
+	</div>
+</div>

@@ -1,0 +1,25 @@
+.dpl-footer {
+  background:$bg-dark;
+  color:white;
+  position:relative;
+	
+	.section-row{
+		position: relative;
+	}
+
+  .dpl-arbitrary-navigation {
+    li {
+      border-bottom-color:$bg-medium;
+    }
+
+    a {
+      color:white;
+    }
+  }
+
+	@media(max-width: $device-m - 1){
+	  .columns {
+		margin-bottom:$column-padding;
+	  }
+	}
+}

@@ -1,0 +1,307 @@
+{
+  "tabTitle": "Stage 0",
+  "title": "Sandbox Section",
+  "icon": "",
+  "status": "enabled",
+  "sections": [
+    {
+      "id" : "s001",
+      "title" : "(s001) Section with just plain ol' fields",
+      "status" : "enabled",
+      "tasks" : [
+        {
+          "id" : "t001",
+          "title" : "(t001) Task 1",
+          "status" : "enabled",
+          "questions" : [
+            {
+              "id": "q001",
+              "label" : "(q001) A simple text field",
+              "status" : "enabled",
+              "type" : "Text",
+              "value" : "Value 1",
+              "tooltip" : {
+                "help" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+                "gov" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+              }
+            },
+            {
+              "id": "q002",
+              "label" : "(q002) Another simple text field",
+              "status" : "enabled",
+              "type" : "Text",
+              "value" : "Value 2",
+              "tooltip" : {
+                "help" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+                "gov" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+              }
+            },
+            {
+              "id": "q003",
+              "label" : "(q003) Another simple text field (full width)",
+              "status" : "enabled",
+              "fieldFullWidth" : true,
+              "type" : "Text",
+              "value" : "Value 2"
+            },
+            {
+              "id" : "q004",
+              "label" : "(q004) A radio field",
+              "status" : "enabled",
+              "type" : "Radio",
+              "value" : "Yes",
+              "options" : [
+                "Yes", "No"
+              ]
+            },
+            {
+              "id" : "q005",
+              "label" : "(q005) A radio field (with conditional question)",
+              "status" : "enabled",
+              "type" : "Radio",
+              "value" : "",
+              "options" : [
+                "Yes", "No"
+              ],
+              "enableConditions" : [
+                {
+                  "target" : "q006",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "q006",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q005",
+              "label" : "(q005) A radio field (Yes enables t004 which is a chargeable task)",
+              "status" : "enabled",
+              "type" : "Radio",
+              "value" : "",
+              "options" : [
+                "Yes", "No"
+              ],
+              "tooltip" : {
+                "help" : "In this case t004 appears automatically when Yes is selected but in reality we pass the enabled_inithide status to hide the task before Submit."
+              },
+              "enableConditions" : [
+                {
+                  "target" : "t004",
+                  "thisValueIs" : "Yes",
+                  "updateTargetStatus" : "enabled"
+                },
+                {
+                  "target" : "t004",
+                  "thisValueIs" : "No",
+                  "updateTargetStatus" : "disabled"
+                }
+              ]
+            },
+            {
+              "id" : "q006",
+              "label" : "A hidden field until q005 is Yes",
+              "type" : "Text",
+              "value" : "",
+              "status" : "disabled"
+            },
+            {
+              "id" : "q007",
+              "label": "(q007) Date field",
+              "type": "Date",
+              "status" : "enabled",
+              "value" : "15,November,1982"
+            },
+            {
+              "id" : "q008",
+              "label": "(q008) NI Number field",
+              "type": "NINumber",
+              "status" : "enabled",
+              "value" : "JE274042C"
+            },
+            {
+              "id" : "q009",
+              "label": "(q009) Select field",
+              "type": "Select",
+              "status" : "enabled",
+              "value" : "Option 1",
+              "options" : [
+                "Option 1", "Option 2"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "t002",
+          "title" : "(t002) Task 2 (validation errors)",
+          "status" : "enabled",
+          "questions" : [
+            {
+              "id": "q010",
+              "label" : "(q010) A simple text field",
+              "status" : "enabled",
+              "type" : "Text",
+              "value" : "",
+              "errors" : ["This is required"]
+            },
+            {
+              "id" : "q011",
+              "label" : "(q011) A radio field",
+              "status" : "enabled",
+              "type" : "Radio",
+              "value" : "",
+              "options" : [
+                "Yes", "No"
+              ],
+              "errors" : ["This is incorrect"]
+            }
+          ]
+        },
+        {
+          "id" : "t003",
+          "title" : "(t003) Task 3 (completed state)",
+          "status" : "completed",
+          "questions" : [
+            {
+              "id" : "q012",
+              "label" : "(q012) Just some question",
+              "type" : "Text",
+              "status" : "complete",
+              "value" : "Accepted value"
+            }
+          ]
+        },
+        {
+          "id" : "t004",
+          "title" : "(t004) Task 4 chargeable",
+          "price" : 50000,
+          "status" : "disabled"
+        }
+      ]
+    },
+    {
+      "id" : "s002",
+      "title" : "(s002) Section with repeaters",
+      "status" : "enabled",
+      "tasks" : [
+        {
+          "id": "t005",
+          "title" : "Simple repeater",
+          "status" : "enabled",
+          "questions" : [
+            {
+              "id": "q013",
+              "label": "(q013) Does this person have something? (Select Yes)",
+              "status": "enabled",
+              "type": "Repeater",
+              "fieldFullWidth": true,
+              "value": "",
+              "radio": true,
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "repeatableQuestions": [
+                {
+                  "id" : "q014",
+                  "label" : "(q014) Name of account",
+                  "status" : "enabled",
+                  "type" : "Text",
+                  "value" : ""
+                },
+                {
+                  "id" : "q015",
+                  "label" : "(q015) Do you know how much was in the account?",
+                  "type" : "Radio",
+                  "status" : "enabled",
+                  "value" : "",
+                  "options" : [
+                    "Yes", "No"
+                  ],
+                  "enableConditions" : [
+                    {
+                      "target" : "q016",
+                      "thisValueIs" : "Yes",
+                      "updateTargetStatus" : "enabled"
+                    },
+                    {
+                      "target" : "q016",
+                      "thisValueIs" : "No",
+                      "updateTargetStatus" : "disabled"
+                    },
+                    {
+                      "createTask": {
+                        "section": "s002",
+                        "id": "t006",
+                        "title": "Find out what's in account {{q014}}",
+                        "status": "enabled",
+                        "price": 1000,
+                        "createIfValueIs": "No",
+                        "deleteIfValueIs": "Yes"
+                      }
+                    }
+                  ],
+                  "tooltip" : {
+                    "help" : "Selecting Yes will enable q016. Selecting No will create a new chargeable task."
+                  }
+                },
+                {
+                  "id" : "q016",
+                  "label" : "(q016) How much was in the account {{q014}}?",
+                  "type" : "Text",
+                  "value" : "",
+                  "status" : "disabled"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "s003",
+      "title": "(s003) Address",
+      "tasks" : [
+        {
+          "id": "t007",
+          "title": "Address",
+          "status": "enabled",
+          "questions": [
+            {
+
+              "id" : "q017",
+              "label" : "(q017) Add addresses",
+              "type": "Repeater",
+              "fieldFullWidth": true,
+              "value": "",
+              "radio": true,
+              "status" : "enabled",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "repeatableQuestions": [
+                {
+                  "id" : "q018",
+                  "label" : "(q018) Address of account",
+                  "status" : "enabled",
+                  "type" : "Address",
+                  "value" : "",
+                  "validation" : {
+                    "address" : {
+                      "test" : true,
+                      "message" : "Address is incomplete"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

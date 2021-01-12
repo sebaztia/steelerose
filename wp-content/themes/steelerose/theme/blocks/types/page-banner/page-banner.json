@@ -1,0 +1,12 @@
+{
+    "render_template": "page-banner.php",
+    "name": "page-banner",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Page Banner",
+    "description": "Displays a Page Banner",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

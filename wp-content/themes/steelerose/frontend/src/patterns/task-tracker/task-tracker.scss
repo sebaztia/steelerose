@@ -1,0 +1,162 @@
+// VARS
+$circle-width: 0.04em;
+// $circle-width-hover: 0.04em;
+
+// CIRCLE
+// classes 2 extend
+.rect-auto{
+  clip: rect(auto, auto, auto, auto);
+}
+
+.tracker-text-col{
+	.h2-size{
+		color: lighten($font-body-color, 10%);
+		margin-bottom: 10px;
+	}
+	strong{
+		color: $brand2;
+	}
+}
+
+.pie {
+  position: absolute;
+  border: $circle-width solid $brand2;
+  width: 1 - (2 * $circle-width);
+  height: 1 - (2 * $circle-width);
+  clip: rect(0em, 0.5em, 1em, 0em);
+  border-radius: 50%;
+  @include rotate(0deg);
+}
+
+.pie-fill {
+  @include rotate(180deg);
+}
+
+.dpl-task-tracker{	
+  background: $probate-machine-tabcontent-light;
+}
+
+// main
+.c100 {
+  *, *:before, *:after {
+    @include box-sizing(content-box);
+  }
+
+  position: relative;
+  font-size: 120px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  float: left;
+  background-color: $grey-medium;
+
+  &.center{
+    float: none;
+    margin:($section-padding / 4) auto;
+
+  }
+
+  &.big{
+    font-size: 240px;
+  }
+
+  &.small {
+    font-size:150px;
+  }
+
+  // centered value inside circle
+  > span {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 5em;
+    line-height: 5em;
+    font-size: 0.2em;
+    color: $grey-medium;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    @include transition-property(all);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-out);
+  }
+
+  // background inside the circle
+  &:after{
+    position: absolute;
+    top: $circle-width;
+    left: $circle-width;
+    display: block;
+    content: " ";
+    border-radius: 50%;
+    background-color: white;
+    width: 1 - (2 * $circle-width);
+    height: 1 - (2 * $circle-width);
+    @include transition-property(all);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-in);
+
+  }
+
+  // the slice (mask)
+  .slice {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    clip: rect(0em, 1em, 1em, 0.5em);
+  }
+
+  // circle to show the status
+  .bar {
+    @extend .pie;
+  }
+
+
+  // loop to create all needed elements automatically
+  @for $j from 51 through 100 {
+
+    &.p#{$j} .slice {
+      @extend .rect-auto;
+    }
+
+    &.p#{$j} .bar:after{
+      @extend .pie-fill;
+    }
+
+    &.p#{$j} .fill{
+      @extend .pie;
+      @extend .pie-fill;
+    }
+
+  }
+
+  // loop to rotate all 100 circles
+  @for $j from 1 through 100 {
+    &.p#{$j} .bar {
+      @include rotate((360/100*$j) + deg);
+    }
+  }
+}
+
+.dpl-task-tracker {
+  i.stat-percent, i.stat-completed {
+    display:block;
+    font-style:normal;
+    line-height:1em;
+  }
+
+  i.stat-completed {
+    font-size:$font-size + 4;
+	  margin-top: 10px;
+  }
+
+  span.stat-wrapper {
+    display:flex;
+    height:100%;
+    width:100%;
+    align-items:center;
+    justify-content: center;
+  }
+}

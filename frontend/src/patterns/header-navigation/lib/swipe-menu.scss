@@ -1,0 +1,280 @@
+////// Variables ///////
+
+// Swipe panel
+$swipe-panel-width: 250px;
+$swipe-panel-width-large: 500px;
+$swipe-padding: 40px 25px;
+$swipe-background: white;
+$swipe-z-index: 99999;
+
+// Swipe footer
+$swipe-footer-bg: $swipe-background;
+$swipe-footer-padding: $swipe-padding;
+
+// Overlay
+$swipe-overlay-bg: $bg-overlay;
+$swipe-overlay-opacity: 1;
+$swipe-overlay-transition: all 0.5s ease-in-out;
+
+// Transitions
+$swipe-menu-transition: all 0.3s cubic-bezier(.4,0,.2,1) .1s;
+
+
+$swipe-firstMenu-transition: $swipe-menu-transition;
+$swipe-panel-transition: $swipe-menu-transition;
+$swipe-overlay-transition: $swipe-menu-transition;
+
+// Typography
+$swipe-heading-size: 30px;
+$swipe-heading-color: $font-heading-color;
+
+$swipe-link-size: 22px;
+$swipe-link-color: $font-heading-color;
+
+// SWIPE Prev Next buttons
+$swipe-prevnext-padding: 10px;
+$swipe-prevnext-size: 22px;
+$swipe-prevnext-color: $font-heading-color;
+$swipe-prevnext-left: $swipe-prevnext-padding;
+$swipe-prevnext-right: $swipe-prevnext-padding;
+$swipe-prev-top: -12px;
+$swipe-next-top: 1px;
+
+
+/////// Transititions Styles ////////
+
+body, .swipe-menu{
+  @include transition($swipe-menu-transition);
+}
+
+// First menu
+.swipe-open > h2, .swipe-open > ul, .swipe-footer{
+  @include transition($swipe-firstMenu-transition);
+}
+
+// Inner menu panels
+.swipe-panel, .swipe-first-panel{
+  @include transition($swipe-panel-transition);
+}
+
+
+body{
+  position: relative;
+
+  &.swipe-open{
+    overflow: hidden;
+  }
+}
+
+.swipe-menu{
+  background-color: $swipe-background;
+  @include box-sizing(border-box);
+  bottom: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: $swipe-padding;
+  position: fixed;
+  @include transform(translate3d(0, 0, 0));
+  top: 0;
+  visibility: hidden;
+  width: $swipe-panel-width;
+  z-index: $swipe-z-index;
+
+  .swipe-footer{
+    width: $swipe-panel-width;
+  }
+  &.left-swipe{
+    @include transform(translate3d(-$swipe-panel-width, 0, 0));
+  }
+
+  &.right-swipe{
+    right: 0;
+    @include transform(translate3d($swipe-panel-width, 0, 0));
+  }
+
+  &.swipe-open.left-swipe{
+    visibility: visible;
+    @include transform(translate3d(0, 0, 0));
+
+    &.previous-panel{
+      > h2, > ul, .swipe-footer{
+        @include transform(translate3d(-($swipe-panel-width / 4), 0, 0));
+      }
+    }
+  }
+
+  &.swipe-open.right-swipe{
+    visibility: visible;
+    @include transform(translate3d(0, 0, 0));
+
+    // &.previous-panel{
+    // 	> h2, > ul{
+    // 		left: 0;
+    // 		@include transform(translate3d(-($swipe-panel-width / 4), 0, 0));
+    // 	}
+    // }
+  }
+
+  ul{
+    margin: 0;
+    padding: 20px 0 20px;
+  }
+
+  li{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+
+    &:before{
+      background: $brand-secondary;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      @include transform(translate3d(-50%, 0, 0));
+      width: 50px;
+    }
+
+    &:last-child:before{
+      display: none;
+    }
+
+    a{
+      color: $swipe-link-color;
+      display: block;
+      font-family: $font-heading;
+      font-size: $swipe-link-size;
+      font-weight: $font-weight-normal;
+      padding: 15px 0;
+    }
+  }
+
+  .swipe-prev-panel, .swipe-next-panel{
+    color: $swipe-prevnext-color;
+    font-size: $swipe-prevnext-size;
+    padding: $swipe-prevnext-padding;
+    position: absolute;
+    right: -$swipe-prevnext-right;
+    top: $swipe-next-top;
+  }
+
+  .swipe-prev-panel{
+    left: -$swipe-prevnext-left;
+    right: auto;
+    top: $swipe-prev-top;
+  }
+
+  h2{
+    color: $swipe-heading-color;
+    margin-bottom: 0;
+    position: relative;
+    font-size: $swipe-heading-size;
+    text-align: center;
+
+    img{
+      display: inline-block;
+      max-width: 200px;
+    }
+  }
+
+  .swipe-panel, .swipe-first-panel{
+    background: $swipe-background;
+    bottom: 0;
+    @include box-sizing(border-box);
+    min-height: 100%;
+    padding: $swipe-padding;
+    position: absolute;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    top: 0;
+    width: $swipe-panel-width;
+    z-index: $swipe-z-index + 1;
+    left: $swipe-panel-width;
+
+    &.swipe-panel-open{
+      left: 0;
+    }
+
+    &.previous-panel{
+      left: 0;
+      @include transform(translate3d(-($swipe-panel-width / 4), 0 , 0));
+    }
+  }
+
+}
+.swipe-footer{
+  @include box-sizing(border-box);
+  background: $swipe-footer-bg;
+  bottom: 0;
+  max-width: $swipe-panel-width;
+  padding: $swipe-footer-padding;
+  width: 100%;
+  position: fixed;
+  z-index: $swipe-z-index + 2;
+}
+.swipe-overlay{
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $swipe-overlay-bg;
+  z-index: 2;
+  @include transform(translate3d(0,0,0));
+  @include transition($swipe-overlay-transition);
+  z-index: $swipe-z-index - 1;
+
+  &.swipe-open{
+    visibility: visible;
+    opacity: $swipe-overlay-opacity;
+  }
+}
+
+
+@media (min-width: $device-m) {
+
+  .swipe-menu{
+    width: $swipe-panel-width-large;
+    .swipe-footer{
+      width: $swipe-panel-width-large;
+    }
+    &.left-swipe{
+      @include transform(translate3d(-$swipe-panel-width-large, 0, 0));
+    }
+
+    &.right-swipe{
+      @include transform(translate3d($swipe-panel-width-large, 0, 0));
+    }
+
+    &.swipe-open.left-swipe{
+      &.previous-panel{
+        > h2, > ul, .swipe-footer{
+          @include transform(translate3d(-($swipe-panel-width-large / 4), 0, 0));
+        }
+      }
+    }
+
+    .swipe-panel, .swipe-first-panel{
+      width: $swipe-panel-width-large;
+      left: $swipe-panel-width-large;
+      &.previous-panel{
+        left: 0;
+        @include transform(translate3d(-($swipe-panel-width-large / 4), 0 , 0));
+      }
+    }
+  }
+
+  .swipe-footer{
+    max-width: $swipe-panel-width-large;
+  }
+
+
+}

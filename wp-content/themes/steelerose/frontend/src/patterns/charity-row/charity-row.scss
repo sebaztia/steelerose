@@ -1,0 +1,131 @@
+.dpl-charity-row {
+  width:100%;
+  max-width:1100px;
+  margin: $column-padding auto;
+  padding:$column-padding 0;
+  box-sizing:border-box;
+  overflow:hidden;
+	
+	.row{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.columns{
+		float: none;
+		margin: 0 auto;
+		max-width: 970px;
+		padding-left:0;
+		padding-right:0;
+	}
+
+  .charity-row__wrapper {
+    position:relative;
+    left:-$container-width;
+    right:auto;
+    transition:all .5s ease;
+  }
+
+  &.inview {
+    .charity-row__wrapper {
+      left: 0;
+    }
+  }
+
+  &:first-child {
+    border-top:none;
+  }
+
+  .charity-row__thumb {
+    width:250px;
+    overflow:hidden;
+    float:left;
+    text-align:center;
+
+    img {
+      border-radius: 10% 50%;
+		width: 100%;
+    }
+  }
+
+  .charity-row__content {
+    width:calc(100% - 300px);
+    padding-right:$column-padding;
+    box-sizing:border-box;
+    float:right;
+  }
+
+  .charity-row__content-wrapper {
+    display: flex;
+    align-items: center;
+    height:100%;
+
+	  h3, h4{
+		  font-family: "red hat display", sans-serif;
+	  }
+    h3 {
+	  color: $font-heading-color;
+      margin:0;
+		
+		@media(min-width: $device-m){
+			font-size: 28px;
+		}
+    }
+
+    h4 {
+      color:$brand1l;
+	  font-size: 16px;
+      margin-top: 5px;
+    }
+  }
+
+
+  .charity-row__description {
+    margin:$column-padding 0;
+  }
+
+  &.thumb-right {
+    .charity-row__wrapper {
+      right:-$container-width;
+      left:auto;
+    }
+    &.inview {
+      .charity-row__wrapper {
+        right: 0;
+      }
+    }
+
+    .charity-row__thumb {
+      float:right;
+    }
+
+    .charity-row__content {
+      float:left;
+      padding-left:$column-padding;
+      padding-right:0;
+    }
+  }
+}
+
+@media (max-width: $device-m - 1) {
+  .dpl-charity-row {
+    .charity-row__thumb {
+      width:100%;
+      display:block;
+      padding-bottom:20px;
+      height:auto;
+    }
+
+    .charity-row__thumb-wrapper {
+      display:block;
+      position:static;
+
+    }
+
+    .charity-row__content {
+      width:100%;
+      display:block;
+      text-align:center;
+      padding:0 $column-padding !important;
+    }
+  }
+}

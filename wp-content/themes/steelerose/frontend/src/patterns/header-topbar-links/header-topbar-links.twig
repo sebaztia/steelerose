@@ -1,0 +1,7 @@
+{% if links %}
+	{% for link in links %}
+		<a class="dpl-login-link" href="{{ link.url }}">
+			{{ link.title }}
+		</a>
+	{% endfor %}
+{% endif %}

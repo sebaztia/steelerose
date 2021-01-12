@@ -1,0 +1,13 @@
+<div class="dpl-form-logout">
+    <div class="container half">
+        <div class="section-row">
+            {% include "@patterns/button/button.twig" with {
+                element : "a",
+                label : 'Log me out',
+                href : global.logoutLink,
+                wrap : 'div',
+                wrapClass : 'text-center'
+            } %}
+        </div>
+    </div>
+</div>

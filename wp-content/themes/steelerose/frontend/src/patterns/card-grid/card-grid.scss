@@ -1,0 +1,47 @@
+.dpl-card-grid {
+	.container{
+		font-size: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.container, .columns{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+
+	.columns, .dpl-card{
+		flex-grow: 1;
+	}
+
+	.columns{
+		padding: $column-padding;
+	}
+
+	.dpl-card{
+		background: $brand-light;
+		border-radius: 10px;
+		padding: 20px;
+
+		@media(min-width: $device-m){
+			padding: 30px;
+		}
+	}
+
+	@media(min-width: $device-m){
+		.six, .three, .four{
+			max-width: 50%;
+			width: 100%;
+		}
+	}
+
+	@media(min-width: $device-l){
+		.three{
+			max-width: 25%;
+		}
+		.four{
+			max-width: 33.33%;
+		}
+	}
+}

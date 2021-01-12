@@ -1,0 +1,15 @@
+{% if global.phone %}
+<div class="dpl-snippet">
+    <div class="snippet__icon">
+        <svg class="icon icon-phone">
+            <use xlink:href="#icon-phone"></use>
+        </svg>
+    </div>
+    <div class="snippet__content">
+        <p>
+            <a itemprop="telephone" href="tel:{{ global.phone }}">{{ global.phone }}</a>
+        </p>
+    </div>
+    <div class="clearfix"></div>
+</div>
+{% endif %}

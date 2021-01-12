@@ -1,0 +1,19 @@
+.dpl-overlay-link {
+  color:$grey-light;
+  font-size: 16px;
+  text-transform:uppercase;
+
+  a {
+    color:$grey-light;
+	font-size: 16px;
+    &:hover {
+      color:darken($grey-light, 20%);
+    }
+  }
+}
+
+.secondary {
+  .dpl-overlay-link {
+    color:#efb7c5;
+  }
+}

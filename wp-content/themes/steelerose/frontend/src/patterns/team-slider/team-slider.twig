@@ -1,0 +1,106 @@
+<div class="
+    {% if backgroundColour %} bg-{{ backgroundColour }}{% else %} bg-light{% endif %}
+    position-relative">
+    {% if footText %}
+        {% include "@patterns/foottext/foottext.twig" with {
+            text : footText
+        } %}
+    {% endif %}
+    <section class="section-row">
+        {% if title %}
+            <h2 class="text-center">{{ title }}</h2>
+        {% endif %}
+        <div class="dpl-slider-team">
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="columns twelve">
+                        <div class="position-relative">
+                            {% if nav %}
+                                <nav class="slider-team__nav">
+                                    <span>
+                                        <a class="selected" href="#" data-id="0">All</a>
+                                    </span>
+                                    {% for item in nav %}
+                                        <span>
+                                        <a href="#" data-id="{{ item.ID }}">{{ item.label }}</a>
+                                    </span>
+                                    {% endfor %}
+                                </nav>
+                            {% endif %}
+                            <div class="slider-team__wrapper">
+                                {% for slide in slides %}
+                                    <div class="slider-team__item" data-id="{{ slide.ID }}" data-categories="{{ slide.categories }}">
+                                        <div class="slider-team__item-avatar">
+                                            <img src="{{ slide.avatar }}" alt="{{ slide.title }}" />
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="slick-arrow slick-next">></div>
+                            <div class="slick-arrow slick-prev"><</div>
+                        </div>
+
+
+                        <div class="slider-team__bio">
+                            {% for slide in slides %}
+                                <div
+                                        class="slider-team__bio-item {% if loop.index==1 %}show{% endif %}"
+                                        data-id="{{ slide.ID }}"
+                                >
+                                    <div class="row">
+                                        <div class="columns six">
+                                            {% if slide.largeImage %}
+                                                <img src="{{ slide.largeImage  }}" alt="{{ title }}" />
+                                            {% endif %}
+                                            &nbsp;
+                                        </div>
+                                        <div class="columns six">
+                                            <h3>{{ slide.title }}</h3>
+
+                                            {% if slide.interests %}
+                                            <div class="wrapspace nomargin--top">
+                                            <div class="h5 color-brand1 text-uppercase"><b>INTERESTS:</b></div>
+                                            {{ slide.interests }}
+                                            </div>
+                                            {% endif %}
+
+                                            {% if slide.activities %}
+                                            <div class="wrapspace nomargin--top">
+                                            <div class="h5 color-brand1 text-uppercase"><b>ACTIVITIES:</b></div>
+                                            {{ slide.activities }}
+                                            </div>
+                                            {% endif %}
+
+                                            {% if slide.education %}
+                                            <div class="wrapspace nomargin--top">
+                                            <div class="h5 color-brand1 text-uppercase"><b>EDUCATION:</b></div>
+                                            {{ slide.education }}
+                                            </div>
+                                            {% endif %}
+
+                                            {% if slide.achievement %}
+                                            <div class="wrapspace nomargin--top">
+                                            <div class="h5 color-brand1 text-uppercase"><b>ACHIEVEMENT:</b></div>
+                                            {{ slide.achievement }}
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% if contact %}
+                            {% include "@patterns/button/button.twig" with {
+                                element : 'a',
+                                href : contact,
+                                wrap : 'div',
+                                wrapClass : 'text-center',
+                                label : "Get in touch"
+                            } %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,38 @@
+$header-bg: white;
+$header-color: #222;
+$header-color-hover: $brand-highlight;
+$header-color-current: $header-color-hover;
+$header-font-size: $font-size;
+
+$hidden-header-bg: white;
+$hidden-header-font-size: $font-size;
+$hidden-header-color: $font-body-color;
+
+header {
+  background: $header-bg;
+  //padding: 10px 0;
+  width: 100%;
+}
+
+.dpl-header {
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:10;
+
+  .dpl-login-link {
+    float:right;
+  }
+}
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}

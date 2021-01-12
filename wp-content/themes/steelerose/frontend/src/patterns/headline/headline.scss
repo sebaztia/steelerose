@@ -1,0 +1,13 @@
+.dpl-headline {
+  padding:$column-padding 0;
+
+  &.bg-light {
+    background:$bg-light;
+  }
+  &.bg-dark {
+    background:$bg-dark;
+  }
+  &.bg-medium {
+    background:$bg-medium;
+  }
+}

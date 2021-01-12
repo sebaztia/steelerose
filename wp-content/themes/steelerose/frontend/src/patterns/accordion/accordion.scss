@@ -1,0 +1,65 @@
+@import "lib/bs-accordion.scss";
+
+.dpl-accordion {
+  .accordion__content {
+    padding:$column-padding / 2 !important;
+  }
+
+  .bs-accordion-heading {
+    background:lighten($bg-light, 3%);
+    color:$brand1;
+  }
+	
+	.complete{
+		.bs-accordion-heading {
+			 background:rgba($brand2, 0.1);
+		}
+	}
+
+	.bs-accordion.disabled{
+		.probate-machine__task-title,
+		.probate-machine__task-title:before{
+			opacity: .5;
+		}
+		
+		.bs-accordion-heading{
+			cursor: default;
+		}
+	}
+  .bs-accordion-container {
+    border:none !important;
+
+    &:hover {
+      border:none !important;
+    }
+  }
+
+  .bs-accordion-container:after {
+    display:none !important;
+  }
+
+  .dpl-accordion {
+    .bs-accordion {
+      border-top:none;
+    }
+    .bs-accordion-heading {
+      color:$font-body-color;
+    }
+
+    .bs-active .bs-accordion-heading {
+      color:$font-body-color !important;
+    }
+
+    .bs-accordion.content-accordion {
+      border-top:2px solid $bg-lightmedium;
+
+      &:first-child {
+        border-top:none;
+      }
+    }
+  }
+
+  .dpl-tabs {
+    margin:0;
+  }
+}

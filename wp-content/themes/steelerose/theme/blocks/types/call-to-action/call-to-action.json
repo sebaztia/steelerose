@@ -1,0 +1,12 @@
+{
+    "render_template": "call-to-action.php",
+    "name": "call-to-action",
+    "category": "patterns",
+    "type": "plain",
+    "title": "Call to action (DEPRECATED)",
+    "description": "Displays the \"Call to action\" pattern",
+    "icon": "format-image",
+    "supports": {
+        "align": false
+    }
+}

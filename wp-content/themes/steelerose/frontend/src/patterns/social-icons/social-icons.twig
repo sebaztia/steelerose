@@ -1,0 +1,32 @@
+<div class="dpl-social-icons{% if class %} {{ class }}{% endif %}">
+	<nav>
+		{% if global.facebook %}
+			<a class="social-icons__item" href="{{ global.facebook }}" target="_blank">
+				<svg class="icon icon-facebook">
+					<use xlink:href="#icon-facebook"></use>
+				</svg>
+			</a>
+		{% endif %}
+		{% if global.linkedIn %}
+			<a class="social-icons__item" href="{{ global.linkedIn }}" target="_blank">
+				<svg class="icon icon-linkedin">
+					<use xlink:href="#icon-linkedin"></use>
+				</svg>
+			</a>
+		{% endif %}
+		{% if global.instagram %}
+			<a class="social-icons__item" href="{{ global.instagram }}" target="_blank">
+				<svg class="icon icon-instagram">
+					<use xlink:href="#icon-instagram"></use>
+				</svg>
+			</a>
+		{% endif %}
+		{% if global.phone %}
+			<a class="social-icons__item" href="tel:{{ global.phone }}" target="_blank">
+				<svg class="icon icon-phone">
+					<use xlink:href="#icon-phone"></use>
+				</svg>
+			</a>
+		{% endif %}
+	</nav>
+</div>

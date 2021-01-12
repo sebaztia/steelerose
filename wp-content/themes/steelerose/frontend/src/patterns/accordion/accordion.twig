@@ -1,0 +1,34 @@
+{% if accordions %}
+    <div class="dpl-accordion
+        {% if backgroundColour %} bg-{{ backgroundColour }}{% endif %}
+        ">
+        {% if embed == false %}
+        <div class="section-row">
+            <div class="container">
+            {% endif %}
+                {% for acc in accordions %}
+                    <div class="bs-accordion content-accordion left-align">
+                        <a href="#" class="bs-accordion-heading">
+                            {{ acc.title }}
+                            <span class="icon-plus"></span>
+                        </a>
+                        <div class="bs-accordion-container">
+                            <div class="bs-accordion-content accordion__content">
+                                {% if acc.contentType == 'tabs' %}
+                                    {% include "@patterns/tabs/tabs.twig" with {
+                                        embed : true,
+                                        tabs : acc.tabs
+                                    }%}
+                                {% else %}
+                                    {{ acc.content }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% if embed == false %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endif %}

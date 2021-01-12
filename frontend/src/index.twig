@@ -1,0 +1,167 @@
+{% include "@templates/head.twig" %}
+<main id="main">
+    {% include "@patterns/call-to-action/call-to-action.twig" with {
+        align : 'left',
+        title : 'Example Left Align',
+        content : '<p class="standfirst">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et</p>',
+        buttonLabel : "Start the machine",
+        buttonHref : '#',
+        imgSrc : "/public/600x600.png",
+        imgAlt : "Probate Machine"
+    } %}
+
+    {% include "@patterns/stat-grid/stat-grid.twig" with {
+        cols : [
+            {
+                title : "50",
+                text  : "Lorem ipsum dolor sit amet, consectetur"
+            },
+            {
+                title : "375",
+                text  : "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            },
+            {
+                title : "1,000",
+                text : "Lorem ipsum dolor sit amet, consectetur"
+            }
+        ]
+    } %}
+
+    {% include "@patterns/headline/headline.twig" with {
+        headline: "Example headline",
+        element: "h3"
+    } %}
+
+    {% include "@patterns/profile-slide/profile-slide.twig" with {
+        avatarAlign : "left",
+        avatar: "/public/200x200.png",
+        title : "Full name here",
+        subtitle : "Charity name here",
+        description : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>",
+        buttonHref : "#",
+        buttonLabel : "Find out more"
+    } %}
+
+    {% include "@patterns/profile-slide/profile-slide.twig" with {
+        avatarAlign : "right",
+        avatar: "/public/200x200.png",
+        title : "Full name here",
+        subtitle : "Charity name here",
+        description : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>",
+        buttonHref : "#",
+        buttonLabel : "Find out more"
+    } %}
+
+    {% include "@patterns/profile-slide/profile-slide.twig" with {
+        avatarAlign : "left",
+        avatar: "/public/200x200.png",
+        title : "Full name here",
+        subtitle : "Charity name here",
+        description : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>",
+        buttonHref : "#",
+        buttonLabel : "Find out more"
+    } %}
+
+    {% include "@patterns/profile-slide/profile-slide.twig" with {
+        avatarAlign : "right",
+        avatar: "/public/200x200.png",
+        title : "Full name here",
+        subtitle : "Charity name here",
+        description : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>",
+        buttonHref : "#",
+        buttonLabel : "Find out more"
+    } %}
+
+    {% include "@patterns/call-to-action/call-to-action.twig" with {
+        align : 'right',
+        title : 'Example Right Align',
+        content : '<p class="standfirst">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et</p>',
+        buttonLabel : "Find out more",
+        buttonHref : '#',
+        imgSrc : "/public/600x600.png",
+        imgAlt : "Probate Machine"
+    } %}
+
+    {% include "@patterns/headline/headline.twig" with {
+        headline: "Services title here",
+        element: "h3",
+        bgColour : "bg-light"
+    } %}
+
+    {% include "@patterns/service-grid/service-grid.twig" with {
+        cols : [
+            {
+                image : "/public/100x100.png",
+                imageAlt : "Test alt",
+                title : "Service",
+                text  : "Lorem ipsum dolor sit amet, consectetur",
+                buttonHref : '#',
+                buttonLabel : 'Find out more'
+            },
+            {
+                image : "/public/100x100.png",
+                imageAlt : "Test alt",
+                title : "Service",
+                text  : "Lorem ipsum dolor sit amet, consectetur",
+                buttonHref : '#',
+                buttonLabel : 'Find out more'
+            },
+            {
+                image : "/public/100x100.png",
+                imageAlt : "Test alt",
+                title : "Service",
+                text  : "Lorem ipsum dolor sit amet, consectetur",
+                buttonHref : '#',
+                buttonLabel : 'Find out more'
+            }
+        ]
+    } %}
+
+    {% include "@patterns/headline/headline.twig" with {
+        headline: "Latest News",
+        element: "h3"
+    } %}
+
+    {% include "@patterns/post-grid/post-grid.twig" with {
+        cols : [
+            {
+                title : "Post Title",
+                label : "DD/MM/YY",
+                excerpt : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                href : "#"
+            },
+            {
+                title : "Post Title",
+                label : "DD/MM/YY",
+                excerpt : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+                href : "#"
+            },
+            {
+                title : "Post Title",
+                label : "DD/MM/YY",
+                excerpt : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+                href : "#"
+            }
+        ]
+    } %}
+
+    {% include "@patterns/call-to-action/call-to-action.twig" with {
+        align : 'left',
+        invert : true,
+        title : 'Signup CTA here',
+        content : '<p class="standfirst">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit</p><p>Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit</p>',
+        buttonLabel : "Find out more",
+        buttonHref : '#',
+        imgSrc : "/public/600x600.png",
+        imgAlt : "Probate Machine"
+    } %}
+
+</main>
+{% include "@templates/foot.twig" %}

@@ -1,0 +1,22 @@
+<a href="{{ href }}" class="dpl-post-box">
+	<div class="post-box__content">
+		<div class="post-box__wrapper">
+			<div class="post-box__label">
+				{{ label }}
+			</div>
+			<div class="post-box__title">
+				{{ title }}
+			</div>
+			<div class="post-box__excerpt">
+				{{ excerpt }}
+			</div>
+			<div class="post-box__button">
+				{% include "@patterns/button/button.twig" with {
+					element : "button",
+					label : "Find out more",
+					class : "full-width"
+				} %}
+			</div>
+		</div>
+	</div>
+</a>

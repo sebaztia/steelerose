@@ -1,0 +1,12 @@
+{% if list %}
+    <ul class="dpl-bullet-list">
+        {% for item in list %}
+            <li>
+                <div class="h4">{{ item.heading }}</div>
+                {% if item.subHeading %}
+                    {{ item.subHeading }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -1,0 +1,21 @@
+<div class="dpl-header-topbar">
+	<div class="container">
+		<div class="row">
+			<div class="columns twelve">
+				<div class="header-topbar__icons">
+					{% include "@patterns/social-icons/social-icons.twig" %}
+				</div>
+				<div class="header-topbar__search">
+					{% include "@patterns/header-search/header-search.twig" with {
+						icon : true
+					} %}
+				</div>
+				<div class="header-topbar__login">
+					{% include "@patterns/login-link/login-link.twig" with {
+						loggedIn : false
+					} %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

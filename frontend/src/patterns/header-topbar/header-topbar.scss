@@ -1,0 +1,25 @@
+.dpl-header-topbar {
+  background:$bg-medium;
+  margin-bottom:10px;
+
+  .header-topbar__icons {
+    width:calc(45% - 17.5px);
+    float:left;
+    padding-top:4px;
+  }
+
+  .header-topbar__login {
+    width:calc(55% - 17.5px);
+    float:left;
+    text-align:right;
+    padding-right:10px;
+    box-sizing:border-box;
+    padding-top:3px;
+  }
+
+  .header-topbar__search {
+    float:right;
+    width:35px;
+    text-align:right;
+  }
+}
